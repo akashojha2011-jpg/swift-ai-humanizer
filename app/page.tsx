@@ -16,7 +16,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24 space-y-16">
         {/* Main Hero Banner */}
         <div className="text-center max-w-4xl mx-auto space-y-5">
-          <h1 className="font-heading font-extrabold text-4xl sm:text-6xl text-slate-900 dark:text-white tracking-tight leading-tight">
+          <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-[42px] text-slate-900 dark:text-white tracking-tight leading-tight whitespace-normal sm:whitespace-nowrap">
             Humanize AI Text with Swift AI Humanizer
           </h1>
 

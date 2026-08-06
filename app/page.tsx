@@ -16,11 +16,6 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24 space-y-16">
         {/* Main Hero Banner */}
         <div className="text-center max-w-4xl mx-auto space-y-5">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 dark:bg-emerald-950/90 border border-brand-200 dark:border-emerald-800 text-brand-700 dark:text-emerald-300 text-xs font-semibold shadow-2xs">
-            <Sparkles className="w-3.5 h-3.5 text-brand-600 dark:text-emerald-400" />
-            <span>Over 50,000 writers trust Swift AI Humanizer</span>
-          </div>
-
           <h1 className="font-heading font-extrabold text-4xl sm:text-6xl text-slate-900 dark:text-white tracking-tight leading-tight">
             Humanize AI Text with Swift AI Humanizer
           </h1>

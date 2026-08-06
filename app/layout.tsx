@@ -5,6 +5,9 @@ import { LayoutWrapper } from "@/components/LayoutWrapper";
 export const metadata: Metadata = {
   title: "Free AI Text Humanizer — Bypass GPTZero, Turnitin & Copyleaks | Swift AI Humanizer",
   description: "Free AI text humanizer to convert ChatGPT, Claude, and Gemini text into 100% human-sounding writing. Bypass GPTZero, Turnitin, Originality.ai & Copyleaks with zero sign up required.",
+  verification: {
+    google: "Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8",
+  },
   keywords: [
     "swift ai humanizer",
     "free ai text humanizer",
@@ -128,6 +131,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="google-site-verification" content="Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <script

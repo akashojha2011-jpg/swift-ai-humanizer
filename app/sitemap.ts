@@ -18,6 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const blogPosts = [
+    "/blog/what-is-ai-humanizer",
+    "/blog/how-to-humanize-chatgpt-essays",
+    "/blog/best-free-ai-humanizer-2026",
+    "/blog/ai-humanizer-for-students",
     "/blog/how-gptzero-and-turnitin-detect-ai-text",
     "/blog/5-essential-tips-to-make-chatgpt-text-sound-human",
     "/blog/avoiding-false-positives-in-academic-writing",

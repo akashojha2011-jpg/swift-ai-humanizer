@@ -15,30 +15,66 @@ export default function Home() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-24 space-y-16">
         {/* Main Hero Banner */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
-          <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-[42px] text-slate-900 dark:text-white tracking-tight leading-tight whitespace-normal sm:whitespace-nowrap">
-            Humanize AI Text with Swift AI Humanizer
+        <div className="text-center max-w-5xl mx-auto space-y-5">
+          <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-[40px] text-slate-900 dark:text-white tracking-tight leading-tight whitespace-normal sm:whitespace-nowrap">
+            Best Free AI Humanizer – Instantly Bypass GPTZero & Turnitin
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-sans">
-            Paste your AI-generated text below to instantly make it sound 100% human and pass all AI detectors.
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto font-sans">
+            Convert ChatGPT, Claude, and Gemini text into natural human-sounding writing. 98% bypass accuracy with zero sign up required.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-600 dark:text-slate-300 font-semibold pt-1">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> 100% Free
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> 100% Free Forever
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Preserves Bullets & Bold
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Preserves Bullets & Formatting
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Turnitin & GPTZero Safe
             </span>
           </div>
+
+          {/* Table of Contents / Internal Anchor Links */}
+          <nav aria-label="Page Quick Sections" className="flex flex-wrap items-center justify-center gap-2 pt-3">
+            <a href="#what-is-ai-humanizer" className="px-3 py-1.5 rounded-full text-[11px] font-bold bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-brand-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 transition-all">
+              #what-is-ai-humanizer
+            </a>
+            <a href="#how-it-works" className="px-3 py-1.5 rounded-full text-[11px] font-bold bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-brand-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 transition-all">
+              #how-it-works
+            </a>
+            <a href="#why-swift-ai" className="px-3 py-1.5 rounded-full text-[11px] font-bold bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-brand-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 transition-all">
+              #why-swift-ai
+            </a>
+            <a href="#features" className="px-3 py-1.5 rounded-full text-[11px] font-bold bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-brand-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 transition-all">
+              #features
+            </a>
+            <a href="#faq" className="px-3 py-1.5 rounded-full text-[11px] font-bold bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-brand-600 hover:text-white dark:hover:bg-emerald-500 dark:hover:text-slate-950 transition-all">
+              #faq
+            </a>
+          </nav>
         </div>
 
+        {/* Intro Section: What is an AI Humanizer? */}
+        <section id="what-is-ai-humanizer" className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-6 sm:p-8 shadow-float max-w-4xl mx-auto space-y-4 scroll-mt-20">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white">
+            What is an AI Humanizer?
+          </h2>
+          <div className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed space-y-3 font-sans">
+            <p>
+              An <strong>AI humanizer</strong> is a specialized writing tool that rewrites AI-generated text from ChatGPT, Claude, and Gemini into authentic, natural writing that reads as if authored by a real human. Most raw content produced by generative AI models contains rigid statistical patterns—such as low perplexity and uniform sentence length—that institutional AI detectors like <strong>GPTZero</strong> and <strong>Turnitin 2026</strong> easily identify. Our <strong>free AI humanizer</strong> eliminates these mathematical signals by adjusting sentence structure, adding organic contractions, and varying writing cadence while keeping your original facts, bullet points, and core meaning 100% intact.
+            </p>
+            <p>
+              Whether you are a student safeguarding academic essays from false positive flags, a content creator publishing SEO articles, a marketer polishing ad copy, or a business professional refining corporate emails, our <strong>best AI humanizer</strong> delivers fast, undetectable rewrites with zero account registration required. <Link href="/blog/what-is-ai-humanizer" className="text-brand-600 dark:text-emerald-400 font-bold hover:underline">Learn what an AI humanizer is</Link>, <Link href="/blog/ai-humanizer-for-students" className="text-brand-600 dark:text-emerald-400 font-bold hover:underline">read our guide for students</Link>, or <Link href="/blog/best-free-ai-humanizer-2026" className="text-brand-600 dark:text-emerald-400 font-bold hover:underline">see how we compare to other tools</Link>.
+            </p>
+          </div>
+        </section>
+
         {/* Rewriter Workbench Tool */}
-        <HumanizerTool />
+        <div id="humanizer">
+          <HumanizerTool />
+        </div>
 
         {/* Performance Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-8 shadow-float max-w-6xl mx-auto text-center transition-colors">
@@ -67,10 +103,10 @@ export default function Home() {
         <SEOContentSection />
 
         {/* How It Works Section */}
-        <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-10">
+        <section id="how-it-works" className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-10 scroll-mt-20">
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-              Humanize AI Text in 4 Steps
+              How Swift AI Works
             </h2>
             <p className="text-sm text-slate-600 dark:text-slate-300">
               Simple, automatic rewriting that keeps your original meaning and formatting.
@@ -120,62 +156,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Key Features */}
-        <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-10">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-              Built for Fast, Clean Rewriting
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-brand-50 dark:bg-emerald-950/90 border border-brand-200 dark:border-emerald-800 flex items-center justify-center text-brand-600 dark:text-emerald-400">
-                <FileCheck className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Preserves Bullets & Bold</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Keep lists, bolding, and headers intact. Copy straight into Word or Google Docs.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-emerald-50 dark:bg-emerald-950/90 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                <Wand2 className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">5 Writing Tones</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Switch between Academic, Conversational, Professional, Marketing, and Creative styles.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-950/90 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400">
-                <Layers className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Bulk Document Upload</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Process Word files (.docx) or paste multiple paragraphs at once.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-sky-50 dark:bg-sky-950/90 border border-sky-200 dark:border-sky-800 flex items-center justify-center text-sky-600 dark:text-sky-400">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Live Detector Checks</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                View instant AI risk scores for Turnitin, GPTZero, and Copyleaks.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* Features Built for Your Needs */}
+        <UseCases />
 
         {/* Comparison Matrix */}
         <CompetitorComparison />
-
-        {/* Use Cases */}
-        <UseCases />
 
         {/* FAQs */}
         <FAQSection />

@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Briefcase, Feather, Megaphone, FileText } from "lucide-react";
+import { GraduationCap, Briefcase, Feather, Megaphone } from "lucide-react";
 
 export function UseCases() {
   const cases = [
@@ -31,10 +31,10 @@ export function UseCases() {
   ];
 
   return (
-    <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 font-sans">
+    <section id="features" className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 font-sans scroll-mt-20">
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-          Built for All Content Needs
+          Features Built for Your Needs
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-300">
           Tailored humanization algorithms for students, professionals, and digital marketers.

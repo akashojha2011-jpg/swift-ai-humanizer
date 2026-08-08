@@ -56,10 +56,10 @@ export function DifferentiatorsChart() {
   const current = metricsData[activeMetric];
 
   return (
-    <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 font-sans">
+    <section id="why-swift-ai" className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 font-sans scroll-mt-20">
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-          Why Swift AI Outperforms Paid Tools
+          Why Choose Swift AI Over Other Tools
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-300">
           Compare real-world accuracy, meaning retention, and speed across top humanizers.

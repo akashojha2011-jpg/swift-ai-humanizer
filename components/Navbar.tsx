@@ -81,6 +81,9 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             <Link href="/how-it-works" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
               How It Works
             </Link>
+            <Link href="/how-it-was-made" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
+              Research &amp; Architecture
+            </Link>
             <Link href="/vs/superhumanizer" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
               vs Competitors
             </Link>
@@ -154,6 +157,13 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             How It Works
+          </Link>
+          <Link
+            href="/how-it-was-made"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Research &amp; Architecture
           </Link>
           <Link
             href="/vs/superhumanizer"

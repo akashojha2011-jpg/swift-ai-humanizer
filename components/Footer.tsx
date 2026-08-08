@@ -140,8 +140,13 @@ export function Footer() {
             </span>
             <ul className="space-y-2.5">
               <li>
+                <Link href="/how-it-was-made" className="hover:text-brand-600 dark:hover:text-white transition-colors font-bold text-emerald-600 dark:text-emerald-400">
+                  IEEE Research &amp; Architecture
+                </Link>
+              </li>
+              <li>
                 <Link href="/blog" className="hover:text-brand-600 dark:hover:text-white transition-colors">
-                  Writers Guides & Blog
+                  Writers Guides &amp; Blog
                 </Link>
               </li>
               <li>
@@ -167,7 +172,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 dark:text-slate-400">
           <p>© {new Date().getFullYear()} Swift AI Humanizer. All rights reserved.</p>
           <p className="flex items-center gap-1">
-            Built for writers, students & creators with <Heart className="w-3 h-3 text-rose-500 fill-rose-500" />
+            Built for writers, students &amp; creators with <Heart className="w-3 h-3 text-rose-500 fill-rose-500" />
           </p>
         </div>
       </div>

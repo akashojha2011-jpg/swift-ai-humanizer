@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/how-it-works",
+    "/how-it-was-made",
     "/bulk-rewriter",
     "/tone-customizer",
     "/ai-detector",
@@ -34,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? ("daily" as const) : ("weekly" as const),
-    priority: route === "" ? 1.0 : route === "/bulk-rewriter" || route === "/tone-customizer" || route === "/ai-detector" || route === "/how-it-works" ? 0.9 : 0.7,
+    priority: route === "" ? 1.0 : route === "/bulk-rewriter" || route === "/tone-customizer" || route === "/ai-detector" || route === "/how-it-works" || route === "/how-it-was-made" ? 0.9 : 0.7,
   }));
 
   const blogRoutes = blogPosts.map((route) => ({

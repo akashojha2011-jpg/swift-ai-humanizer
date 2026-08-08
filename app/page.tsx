@@ -28,8 +28,8 @@ export default function Home() {
             Free AI Humanizer: Turn AI Text into 100% Human Writing
           </h1>
 
-          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mx-auto font-sans">
-            Instantly convert ChatGPT, Claude, and Gemini text into natural, undetectable writing. Bypass Turnitin, GPTZero, and Copyleaks — built on peer-reviewed detection research, not guesswork. No sign-up required.
+          <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-sans">
+            Convert ChatGPT, Claude, and Gemini text into natural, undetectable writing. Bypass Turnitin, GPTZero, and Copyleaks with research-backed precision. No sign-up required.
           </p>
 
           {/* Section 3: Trust Bar */}

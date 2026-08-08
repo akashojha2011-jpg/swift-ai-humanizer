@@ -18,7 +18,7 @@ export default function Home() {
         <div className="flex items-center justify-center">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs font-semibold shadow-2xs">
             <RefreshCw className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400 shrink-0" />
-            <span>Last updated August 2026 — detection models refreshed for Turnitin 2026 and GPTZero v2</span>
+            <span>Last updated August 2026. Detection models refreshed for Turnitin 2026 and GPTZero v2</span>
           </div>
         </div>
 
@@ -44,7 +44,7 @@ export default function Home() {
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> IEEE Research-Based
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> 100% Free — No Sign-Up
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> 100% Free • No Sign-Up
             </span>
           </div>
         </div>
@@ -84,7 +84,7 @@ export default function Home() {
                 Built on Peer-Reviewed Detection Research
               </h2>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-                Most humanizers rely on random word-swapping. Swift AI reverse-engineers the actual classifiers AI detectors use — based on the IEEE-published study <em className="font-medium text-slate-900 dark:text-white">"How to Detect AI-Generated Texts?"</em> (Nguyen, Hatua &amp; Sung, 2023). We target the exact features detectors score on: Coleman-Liau readability, word density, and sentence-level predictability — then rebalance your text into natural human ranges instead of just scrambling words.
+                Most humanizers rely on random word-swapping. Swift AI reverse-engineers the actual classifiers AI detectors use, based on the IEEE-published study <em className="font-medium text-slate-900 dark:text-white">"How to Detect AI-Generated Texts?"</em> (Nguyen, Hatua &amp; Sung, 2023). We target the exact features detectors score on: Coleman-Liau readability, word density, and sentence-level predictability, then rebalance your text into natural human ranges instead of just scrambling words.
               </p>
             </div>
 
@@ -105,47 +105,6 @@ export default function Home() {
             Higher pass rates because we target the actual signals detectors score, not just word choice.
           </p>
         </div>
-
-        {/* Section 7: The Next-Generation AI Text Humanizer (3 Feature Blocks) */}
-        <section className="py-8 border-t border-slate-200/80 dark:border-slate-800 space-y-8 max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-              The Next-Generation AI Text Humanizer
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-7 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-brand-50 dark:bg-emerald-950/90 border border-brand-200 dark:border-emerald-800 flex items-center justify-center text-brand-600 dark:text-emerald-400">
-                <FileCheck className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Preserves All Formatting</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Bullets, bold text, numbered lists, and subheaders stay 100% intact through the rewrite.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-7 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-emerald-50 dark:bg-emerald-950/90 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Turnitin &amp; GPTZero Bypasser</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Eliminates AI buzzwords and adjusts sentence burstiness for 98%+ human confidence.
-              </p>
-            </div>
-
-            <div className="bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-7 rounded-3xl space-y-3 shadow-float hover:-translate-y-1 transition-all">
-              <div className="w-10 h-10 rounded-2xl bg-amber-50 dark:bg-amber-950/90 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-600 dark:text-amber-400">
-                <Wand2 className="w-5 h-5" />
-              </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Rich Text Clipboard Support</h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
-                Copy fully styled HTML straight into Google Docs, Microsoft Word, Notion, or Gmail.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Section 8: Humanize AI Text in 4 Steps */}
         <section className="py-8 border-t border-slate-200/80 dark:border-slate-800 space-y-8 max-w-6xl mx-auto">

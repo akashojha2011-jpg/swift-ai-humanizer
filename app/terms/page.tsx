@@ -1,36 +1,139 @@
+import Link from "next/link";
+import { FileText, ShieldAlert, Award, CheckCircle2, HelpCircle, ArrowRight } from "lucide-react";
+
 export const metadata = {
   title: "Terms of Service — Swift AI Humanizer",
-  description: "Terms of Service and usage guidelines for Swift AI Humanizer free AI text humanizer.",
+  description: "Read Swift AI Humanizer's Terms of Service, user copyright ownership rights, and ethical usage guidelines.",
 };
 
 export default function TermsPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-8 font-sans">
-      <div className="space-y-2 border-b border-slate-200 dark:border-slate-800 pb-6">
-        <h1 className="font-heading font-extrabold text-3xl text-slate-900 dark:text-white">
-          Terms of Service
-        </h1>
-        <p className="text-xs text-slate-500 font-mono">Last updated: August 2026</p>
-      </div>
+    <div className="relative overflow-hidden bg-[#F9FAFB] dark:bg-[#0F172A] min-h-screen py-16 transition-colors font-sans">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        {/* Header */}
+        <div className="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8 text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 dark:bg-emerald-950/80 border border-brand-200 dark:border-emerald-800 text-brand-700 dark:text-emerald-300 text-xs font-bold font-mono">
+            <FileText className="w-3.5 h-3.5 text-brand-600 dark:text-emerald-400" />
+            <span>Service Agreement &amp; Usage Terms</span>
+          </div>
 
-      <div className="prose prose-slate dark:prose-invert text-xs leading-relaxed space-y-6">
-        <section className="space-y-2">
-          <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white">
-            1. Acceptable Use
-          </h2>
-          <p>
-            Swift AI Humanizer is provided as a free tool for writers, students, bloggers, and professionals to enhance text readability, vary sentence burstiness, and refine AI-generated drafts. Users are responsible for complying with their institution's or employer's academic integrity and editorial policies.
-          </p>
-        </section>
+          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+            Terms of Service
+          </h1>
 
-        <section className="space-y-2">
-          <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white">
-            2. Disclaimer of Detection Warranties
-          </h2>
-          <p>
-            While our 4-stage pipeline is engineered to maximize human confidence scores across third-party detection models (GPTZero, Turnitin, Copyleaks), third-party algorithms update continuously. Swift AI Humanizer is provided "as-is" without warranty of guaranteed outcomes.
+          <p className="text-xs text-slate-500 dark:text-slate-400 font-mono">
+            Effective date: August 8, 2026 • Version 2.4
           </p>
-        </section>
+        </div>
+
+        {/* Highlight Box */}
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5 text-xs shadow-float">
+          <div className="w-12 h-12 rounded-2xl bg-brand-600 text-white flex items-center justify-center shrink-0 shadow-md">
+            <Award className="w-6 h-6" />
+          </div>
+          <div className="space-y-1">
+            <span className="font-heading font-extrabold text-base block text-slate-900 dark:text-white">
+              100% User Copyright Ownership Guaranteed
+            </span>
+            <p className="text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              You retain full, exclusive ownership of all original text inputs and humanized text outputs generated through Swift AI Humanizer. We claim zero copyright, royalty, or commercial rights over your content.
+            </p>
+          </div>
+        </div>
+
+        {/* Terms Sections */}
+        <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-float space-y-10 text-slate-700 dark:text-slate-300 text-xs leading-relaxed">
+          {/* Section 1 */}
+          <section className="space-y-3">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
+              1. Acceptance of Terms &amp; Scope of Service
+            </h2>
+            <p>
+              By accessing or using Swift AI Humanizer (the "Service"), you agree to be bound by these Terms of Service. Swift AI Humanizer provides a free, formatting-aware AI text humanization platform designed to refine sentence cadence, vary burstiness, and eliminate robotic AI phrasing for students, writers, and professionals.
+            </p>
+          </section>
+
+          {/* Section 2 */}
+          <section className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
+              2. Intellectual Property Rights &amp; Ownership
+            </h2>
+            <p>
+              All inputs submitted by users and all humanized output texts generated by our algorithms remain 100% the intellectual property of the respective user. Swift AI Humanizer assigns all rights, titles, and interests in the generated output text to you upon creation.
+            </p>
+          </section>
+
+          {/* Section 3 */}
+          <section className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
+              3. Responsible Use &amp; Academic Integrity
+            </h2>
+            <p>
+              Swift AI Humanizer is engineered to serve as an ethical writing enhancement and stylistic editing assistant. Users are responsible for ensuring that their use of our tool complies with all applicable institutional policies, academic codes of conduct, workplace editorial guidelines, and copyright laws.
+            </p>
+          </section>
+
+          {/* Section 4 */}
+          <section className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4 text-amber-600 dark:text-amber-400" />
+              4. Third-Party AI Detector Performance Disclaimer
+            </h2>
+            <p>
+              While our multi-pass humanization pipeline is engineered based on published IEEE research to maximize human confidence scores across third-party classification systems (e.g., Turnitin, Copyleaks, GPTZero, Originality.ai), third-party algorithms update continuously and rely on probabilistic statistical models.
+            </p>
+            <p>
+              Swift AI Humanizer is provided on an "as-is" basis without guarantees of specific scoring outcomes on external software.
+            </p>
+          </section>
+
+          {/* Section 5 */}
+          <section className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
+              5. Service Availability &amp; Rate Limits
+            </h2>
+            <p>
+              Our web application is free to use. To maintain server stability and prevent automated abuse, we reserve the right to enforce automated rate limits or temporary throttling for excessive automated requests.
+            </p>
+          </section>
+
+          {/* Section 6 */}
+          <section className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
+              6. Limitation of Liability
+            </h2>
+            <p>
+              To the maximum extent permitted by law, Swift AI Humanizer and its developers shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use our platform.
+            </p>
+          </section>
+
+          {/* Section 7 */}
+          <section className="space-y-3 pt-6 border-t border-slate-100 dark:border-slate-800">
+            <h2 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <HelpCircle className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
+              7. Questions &amp; Support Contact
+            </h2>
+            <p>
+              If you have any questions regarding these Terms of Service or need support, please contact us at <a href="mailto:support@swiftaihumanizer.com" className="text-brand-600 dark:text-emerald-400 underline font-semibold">support@swiftaihumanizer.com</a>.
+            </p>
+          </section>
+        </div>
+
+        {/* Footer Link back to tool */}
+        <div className="text-center pt-4">
+          <Link
+            href="/#humanizer"
+            className="inline-flex items-center gap-2 text-xs font-bold text-brand-600 dark:text-emerald-400 hover:underline"
+          >
+            <span>Back to Humanizer Tool</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+        </div>
       </div>
     </div>
   );

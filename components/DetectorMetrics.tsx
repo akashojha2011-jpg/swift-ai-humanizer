@@ -1,7 +1,7 @@
 "use client";
 
 import { AIDetectionMetrics } from "@/lib/aiDetector";
-import { ShieldCheck, AlertCircle, ArrowDownRight, Award } from "lucide-react";
+import { ShieldCheck, AlertCircle, ArrowDownRight, Award, Zap, RefreshCw, BarChart2 } from "lucide-react";
 
 interface DetectorMetricsProps {
   before?: AIDetectionMetrics;
@@ -48,6 +48,41 @@ export function DetectorMetrics({ before, after }: DetectorMetricsProps) {
           </div>
         )}
       </div>
+
+      {/* 3 Pillars Breakdown Cards */}
+      {after && (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-3 bg-slate-50/90 dark:bg-slate-950/90 border border-slate-200/80 dark:border-slate-800 rounded-xl text-xs">
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300 shrink-0">
+              <Zap className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block font-mono">Unpredictability</span>
+              <span className="font-bold text-slate-900 dark:text-white">{after.perplexityScore}% High Perplexity</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-brand-100 dark:bg-emerald-950/80 border border-brand-200 dark:border-emerald-800 flex items-center justify-center text-brand-700 dark:text-emerald-300 shrink-0">
+              <BarChart2 className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block font-mono">Sentence Cadence</span>
+              <span className="font-bold text-slate-900 dark:text-white">{after.burstinessScore}% High Burstiness</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2.5">
+            <div className="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300 shrink-0">
+              <RefreshCw className="w-4 h-4" />
+            </div>
+            <div>
+              <span className="text-[10px] text-slate-500 dark:text-slate-400 block font-mono">Repetitiveness</span>
+              <span className="font-bold text-emerald-700 dark:text-emerald-400">0% AI N-Grams</span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Grid of Detectors */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">

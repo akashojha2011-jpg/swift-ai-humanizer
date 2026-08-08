@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ShieldCheck, Heart } from "lucide-react";
+import { Heart } from "lucide-react";
 
 export function Footer() {
   return (
@@ -37,39 +37,36 @@ export function Footer() {
               Free AI text humanizer to turn ChatGPT, Claude, and Gemini drafts into clear, natural writing that passes Turnitin and GPTZero.
             </p>
 
-            <div className="flex items-center gap-2 text-[11px] font-mono text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 px-3 py-1.5 rounded-full w-fit">
-              <ShieldCheck className="w-3.5 h-3.5" />
-              <span>100% Free • Privacy Protected</span>
-            </div>
-
             {/* Follow Us Section */}
-            <div className="space-y-2 pt-2">
+            <div className="space-y-2 pt-1">
               <span className="font-heading font-bold text-slate-900 dark:text-white text-xs block">
                 Follow Us
               </span>
-              <div className="flex flex-wrap items-center gap-2.5">
+              <div className="flex items-center gap-3">
                 <a
                   href="https://whatsapp.com/channel/0029VbDhh873bbV5SARXaE3j"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-emerald-50/80 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-[11px] font-bold hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-all shadow-2xs"
+                  aria-label="WhatsApp Channel"
+                  title="WhatsApp Channel"
+                  className="w-8 h-8 rounded-xl bg-emerald-50 dark:bg-emerald-950/80 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center hover:bg-emerald-100 dark:hover:bg-emerald-900 transition-all shadow-2xs group"
                 >
-                  <svg className="w-3.5 h-3.5 fill-emerald-600 dark:fill-emerald-400" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-emerald-600 dark:fill-emerald-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
                     <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-1.103 4.026 4.081-1.071z"/>
                   </svg>
-                  <span>WhatsApp Channel</span>
                 </a>
 
                 <a
                   href="https://www.linkedin.com/company/swifthumanizer/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-blue-50/80 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-800 dark:text-blue-300 text-[11px] font-bold hover:bg-blue-100 dark:hover:bg-blue-900 transition-all shadow-2xs"
+                  aria-label="LinkedIn"
+                  title="LinkedIn"
+                  className="w-8 h-8 rounded-xl bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 flex items-center justify-center hover:bg-blue-100 dark:hover:bg-blue-900 transition-all shadow-2xs group"
                 >
-                  <svg className="w-3.5 h-3.5 fill-blue-600 dark:fill-blue-400" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 fill-blue-600 dark:fill-blue-400 group-hover:scale-110 transition-transform" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                   </svg>
-                  <span>LinkedIn</span>
                 </a>
               </div>
             </div>

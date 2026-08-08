@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { History, Menu, X, ArrowRight, Sun, Moon } from "lucide-react";
+import { History, Menu, X, Sun, Moon } from "lucide-react";
 
 interface NavbarProps {
   onOpenHistory?: () => void;
@@ -40,15 +40,15 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors shadow-2xs">
+    <header className="sticky top-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18 py-3">
+        <div className="flex items-center justify-between h-16 py-3">
           {/* Left: Brand Logo & Name */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-            <div className="w-9 h-9 rounded-xl bg-brand-600 relative flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-md">
+            <div className="w-8 h-8 rounded-xl bg-brand-600 relative flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
               <svg
-                width="22"
-                height="22"
+                width="18"
+                height="18"
                 viewBox="0 0 32 32"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -63,44 +63,41 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
               </svg>
             </div>
 
-            <div className="flex items-center gap-1.5">
-              <span className="font-heading font-extrabold text-xl tracking-tight text-slate-900 dark:text-white leading-none">
-                Swift<span className="text-brand-600 dark:text-emerald-400"> AI Humanizer</span>
-              </span>
-              <span className="hidden sm:inline-block text-[10px] font-mono font-bold px-2 py-0.5 rounded-full bg-brand-50 dark:bg-emerald-950/90 text-brand-700 dark:text-emerald-300 border border-brand-200 dark:border-emerald-800 uppercase">
-                Free
-              </span>
-            </div>
+            <span className="font-heading font-extrabold text-lg tracking-tight text-slate-900 dark:text-white leading-none">
+              Swift<span className="text-brand-600 dark:text-emerald-400"> AI</span>
+            </span>
           </Link>
 
-          {/* Center: Main Navigation Links */}
+          {/* Center: Clean Navigation Links matching Planicorn */}
           <nav className="hidden lg:flex items-center gap-8 font-sans">
-            <Link href="/how-it-works" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
+            <Link href="/#humanizer" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+              Product
+            </Link>
+            <Link href="/how-it-works" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
               How It Works
             </Link>
-            <Link href="/how-it-was-made" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
-              Research &amp; Architecture
+            <Link href="/how-it-was-made" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+              Research
             </Link>
-            <Link href="/dashboard" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
+            <Link href="/dashboard" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
               Dashboard
             </Link>
           </nav>
 
-          {/* Right: Actions (Theme, History, CTA) */}
+          {/* Right: Actions */}
           <div className="hidden md:flex items-center gap-3 shrink-0">
-            {/* Theme Switcher Toggle */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200 dark:border-slate-800"
-              title={isDark ? "Switch to Light Theme" : "Switch to Dark Theme"}
+              className="p-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-800"
+              title={isDark ? "Light mode" : "Dark mode"}
             >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
+              {isDark ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-slate-700" />}
             </button>
 
             {onOpenHistory && (
               <button
                 onClick={onOpenHistory}
-                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200 dark:border-slate-800"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200/80 dark:border-slate-800"
               >
                 <History className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
                 <span>History</span>
@@ -109,10 +106,9 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
 
             <Link
               href="/#humanizer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-md shadow-brand-600/20 transition-all hover:scale-[1.02]"
+              className="inline-flex items-center px-4 py-2 rounded-full text-xs font-bold text-white bg-brand-600 hover:bg-brand-700 shadow-2xs transition-all hover:scale-105"
             >
-              <span>Try Swift Free</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              Try Swift Free
             </Link>
           </div>
 
@@ -120,7 +116,7 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
           <div className="flex items-center gap-2 md:hidden">
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800"
+              className="p-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-800"
             >
               {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
             </button>
@@ -129,7 +125,7 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
             >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -138,6 +134,13 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+          <Link
+            href="/#humanizer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Product
+          </Link>
           <Link
             href="/how-it-works"
             onClick={() => setMobileMenuOpen(false)}
@@ -150,7 +153,7 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
-            Research &amp; Architecture
+            Research
           </Link>
           <Link
             href="/dashboard"

@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { ChevronDown, HelpCircle } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -66,46 +66,42 @@ export function FAQSection() {
   ];
 
   return (
-    <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 max-w-4xl mx-auto font-sans">
+    <section className="py-16 border-t border-slate-200/60 dark:border-slate-800 space-y-12 max-w-6xl mx-auto font-sans">
       <div className="text-center space-y-2">
-        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-          Frequently Asked Questions
+        <h2 className="font-heading font-extrabold text-3xl sm:text-4xl tracking-tight text-slate-900 dark:text-white">
+          Questions usually asked
         </h2>
-        <p className="text-sm text-slate-600 dark:text-slate-300">
-          Everything you need to know about Swift AI Humanizer.
+        <p className="text-sm text-slate-500 dark:text-slate-400">
+          Can't find what you're looking for? We're always happy to chat.
         </p>
       </div>
 
-      <div className="space-y-3">
+      {/* Planicorn-style Minimal 2-Column FAQ Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
         {faqs.map((faq, idx) => {
           const isOpen = openIndex === idx;
           return (
             <div
               key={idx}
-              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden transition-all shadow-2xs"
+              className="border-b border-slate-200/70 dark:border-slate-800/80 py-4 transition-colors"
             >
               <button
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
-                className="w-full p-5 text-left flex items-center justify-between gap-4 font-heading font-bold text-sm text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-emerald-400 transition-colors"
+                className="w-full text-left flex items-center justify-between gap-4 font-heading font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors py-1"
               >
-                <span className="flex items-center gap-2.5">
-                  <HelpCircle className="w-4 h-4 text-brand-600 dark:text-emerald-400 shrink-0" />
-                  <span>{faq.q}</span>
-                </span>
+                <span>{faq.q}</span>
                 <ChevronDown
-                  className={`w-4 h-4 text-slate-400 shrink-0 transition-transform ${
-                    isOpen ? "rotate-180 text-brand-600 dark:text-emerald-400" : ""
+                  className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
+                    isOpen ? "rotate-180 text-emerald-600 dark:text-emerald-400" : ""
                   }`}
                 />
               </button>
 
-              <div
-                className={`px-5 pb-5 pt-0 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 ${
-                  isOpen ? "block" : "hidden"
-                }`}
-              >
-                <p className="pt-3">{faq.a}</p>
-              </div>
+              {isOpen && (
+                <div className="pt-2 pb-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+                  {faq.a}
+                </div>
+              )}
             </div>
           );
         })}

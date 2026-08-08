@@ -24,13 +24,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/blog/avoiding-false-positives-in-academic-writing",
   ];
 
-  const comparisons = [
-    "/vs/superhumanizer",
-    "/vs/undetectable-ai",
-    "/vs/stealthgpt",
-    "/vs/gptzero",
-  ];
-
   const mainRoutes = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -45,12 +38,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const compRoutes = comparisons.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  return [...mainRoutes, ...blogRoutes, ...compRoutes];
+  return [...mainRoutes, ...blogRoutes];
 }

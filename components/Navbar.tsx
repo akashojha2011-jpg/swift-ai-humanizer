@@ -75,17 +75,11 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
 
           {/* Center: Main Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8 font-sans">
-            <Link href="/" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
-              Humanizer
-            </Link>
             <Link href="/how-it-works" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
               How It Works
             </Link>
             <Link href="/how-it-was-made" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
               Research &amp; Architecture
-            </Link>
-            <Link href="/vs/superhumanizer" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
-              vs Competitors
             </Link>
             <Link href="/dashboard" className="text-xs font-bold text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors">
               Dashboard
@@ -145,13 +139,6 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <Link
-            href="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
-          >
-            Humanizer Tool
-          </Link>
-          <Link
             href="/how-it-works"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
@@ -164,13 +151,6 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             Research &amp; Architecture
-          </Link>
-          <Link
-            href="/vs/superhumanizer"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
-          >
-            vs Competitors
           </Link>
           <Link
             href="/dashboard"

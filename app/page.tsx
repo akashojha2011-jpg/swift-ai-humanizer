@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Sparkles, ShieldCheck, Wand2, Layers, ArrowRight, CheckCircle2, FileCheck } from "lucide-react";
 import { HumanizerTool } from "@/components/HumanizerTool";
-import { CompetitorComparison } from "@/components/CompetitorComparison";
 import { FAQSection } from "@/components/FAQSection";
 import { UseCases } from "@/components/UseCases";
 import { SEOContentSection } from "@/components/SEOContentSection";
@@ -29,10 +28,10 @@ export default function Home() {
               <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> 100% Free
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Preserves Bullets & Bold
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Preserves Bullets &amp; Bold
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Turnitin & GPTZero Safe
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400" /> Turnitin &amp; GPTZero Safe
             </span>
           </div>
         </div>
@@ -48,7 +47,7 @@ export default function Home() {
           </div>
           <div className="space-y-1">
             <div className="font-heading font-extrabold text-3xl sm:text-4xl text-emerald-600 dark:text-emerald-400">100%</div>
-            <div className="text-xs font-medium text-slate-500 dark:text-slate-400">Meaning & Formatting Kept</div>
+            <div className="text-xs font-medium text-slate-500 dark:text-slate-400">Meaning &amp; Formatting Kept</div>
           </div>
           <div className="space-y-1">
             <div className="font-heading font-extrabold text-3xl sm:text-4xl text-brand-600 dark:text-emerald-400">&lt; 1.5s</div>
@@ -133,7 +132,7 @@ export default function Home() {
               <div className="w-10 h-10 rounded-2xl bg-brand-50 dark:bg-emerald-950/90 border border-brand-200 dark:border-emerald-800 flex items-center justify-center text-brand-600 dark:text-emerald-400">
                 <FileCheck className="w-5 h-5" />
               </div>
-              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Preserves Bullets & Bold</h3>
+              <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">Preserves Bullets &amp; Bold</h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
                 Keep lists, bolding, and headers intact. Copy straight into Word or Google Docs.
               </p>
@@ -170,9 +169,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Comparison Matrix */}
-        <CompetitorComparison />
 
         {/* Use Cases */}
         <UseCases />

@@ -6,7 +6,7 @@ export function Footer() {
     <footer className="bg-white dark:bg-slate-950 text-slate-600 dark:text-slate-400 text-xs py-14 border-t border-slate-200/80 dark:border-slate-800 font-sans transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Main Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 pb-10 border-b border-slate-200/80 dark:border-slate-800">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-200/80 dark:border-slate-800">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <Link href="/" className="flex items-center gap-2.5 group">
@@ -104,36 +104,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 2: Comparisons */}
-          <div className="space-y-3">
-            <span className="font-heading font-bold text-slate-900 dark:text-white text-xs block">
-              Comparisons
-            </span>
-            <ul className="space-y-2.5">
-              <li>
-                <Link href="/vs/superhumanizer" className="hover:text-brand-600 dark:hover:text-white transition-colors">
-                  vs Superhumanizer
-                </Link>
-              </li>
-              <li>
-                <Link href="/vs/undetectable-ai" className="hover:text-brand-600 dark:hover:text-white transition-colors">
-                  vs Undetectable.ai
-                </Link>
-              </li>
-              <li>
-                <Link href="/vs/stealthgpt" className="hover:text-brand-600 dark:hover:text-white transition-colors">
-                  vs StealthGPT
-                </Link>
-              </li>
-              <li>
-                <Link href="/vs/gptzero" className="hover:text-brand-600 dark:hover:text-white transition-colors">
-                  Bypass GPTZero
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Resources */}
+          {/* Column 2: Resources */}
           <div className="space-y-3">
             <span className="font-heading font-bold text-slate-900 dark:text-white text-xs block">
               Resources
@@ -142,6 +113,11 @@ export function Footer() {
               <li>
                 <Link href="/how-it-was-made" className="hover:text-brand-600 dark:hover:text-white transition-colors font-bold text-emerald-600 dark:text-emerald-400">
                   IEEE Research &amp; Architecture
+                </Link>
+              </li>
+              <li>
+                <Link href="/how-it-works" className="hover:text-brand-600 dark:hover:text-white transition-colors">
+                  How It Works
                 </Link>
               </li>
               <li>

@@ -68,15 +68,15 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             </span>
           </Link>
 
-          {/* Center: Main Navigation Links (No Product link, increased font size) */}
+          {/* Center: Main Navigation Links (Normal font weight) */}
           <nav className="hidden lg:flex items-center gap-8 font-sans">
-            <Link href="/how-it-works" className="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            <Link href="/how-it-works" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               How It Works
             </Link>
-            <Link href="/how-it-was-made" className="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            <Link href="/how-it-was-made" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Research &amp; Architecture
             </Link>
-            <Link href="/dashboard" className="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            <Link href="/dashboard" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Dashboard
             </Link>
           </nav>
@@ -134,21 +134,21 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
           <Link
             href="/how-it-works"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block px-3 py-2 rounded-xl text-base font-normal text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             How It Works
           </Link>
           <Link
             href="/how-it-was-made"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block px-3 py-2 rounded-xl text-base font-normal text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             Research &amp; Architecture
           </Link>
           <Link
             href="/dashboard"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block px-3 py-2 rounded-xl text-base font-normal text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             Dashboard
           </Link>

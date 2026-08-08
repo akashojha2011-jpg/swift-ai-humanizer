@@ -275,17 +275,18 @@ export function HumanizerTool({ onOpenHistory }: HumanizerToolProps) {
             </div>
 
             {/* Purpose / Tone Dropdown */}
-            <div className="relative">
+            <div className="relative flex items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 shadow-2xs">
+              <span className="text-xs font-bold text-slate-400 dark:text-slate-500 mr-1.5 shrink-0">Tone:</span>
               <select
                 value={tone}
                 onChange={(e) => setTone(e.target.value as HumanizeTone)}
-                className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3.5 py-1.5 pr-8 text-xs font-semibold text-slate-700 dark:text-slate-200 hover:border-slate-300 dark:hover:border-slate-700 focus:outline-none cursor-pointer appearance-none shadow-2xs"
+                className="bg-transparent text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none cursor-pointer appearance-none pr-6"
               >
-                <option value="casual">Tone: Conversational / General</option>
-                <option value="academic">Tone: Academic Paper</option>
-                <option value="professional">Tone: Professional Business</option>
-                <option value="marketing">Tone: Persuasive Marketing</option>
-                <option value="creative">Tone: Creative Story</option>
+                <option value="casual" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Conversational / General</option>
+                <option value="academic" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Academic Paper</option>
+                <option value="professional" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Professional Business</option>
+                <option value="marketing" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Persuasive Marketing</option>
+                <option value="creative" className="bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100">Creative Story</option>
               </select>
               <ChevronDown className="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-2.5 pointer-events-none" />
             </div>

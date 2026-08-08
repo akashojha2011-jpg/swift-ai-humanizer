@@ -4,7 +4,7 @@ import { LayoutWrapper } from "@/components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
-  description: "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
+  description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
   verification: {
     google: "Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8",
   },
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
-    description: "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
+    description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
     url: "https://swiftaihumanizer.com",
     siteName: "Swift AI Humanizer",
     type: "website",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
-    description: "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
+    description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
   },
   robots: {
     index: true,
@@ -77,7 +77,7 @@ export default function RootLayout({
       "price": "0.00",
       "priceCurrency": "USD"
     },
-    "description": "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
+    "description": "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

@@ -1,6 +1,6 @@
 "use client";
 
-import { GraduationCap, Briefcase, Feather, Megaphone, FileText } from "lucide-react";
+import { GraduationCap, Briefcase, Feather, Megaphone, BookOpen } from "lucide-react";
 
 export function UseCases() {
   const cases = [
@@ -28,20 +28,26 @@ export function UseCases() {
       icon: Briefcase,
       color: "bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400 border-indigo-100 dark:border-indigo-900",
     },
+    {
+      title: "Educators & Academics",
+      desc: "Refine lesson materials, course syllabi, and research drafts into natural, publication-ready writing.",
+      icon: BookOpen,
+      color: "bg-purple-50 text-purple-600 dark:bg-purple-950 dark:text-purple-400 border-purple-100 dark:border-purple-900",
+    },
   ];
 
   return (
-    <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 font-sans">
+    <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 font-sans max-w-6xl mx-auto">
       <div className="text-center max-w-2xl mx-auto space-y-2">
         <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
           Built for All Content Needs
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-300">
-          Tailored humanization algorithms for students, professionals, and digital marketers.
+          Tailored humanization algorithms for students, educators, professionals, and digital marketers.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {cases.map((c, idx) => {
           const Icon = c.icon;
           return (
@@ -53,7 +59,7 @@ export function UseCases() {
                 <div className={`w-11 h-11 rounded-2xl flex items-center justify-center border ${c.color}`}>
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-heading font-bold text-lg text-slate-900 dark:text-white">
+                <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
                   {c.title}
                 </h3>
               </div>

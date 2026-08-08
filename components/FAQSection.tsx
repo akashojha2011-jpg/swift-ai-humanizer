@@ -9,43 +9,59 @@ export function FAQSection() {
   const faqs = [
     {
       q: "What is Swift AI Humanizer?",
-      a: "Swift AI Humanizer is the next-generation humanizer trained on thousands of human-written samples and advanced NLP algorithms to humanize AI content and bypass detection.",
+      a: "Swift AI Humanizer is a free tool that rewrites ChatGPT, Claude, and Gemini text so it reads as natural human writing while keeping your original meaning, formatting, and structure intact.",
     },
     {
-      q: "How accurate is Swift AI Humanizer?",
-      a: "Swift AI Humanizer is trained on 14 million human-written samples and advanced NLP algorithms, ensuring exceptional accuracy and 98%+ human pass rates.",
+      q: "How accurate is it at bypassing AI detectors?",
+      a: "In internal testing across thousands of samples, Swift AI achieves a 98%+ human-confidence score against Turnitin, GPTZero, and Copyleaks by targeting the specific linguistic features these detectors measure.",
     },
     {
-      q: "Why Humanize AI with Swift AI Humanizer?",
-      a: "Humanizing AI text prevents false positive flags on institutional AI detectors, enhances readability with natural sentence burstiness, and preserves your exact document formatting, bold text, and bullet lists.",
+      q: "Is Swift AI Humanizer really free?",
+      a: "Yes. There's no sign-up, no credit card, and no word cap on the free tier — you can humanize text as many times as you need at no cost.",
+    },
+    {
+      q: "Which AI detectors does it bypass?",
+      a: "Swift AI is built to pass Turnitin, GPTZero, Copyleaks, ZeroGPT, Quillbot, Originality.ai, Sapling, and Writer's AI detection systems.",
+    },
+    {
+      q: "Does it change the meaning of my text?",
+      a: "No. The rewrite engine only adjusts sentence rhythm, word choice, and structure — your facts, arguments, and intent stay exactly the same.",
+    },
+    {
+      q: "How is Swift AI different from other humanizers?",
+      a: "Most humanizer tools rely on random word-swapping. Swift AI is built on the IEEE-published research \"How to Detect AI-Generated Texts?\" (Nguyen, Hatua & Sung, 2023), targeting the exact features — Coleman-Liau readability, word density, sentence predictability — that detector classifiers actually score.",
     },
     {
       q: "Can I humanize AI text on mobile devices?",
-      a: "Yes! Swift AI Humanizer is fully responsive and works seamlessly across mobile phones, tablets, and desktop browsers without requiring app downloads or sign-ups.",
+      a: "Yes. Swift AI Humanizer works fully in the browser on any device — phone, tablet, or desktop — with no app download needed.",
     },
     {
-      q: "Will this Humanizer change the meaning of text?",
-      a: "No. Swift AI Humanizer uses semantic preservation algorithms to ensure that all core facts, technical details, and original arguments remain accurate.",
+      q: "Does it preserve bullet points and formatting?",
+      a: "Yes. Unlike many humanizers that flatten text into plain paragraphs, Swift AI keeps bullet points, numbered lists, bold text, and subheaders intact through the rewrite.",
     },
     {
-      q: "Is Swift AI Humanizer completely free to use?",
-      a: "Yes. Swift AI Humanizer provides free unlimited rewrites without requiring any credit card or account sign-up.",
+      q: "Is using an AI humanizer considered cheating or plagiarism?",
+      a: "Humanizing doesn't introduce new ideas or copy someone else's work — it only changes how your own text is phrased. That said, if your school, employer, or platform requires fully original human writing, check their specific policy before submitting AI-assisted work, humanized or not.",
     },
     {
-      q: "Does Swift AI Humanizer preserve my bullet points and bold formatting?",
-      a: "Yes! Bullet lists, numbers, bolding, and headers stay 100% intact. You can use the 'Copy Formatted' button to paste directly into Google Docs or Word with all styling preserved.",
+      q: "What's the difference between humanizing, paraphrasing, and rewriting?",
+      a: "Humanizing adjusts tone and rhythm so text reads naturally while keeping the same wording and structure. Paraphrasing changes the wording while keeping the same idea. Rewriting goes further, reshaping both the wording and how the idea is expressed.",
     },
     {
-      q: "Which AI detectors does Swift AI Humanizer pass?",
-      a: "Outputs pass top AI detectors including Turnitin 2026, GPTZero v2, Copyleaks, Originality.ai, and ZeroGPT with 98%+ human confidence scores.",
+      q: "Can I process Word documents or bulk text?",
+      a: "Yes. Swift AI supports bulk document upload for .docx files, so you can humanize full drafts in one pass instead of pasting section by section.",
     },
     {
-      q: "How does Swift AI humanize ChatGPT and Claude text?",
-      a: "It eliminates formal AI buzzwords ('moreover', 'tapestry', 'delve'), injects natural contractions, varies sentence length, and boosts perplexity and burstiness naturally.",
+      q: "How do I humanize ChatGPT or Claude text specifically?",
+      a: "Paste your ChatGPT or Claude output directly into the input box and click Humanize — the tool works the same way regardless of which AI model generated the original text.",
     },
     {
-      q: "Can I process full Word documents (.docx) or bulk text?",
-      a: "Yes. Click the 'Bulk Article Rewriter' link in the top menu or footer to process Word files or multiple text blocks at once.",
+      q: "Is my text stored or shared?",
+      a: "No. Your input and output text are processed for the rewrite only and are not sold or shared with third parties.",
+    },
+    {
+      q: "What's the word limit per request?",
+      a: "The free tier supports up to 1,200 words per request, with no limit on how many times you can use the tool.",
     },
   ];
 
@@ -83,11 +99,13 @@ export function FAQSection() {
                 />
               </button>
 
-              {isOpen && (
-                <div className="px-5 pb-5 pt-0 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
-                  <p className="pt-3">{faq.a}</p>
-                </div>
-              )}
+              <div
+                className={`px-5 pb-5 pt-0 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80 ${
+                  isOpen ? "block" : "hidden"
+                }`}
+              >
+                <p className="pt-3">{faq.a}</p>
+              </div>
             </div>
           );
         })}

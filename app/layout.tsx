@@ -3,8 +3,8 @@ import "./globals.css";
 import { LayoutWrapper } from "@/components/LayoutWrapper";
 
 export const metadata: Metadata = {
-  title: "Free AI Text Humanizer — Bypass GPTZero, Turnitin & Copyleaks | Swift AI Humanizer",
-  description: "Free AI text humanizer to convert ChatGPT, Claude, and Gemini text into 100% human-sounding writing. Bypass GPTZero, Turnitin, Originality.ai & Copyleaks with zero sign up required.",
+  title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
+  description: "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
   verification: {
     google: "Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8",
   },
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Free AI Text Humanizer — Convert ChatGPT to Natural Human Writing | Swift AI",
-    description: "Instantly humanize AI content from ChatGPT, Claude, and Gemini. Pass GPTZero, Turnitin, and Copyleaks with 98%+ human confidence.",
+    title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
+    description: "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
     url: "https://swiftaihumanizer.com",
     siteName: "Swift AI Humanizer",
     type: "website",
@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free AI Text Humanizer — Bypass AI Detectors Instantly | Swift AI",
-    description: "Convert AI text into authentic human prose. Free, fast, and no sign-up required.",
+    title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
+    description: "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
   },
   robots: {
     index: true,
@@ -77,7 +77,7 @@ export default function RootLayout({
       "price": "0.00",
       "priceCurrency": "USD"
     },
-    "description": "Free online AI text humanizer to convert ChatGPT, Claude & Gemini content into natural, undetectable human writing.",
+    "description": "Free AI humanizer that turns ChatGPT & Claude text into 100% human writing. Bypass Turnitin & GPTZero instantly — no sign-up.",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

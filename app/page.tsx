@@ -16,11 +16,11 @@ export default function Home() {
         {/* Main Hero Banner */}
         <div className="text-center max-w-4xl mx-auto space-y-5">
           <h1 className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-[42px] text-slate-900 dark:text-white tracking-tight leading-tight whitespace-normal sm:whitespace-nowrap">
-            Humanize AI Text with Swift AI Humanizer
+            Free AI Humanizer: Turn AI Text into 100% Human Writing
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-sans">
-            Paste your AI-generated text below to instantly make it sound 100% human and pass all AI detectors.
+            The best free AI humanizer to convert ChatGPT, Claude, and Gemini text into natural, undetectable human writing. No sign-up required.
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-600 dark:text-slate-300 font-semibold pt-1">

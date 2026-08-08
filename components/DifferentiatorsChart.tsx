@@ -23,7 +23,7 @@ export function DifferentiatorsChart() {
   const metricsData: Record<"bypass" | "meaning" | "speed", BenchmarkMetric> = {
     bypass: {
       title: "Detection Pass Rate vs Modern AI Classifiers",
-      description: "Tested against 5,000 ChatGPT-4o and Claude 3.5 Sonnet samples.",
+      description: "In internal testing against ChatGPT-4o and Claude 3.5 Sonnet samples.",
       items: [
         { name: "Swift AI Humanizer", score: 98, color: "bg-brand-600 dark:bg-emerald-500", highlight: true },
         { name: "Superhumanizer", score: 95, color: "bg-slate-700 dark:bg-slate-600" },
@@ -90,7 +90,7 @@ export function DifferentiatorsChart() {
             }`}
           >
             <Sparkles className="w-4 h-4" />
-            <span>Fact & Formatting Retention</span>
+            <span>Fact &amp; Formatting Retention</span>
           </button>
 
           <button

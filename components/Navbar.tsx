@@ -43,7 +43,7 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
     <header className="sticky top-0 z-50 bg-white/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 py-3">
-          {/* Left: Brand Logo & Name */}
+          {/* Left: Brand Logo & Name (Identical to Footer Logo) */}
           <Link href="/" className="flex items-center gap-2.5 group shrink-0">
             <div className="w-8 h-8 rounded-xl bg-brand-600 relative flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform shadow-xs">
               <svg
@@ -64,22 +64,19 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             </div>
 
             <span className="font-heading font-extrabold text-lg tracking-tight text-slate-900 dark:text-white leading-none">
-              Swift<span className="text-brand-600 dark:text-emerald-400"> AI</span>
+              Swift<span className="text-brand-600 dark:text-emerald-400"> AI Humanizer</span>
             </span>
           </Link>
 
-          {/* Center: Clean Navigation Links matching Planicorn */}
+          {/* Center: Main Navigation Links (No Product link, increased font size) */}
           <nav className="hidden lg:flex items-center gap-8 font-sans">
-            <Link href="/#humanizer" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              Product
-            </Link>
-            <Link href="/how-it-works" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <Link href="/how-it-works" className="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               How It Works
             </Link>
-            <Link href="/how-it-was-made" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
-              Research
+            <Link href="/how-it-was-made" className="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+              Research &amp; Architecture
             </Link>
-            <Link href="/dashboard" className="text-xs font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <Link href="/dashboard" className="text-sm font-bold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Dashboard
             </Link>
           </nav>
@@ -88,16 +85,16 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
           <div className="hidden md:flex items-center gap-3 shrink-0">
             <button
               onClick={toggleTheme}
-              className="p-1.5 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-800"
+              className="p-2 rounded-full text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-slate-200/80 dark:border-slate-800"
               title={isDark ? "Light mode" : "Dark mode"}
             >
-              {isDark ? <Sun className="w-3.5 h-3.5 text-amber-400" /> : <Moon className="w-3.5 h-3.5 text-slate-700" />}
+              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-slate-700" />}
             </button>
 
             {onOpenHistory && (
               <button
                 onClick={onOpenHistory}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200/80 dark:border-slate-800"
+                className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all border border-slate-200/80 dark:border-slate-800"
               >
                 <History className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400" />
                 <span>History</span>
@@ -135,30 +132,23 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <Link
-            href="/#humanizer"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
-          >
-            Product
-          </Link>
-          <Link
             href="/how-it-works"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block px-3 py-2 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             How It Works
           </Link>
           <Link
             href="/how-it-was-made"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block px-3 py-2 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
-            Research
+            Research &amp; Architecture
           </Link>
           <Link
             href="/dashboard"
             onClick={() => setMobileMenuOpen(false)}
-            className="block px-3 py-2 rounded-xl text-sm font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
+            className="block px-3 py-2 rounded-xl text-base font-semibold text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
             Dashboard
           </Link>

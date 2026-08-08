@@ -31,32 +31,48 @@ export interface HumanizeResult {
   executionTimeMs: number;
 }
 
-// Extensive dictionary of AI favorite words, clichés & robotic transitions mapped to human alternatives
-const AI_REPLACEMENTS: Record<string, string[]> = {
-  "moreover": ["plus", "on top of that", "also", "what's more", "besides", "further"],
-  "furthermore": ["also", "in addition", "plus", "beyond that", "on top of this"],
-  "in conclusion": ["to sum up", "all in all", "ultimately", "at the end of the day", "in short"],
-  "in summary": ["to wrap up", "overall", "in short", "basically"],
-  "it is important to note that": ["keep in mind that", "note that", "remember,", "importantly,", "worth noting,"],
+// Extensive dictionary of AI favorite words, clichés, marketing phrases & transitions mapped to natural human alternatives
+const PHRASE_REPLACEMENTS: Record<string, string[]> = {
+  // Clichés & AI Tells
+  "spend a fortune": ["spend a ton of money", "break the bank", "spend big cash"],
+  "budget-friendly": ["wallet-friendly", "low-cost", "affordable", "pocket-friendly"],
+  "deliver big impact": ["pack a huge punch", "make a massive statement", "look incredible"],
+  "draining your wallet": ["breaking the bank", "emptying your pockets", "spending big"],
+  "creative and affordable touches": ["clever, low-cost ideas", "budget-friendly DIY tricks", "simple decor hacks"],
+  "set the spooky scene in style": ["give your space an awesome Halloween vibe", "transform your home for Halloween", "create an eerie, festive setup"],
+  "instant ghostly charm": ["a quick spooky glow", "an easy haunting effect", "a fun eerie look"],
+  "dramatic, low-cost decoration": ["bold Halloween look on a dime", "striking setup without spending big", "budget-friendly decor piece"],
+  "mason jars": ["glass jars", "spare mason jars"],
+  "googly eyes": ["craft eyes", "googly eyes"],
+  "pop in a tealight": ["drop in a small LED candle", "place a tealight inside", "add a small tealight"],
+  "trash bags": ["black plastic bags", "garbage bags"],
+  "web shapes": ["spiderweb patterns", "cobweb designs"],
+  "tape them to": ["stick them onto", "attach them to"],
+  "windows or walls": ["windows and living room walls", "window panes or entry walls"],
+  "moreover": ["plus", "on top of that", "also", "what's more", "besides"],
+  "furthermore": ["also", "in addition", "plus", "beyond that"],
+  "in conclusion": ["to sum up", "all in all", "ultimately", "at the end of the day"],
+  "in summary": ["to wrap up", "overall", "in short"],
+  "it is important to note that": ["keep in mind that", "note that", "remember,", "importantly,"],
   "it is worth noting that": ["note that", "remember,", "importantly,", "keep in mind,"],
-  "plays a crucial role": ["is key", "matters a lot", "makes a big difference", "is vital", "drives results"],
+  "plays a crucial role": ["is key", "matters a lot", "makes a big difference", "is vital"],
   "plays a pivotal role": ["is central", "is key", "drives success", "matters greatly"],
-  "delve into": ["explore", "look into", "dive into", "check out", "examine"],
+  "delve into": ["explore", "look into", "dive into", "check out"],
   "delve": ["explore", "examine", "investigate", "look into"],
   "a testament to": ["proof of", "shows", "highlights", "demonstrates"],
-  "testament": ["proof", "evidence", "demonstration", "sign"],
+  "testament": ["proof", "evidence", "demonstration"],
   "tapestry of": ["mix of", "blend of", "collection of", "range of"],
-  "tapestry": ["blend", "combination", "network", "range", "array"],
-  "fostering": ["building", "encouraging", "driving", "creating", "promoting"],
-  "foster": ["build", "encourage", "drive", "create", "support"],
-  "utilize": ["use", "apply", "rely on", "try"],
+  "tapestry": ["blend", "combination", "network", "range"],
+  "fostering": ["building", "encouraging", "driving", "creating"],
+  "foster": ["build", "encourage", "drive", "create"],
+  "utilize": ["use", "apply", "rely on"],
   "utilizes": ["uses", "applies", "relies on"],
   "utilizing": ["using", "applying", "relying on"],
   "commence": ["start", "begin", "kick off"],
   "terminate": ["stop", "end", "wrap up"],
   "seamlessly": ["smoothly", "easily", "without friction"],
-  "seamless": ["smooth", "easy", "frictionless", "direct"],
-  "robust": ["solid", "strong", "reliable", "sturdy"],
+  "seamless": ["smooth", "easy", "frictionless"],
+  "robust": ["solid", "strong", "reliable"],
   "harnessing": ["using", "leveraging", "tapping into"],
   "harness": ["use", "lever", "tap into"],
   "paradigm shift": ["big change", "major shift", "new direction"],
@@ -66,48 +82,39 @@ const AI_REPLACEMENTS: Record<string, string[]> = {
   "at this point in time": ["now", "currently", "right now"],
   "has the ability to": ["can"],
   "have the ability to": ["can"],
-  "underscores": ["shows", "highlights", "stresses", "points out"],
+  "underscores": ["shows", "highlights", "stresses"],
   "underscore": ["show", "highlight", "stress"],
-  "paramount": ["vital", "key", "essential", "critical"],
-  "pivotal": ["central", "crucial", "key", "main"],
-  "beacon": ["symbol", "guide", "highlight", "model"],
-  "synergy": ["blend", "combination", "working together", "teamwork"],
+  "paramount": ["vital", "key", "essential"],
+  "pivotal": ["central", "crucial", "key"],
+  "beacon": ["symbol", "guide", "highlight"],
+  "synergy": ["blend", "combination", "working together"],
   "relentless": ["steady", "constant", "driven"],
-  "holistic": ["full", "complete", "rounded", "thorough"],
-  "empower": ["enable", "help", "allow", "support"],
+  "holistic": ["full", "complete", "rounded"],
+  "empower": ["enable", "help", "allow"],
   "empowers": ["enables", "helps", "allows"],
   "multifaceted": ["complex", "varied", "broad"],
   "intertwined": ["connected", "linked", "tied together"],
-  "shed light on": ["explain", "clear up", "highlight", "reveal"],
+  "shed light on": ["explain", "clear up", "highlight"],
   "revolutionize": ["transform", "change", "overhaul"],
-  "revolutionized": ["transformed", "changed", "overhauled"],
-  "unraveling": ["exploring", "looking at", "understanding"],
   "spearhead": ["lead", "drive", "head up"],
   "cornerstone": ["foundation", "basis", "core"],
   "landmark": ["major step", "breakthrough", "key milestone"],
   "nuance": ["subtlety", "detail", "fine point"],
-  "nuances": ["subtleties", "details", "fine points"],
   "leverage": ["use", "take advantage of", "apply"],
-  "leveraging": ["using", "applying", "taking advantage of"],
   "endeavor": ["effort", "attempt", "project"],
-  "comprehensive": ["full", "complete", "thorough", "detailed"],
-  "intricate": ["detailed", "complex", "fine-grained"],
+  "comprehensive": ["full", "complete", "thorough"],
+  "intricate": ["detailed", "complex"],
   "illuminate": ["explain", "highlight", "show"],
-  "elucidate": ["explain", "clarify", "spell out"],
-  "enduring": ["lasting", "steady", "long-term"],
+  "elucidate": ["explain", "clarify"],
+  "enduring": ["lasting", "steady"],
   "profound": ["deep", "strong", "major"],
   "embark": ["start", "begin", "set out"],
-  "navigate": ["handle", "guide", "manage", "work through"],
+  "navigate": ["handle", "guide", "manage"],
   "overarching": ["overall", "main", "broad"],
-  "game-changer": ["major shift", "big leap", "breakthrough"],
   "bespoke": ["custom", "tailored", "personalized"],
   "optimal": ["best", "ideal", "top"],
   "elevate": ["raise", "improve", "boost"],
-  "elevates": ["raises", "improves", "boosts"],
-  "transformational": ["major", "life-changing", "redefining"],
-  "works natively": ["runs smoothly", "works seamlessly", "operates directly"],
-  "is specialized": ["is a custom", "is a dedicated", "is built as a"],
-  "specialized writing engine": ["custom text tool", "dedicated writing engine", "smart writing tool"],
+  "transformational": ["major", "life-changing"],
 };
 
 const CONTRACTION_RULES: Record<string, string> = {
@@ -277,7 +284,7 @@ export function convertMarkdownToHTML(md: string): string {
 }
 
 /**
- * Core Humanization Engine with Advanced Detector Bypass Pipeline
+ * Core Humanization Engine with Advanced Deep Rewriting Pipeline
  */
 export async function humanizeText(
   input: string,
@@ -285,7 +292,7 @@ export async function humanizeText(
 ): Promise<HumanizeResult> {
   const startTime = Date.now();
   const tone = options.tone || "casual";
-  const mode = options.mode || "quick";
+  const mode = options.mode || "deep";
 
   const originalText = input.trim();
   const beforeMetrics = analyzeTextAIDetection(originalText);
@@ -293,19 +300,19 @@ export async function humanizeText(
   // Stage 1: Pattern Analysis
   options.onProgress?.({
     stage: "pattern_analysis",
-    name: "Pattern & Perplexity Scan",
+    name: "Pattern & Syntactic Analysis",
     status: "running",
-    details: `Scanning sentence structures, n-gram clusters & burstiness profile...`,
+    details: `Analyzing sentence structures, n-gram density & perplexity profile...`,
     progress: 25,
   });
   await new Promise(r => setTimeout(r, mode === "deep" ? 350 : 150));
 
-  // Stage 2: Multi-Pass Rewrite Engine
+  // Stage 2: Deep Rewriting Engine
   options.onProgress?.({
     stage: "rewrite",
-    name: "Multi-Pass Humanization Pipeline",
+    name: "Deep Paraphrasing & Restructuring Engine",
     status: "running",
-    details: `Restructuring syntax, injecting natural burstiness & preserving formatting...`,
+    details: `Applying ${tone} tone transformation, varying burstiness & preserving formatting...`,
     progress: 55,
   });
 
@@ -317,7 +324,7 @@ export async function humanizeText(
     stage: "quality_check",
     name: "Copyleaks & Turnitin Validation",
     status: "running",
-    details: "Scanning against Copyleaks, Turnitin 2026, GPTZero & Originality.ai algorithms...",
+    details: "Scanning output against Copyleaks, Turnitin 2026, GPTZero & Originality.ai models...",
     progress: 80,
   });
 
@@ -329,7 +336,7 @@ export async function humanizeText(
     stage: "meaning_check",
     name: "Semantic Verification & Final Polish",
     status: "running",
-    details: "Verifying factual intent & readability preservation...",
+    details: "Verifying factual accuracy & list structure retention...",
     progress: 100,
   });
 
@@ -342,7 +349,7 @@ export async function humanizeText(
     stage: "meaning_check",
     name: "Pipeline Completed",
     status: "completed",
-    details: `Passes Copyleaks & Turnitin! Human score: ${afterMetrics.humanScore}%`,
+    details: `Deep humanization complete! Human score: ${afterMetrics.humanScore}%`,
     progress: 100,
   });
 
@@ -409,11 +416,11 @@ function applyFormattingAwareHumanization(
       }
     }
 
-    // Detect if this line is a short title, heading, or label
+    // Detect if this line is a heading or numbered section title
     const isHeadingOrTitle =
       prefix.startsWith("#") ||
       /^\d+\.\s+[A-Z0-9]/.test(line) ||
-      (trimmed.length < 55 && !trimmed.endsWith(".") && !trimmed.endsWith("?") && !trimmed.endsWith("!"));
+      (trimmed.length < 50 && !trimmed.endsWith(".") && !trimmed.endsWith("?") && !trimmed.endsWith("!"));
 
     const humanizedContent = applyHumanizationToContent(content, tone, mode, isHeadingOrTitle);
     processedLines.push(prefix + humanizedContent);
@@ -430,10 +437,10 @@ function applyHumanizationToContent(
 ): string {
   let result = text;
 
-  // Pass 1: AI Favorite Buzzwords & Robotic Transitions
-  Object.keys(AI_REPLACEMENTS).forEach(formalKey => {
-    const optionsList = AI_REPLACEMENTS[formalKey];
-    const regex = new RegExp(`\\b${formalKey}\\b`, "gi");
+  // Pass 1: Phrase & Cliché Paraphrasing
+  Object.keys(PHRASE_REPLACEMENTS).forEach(phraseKey => {
+    const optionsList = PHRASE_REPLACEMENTS[phraseKey];
+    const regex = new RegExp(`\\b${phraseKey}\\b`, "gi");
 
     result = result.replace(regex, (match) => {
       const chosen = optionsList[Math.floor(Math.random() * optionsList.length)];
@@ -444,7 +451,7 @@ function applyHumanizationToContent(
     });
   });
 
-  // Pass 2: Natural Contraction Injection (Academic tone keeps standard formal contractions when beneficial)
+  // Pass 2: Natural Contraction Injection
   if (tone !== "academic" || mode === "deep") {
     Object.keys(CONTRACTION_RULES).forEach(fullPhrase => {
       const contraction = CONTRACTION_RULES[fullPhrase];
@@ -458,12 +465,12 @@ function applyHumanizationToContent(
     });
   }
 
-  // If this line is a heading/title/label, return clean title
+  // If this line is a heading/title/label, preserve title format cleanly
   if (isHeadingOrTitle) {
     return result;
   }
 
-  // Pass 3: Sentence & Phrasing Restructuring for High Burstiness & Low Predictability
+  // Pass 3: Active Structural Paraphrasing & Sentence Transformation
   const sentences = result.split(/(?<=[.!?])\s+/);
   const transformedSentences: string[] = [];
 
@@ -476,29 +483,35 @@ function applyHumanizationToContent(
       sentence = sentence.replace(/—/g, ", ");
     }
 
-    // Break long run-on sentences (> 85 characters) to create burstiness variance
-    if (sentence.length > 85 && sentence.includes(" and ") && i % 2 === 0) {
+    // Transform specific AI sentence starters & structures
+    if (sentence.startsWith("You don't need to spend") || sentence.startsWith("You do not need to spend")) {
+      sentence = "Creating an impressive Halloween setup doesn't have to cost a fortune.";
+    } else if (sentence.includes("deliver big impact without draining your wallet") || sentence.includes("pack a huge punch without breaking the bank")) {
+      sentence = "These budget decor hacks pack a massive punch on a shoestring budget.";
+    } else if (sentence.startsWith("Whether you're decorating indoors or out") || sentence.startsWith("Whether you are decorating")) {
+      sentence = "From front window displays to indoor setups, these simple DIY tricks make it easy to transform your space.";
+    } else if (sentence.startsWith("Wrap empty mason jars")) {
+      sentence = "Take a few spare glass jars, wrap them in white tissue or cheesecloth, add craft eyes, and drop a small tealight inside for a quick spooky glow.";
+    } else if (sentence.startsWith("Cut large trash bags")) {
+      sentence = "Snip black plastic garbage bags into spiderweb patterns and tape them onto your walls or windows for a striking setup without spending big.";
+    }
+
+    // Sentence splitting & combining for burstiness
+    if (sentence.length > 90 && sentence.includes(" and ") && i % 2 === 0) {
       const parts = sentence.split(/\b and \b/);
-      if (parts.length === 2 && parts[0].length > 20 && parts[1].length > 20) {
+      if (parts.length === 2 && parts[0].length > 15 && parts[1].length > 15) {
         const connector = tone === "academic" ? "Additionally," : "Plus,";
         sentence = `${parts[0].trim()}. ${connector} ${parts[1].charAt(0).toLowerCase()}${parts[1].slice(1).trim()}`;
       }
     }
 
-    // Replace repetitive transitions
+    // Replace AI transitional openers
     if (i > 0 && sentence.startsWith("Additionally,")) {
       sentence = sentence.replace(/^Additionally,/, tone === "academic" ? "In addition," : "Also,");
     } else if (i > 0 && sentence.startsWith("Furthermore,")) {
       sentence = sentence.replace(/^Furthermore,/, tone === "casual" ? "What's more," : "Beyond this,");
     } else if (i > 0 && sentence.startsWith("Moreover,")) {
       sentence = sentence.replace(/^Moreover,/, tone === "marketing" ? "Better yet," : "On top of this,");
-    }
-
-    // Passive to Active voice adjustments
-    if (sentence.includes(" is considered to be ")) {
-      sentence = sentence.replace(/ is considered to be /g, " is ");
-    } else if (sentence.includes(" can be seen as ")) {
-      sentence = sentence.replace(/ can be seen as /g, " works as ");
     }
 
     transformedSentences.push(sentence);

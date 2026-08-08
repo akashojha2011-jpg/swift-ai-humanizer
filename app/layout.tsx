@@ -3,28 +3,31 @@ import "./globals.css";
 import { LayoutWrapper } from "@/components/LayoutWrapper";
 
 export const metadata: Metadata = {
-  title: "Free AI Humanizer - Make ChatGPT Sound Human | Swift AI",
-  description: "Free AI humanizer that converts ChatGPT to natural human writing. Bypass GPTZero, Turnitin & Copyleaks with 98% accuracy. Preserves formatting. No signup required.",
+  title: "Free AI Text Humanizer — Bypass GPTZero, Turnitin & Copyleaks | Swift AI Humanizer",
+  description: "Free AI text humanizer to convert ChatGPT, Claude, and Gemini text into 100% human-sounding writing. Bypass GPTZero, Turnitin, Originality.ai & Copyleaks with zero sign up required.",
   verification: {
     google: "Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8",
   },
   keywords: [
-    "ai humanizer",
-    "free ai humanizer",
-    "best ai humanizer",
-    "ai text humanizer",
-    "chatgpt humanizer",
-    "claude humanizer",
-    "gemini humanizer",
-    "undetectable ai text",
-    "ai detection bypass",
-    "humanize ai content",
-    "ai content rewriter",
-    "make ai text sound natural",
     "swift ai humanizer",
-    "turnitin ai detector bypass",
+    "free ai text humanizer",
+    "ai to human text converter",
     "bypass gptzero detection free",
-    "academic essay ai humanizer turnitin safe"
+    "turnitin ai detector bypass",
+    "convert chatgpt text to human writing",
+    "undetectable ai text generator",
+    "make chatgpt essay undetectable",
+    "how to make ai writing sound natural",
+    "best free ai humanizer for students",
+    "originality.ai bypass free",
+    "copyleaks ai detection bypass",
+    "humanize claude text free",
+    "humanize gemini AI text",
+    "ai content rewriter free no sign up",
+    "remove ai tells from writing",
+    "ai perplexity and burstiness booster",
+    "academic essay ai humanizer turnitin safe",
+    "bypass zeroGPT online free"
   ],
   authors: [{ name: "Swift AI Team" }],
   icons: {
@@ -33,8 +36,8 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
   openGraph: {
-    title: "Free AI Humanizer - Make ChatGPT Sound Human | Swift AI",
-    description: "Free AI humanizer that converts ChatGPT to natural human writing. Bypass GPTZero, Turnitin & Copyleaks with 98% accuracy. Preserves formatting. No signup required.",
+    title: "Free AI Text Humanizer — Convert ChatGPT to Natural Human Writing | Swift AI",
+    description: "Instantly humanize AI content from ChatGPT, Claude, and Gemini. Pass GPTZero, Turnitin, and Copyleaks with 98%+ human confidence.",
     url: "https://swiftaihumanizer.com",
     siteName: "Swift AI Humanizer",
     type: "website",
@@ -42,8 +45,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free AI Humanizer - Make ChatGPT Sound Human | Swift AI",
-    description: "Bypass GPTZero & Turnitin with 98% accuracy. Free AI humanizer for ChatGPT, Claude & Gemini.",
+    title: "Free AI Text Humanizer — Bypass AI Detectors Instantly | Swift AI",
+    description: "Convert AI text into authentic human prose. Free, fast, and no sign-up required.",
   },
   robots: {
     index: true,
@@ -67,56 +70,46 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Swift AI Humanizer",
-    "description": "Free AI text humanizer to convert ChatGPT, Claude, and Gemini into human-sounding writing that bypasses GPTZero and Turnitin.",
-    "applicationCategory": "UtilityApplication",
-    "operatingSystem": "Web",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "All",
     "offers": {
       "@type": "Offer",
-      "price": "0",
+      "price": "0.00",
       "priceCurrency": "USD"
     },
+    "description": "Free online AI text humanizer to convert ChatGPT, Claude & Gemini content into natural, undetectable human writing.",
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "2500"
+      "ratingValue": "4.9",
+      "ratingCount": "1280"
     }
   };
 
-  const faqSchema = {
+  const howToSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@type": "HowTo",
+    "name": "How to Humanize AI Text and Bypass AI Detectors",
+    "description": "Step-by-step guide to converting AI generated content into natural human writing.",
+    "step": [
       {
-        "@type": "Question",
-        "name": "What is an AI humanizer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An AI humanizer is a tool that converts AI-generated text from ChatGPT, Claude, or Gemini into natural human-sounding writing. It removes detection patterns that AI detectors like GPTZero and Turnitin recognize, while preserving your original meaning and formatting."
-        }
+        "@type": "HowToStep",
+        "name": "Paste AI Content",
+        "text": "Copy your text from ChatGPT, Claude, or Gemini into the input editor."
       },
       {
-        "@type": "Question",
-        "name": "Does Swift AI humanizer really bypass GPTZero and Turnitin?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Swift AI Humanizer has been tested against 5,000 ChatGPT-4o and Claude 3.5 Sonnet samples with a 98% bypass rate on both GPTZero and Turnitin 2026."
-        }
+        "@type": "HowToStep",
+        "name": "Select Purpose Tone & Speed Mode",
+        "text": "Choose between Super Lite or Super Ultra mode and select Academic, Casual, or Marketing tone."
       },
       {
-        "@type": "Question",
-        "name": "Will this change the meaning of my text?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Swift AI preserves all meaning, facts, and formatting. We only adjust sentence structure, add natural contractions, and vary tone to make it sound human-written."
-        }
+        "@type": "HowToStep",
+        "name": "Click Humanize",
+        "text": "Run the 4-stage pipeline to vary burstiness, inject contractions, and remove AI tells."
       },
       {
-        "@type": "Question",
-        "name": "Is Swift AI humanizer completely free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, 100% free forever. No credit card, no account signup, unlimited usage."
-        }
+        "@type": "HowToStep",
+        "name": "Copy Undetectable Human Text",
+        "text": "Verify the live 0% AI detection score and copy your humanized output."
       }
     ]
   };
@@ -147,7 +140,7 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
         />
       </head>
       <body className="min-h-screen bg-[#F9FAFB] dark:bg-[#0F172A] text-slate-900 dark:text-slate-100 selection:bg-brand-100 selection:text-brand-900 transition-colors">

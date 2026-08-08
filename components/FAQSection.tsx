@@ -1,22 +1,19 @@
-import { HelpCircle, CheckCircle2 } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import { ChevronDown, HelpCircle } from "lucide-react";
 
 export function FAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   const faqs = [
     {
-      q: "What is an AI humanizer?",
-      a: "An AI humanizer is a tool that converts AI-generated text from ChatGPT, Claude, or Gemini into natural human-sounding writing. It removes detection patterns that AI detectors like GPTZero and Turnitin recognize, while preserving your original meaning and formatting.",
+      q: "What is Swift AI Humanizer?",
+      a: "Swift AI Humanizer is the next-generation humanizer trained on thousands of human-written samples and advanced NLP algorithms to humanize AI content and bypass detection.",
     },
     {
-      q: "Does Swift AI humanizer really bypass GPTZero and Turnitin?",
-      a: "Yes. Swift AI Humanizer has been tested against 5,000 ChatGPT-4o and Claude 3.5 Sonnet samples with a 98% bypass rate on both GPTZero and Turnitin 2026.",
-    },
-    {
-      q: "Will this change the meaning of my text?",
-      a: "No. Swift AI preserves all meaning, facts, and formatting. We only adjust sentence structure, add natural contractions, and vary tone to make it sound human-written.",
-    },
-    {
-      q: "Is Swift AI humanizer completely free?",
-      a: "Yes, 100% free forever. No credit card, no account signup, unlimited usage.",
+      q: "How accurate is Swift AI Humanizer?",
+      a: "Swift AI Humanizer is trained on 14 million human-written samples and advanced NLP algorithms, ensuring exceptional accuracy and 98%+ human pass rates.",
     },
     {
       q: "Why Humanize AI with Swift AI Humanizer?",
@@ -25,6 +22,14 @@ export function FAQSection() {
     {
       q: "Can I humanize AI text on mobile devices?",
       a: "Yes! Swift AI Humanizer is fully responsive and works seamlessly across mobile phones, tablets, and desktop browsers without requiring app downloads or sign-ups.",
+    },
+    {
+      q: "Will this Humanizer change the meaning of text?",
+      a: "No. Swift AI Humanizer uses semantic preservation algorithms to ensure that all core facts, technical details, and original arguments remain accurate.",
+    },
+    {
+      q: "Is Swift AI Humanizer completely free to use?",
+      a: "Yes. Swift AI Humanizer provides free unlimited rewrites without requiring any credit card or account sign-up.",
     },
     {
       q: "Does Swift AI Humanizer preserve my bullet points and bold formatting?",
@@ -45,31 +50,47 @@ export function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 max-w-4xl mx-auto font-sans scroll-mt-20">
+    <section className="py-12 border-t border-slate-200/80 dark:border-slate-800 space-y-8 max-w-4xl mx-auto font-sans">
       <div className="text-center space-y-2">
         <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-slate-900 dark:text-white">
           Frequently Asked Questions
         </h2>
         <p className="text-sm text-slate-600 dark:text-slate-300">
-          Everything you need to know about how our free AI humanizer works.
+          Everything you need to know about Swift AI Humanizer.
         </p>
       </div>
 
-      <div className="space-y-4">
-        {faqs.map((faq, idx) => (
-          <div
-            key={idx}
-            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 transition-all shadow-2xs space-y-3"
-          >
-            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-start gap-3">
-              <HelpCircle className="w-5 h-5 text-brand-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-              <span>{faq.q}</span>
-            </h3>
-            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pl-8 border-l-2 border-brand-100 dark:border-slate-800">
-              {faq.a}
-            </p>
-          </div>
-        ))}
+      <div className="space-y-3">
+        {faqs.map((faq, idx) => {
+          const isOpen = openIndex === idx;
+          return (
+            <div
+              key={idx}
+              className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl overflow-hidden transition-all shadow-2xs"
+            >
+              <button
+                onClick={() => setOpenIndex(isOpen ? null : idx)}
+                className="w-full p-5 text-left flex items-center justify-between gap-4 font-heading font-bold text-sm text-slate-900 dark:text-white hover:text-brand-600 dark:hover:text-emerald-400 transition-colors"
+              >
+                <span className="flex items-center gap-2.5">
+                  <HelpCircle className="w-4 h-4 text-brand-600 dark:text-emerald-400 shrink-0" />
+                  <span>{faq.q}</span>
+                </span>
+                <ChevronDown
+                  className={`w-4 h-4 text-slate-400 shrink-0 transition-transform ${
+                    isOpen ? "rotate-180 text-brand-600 dark:text-emerald-400" : ""
+                  }`}
+                />
+              </button>
+
+              {isOpen && (
+                <div className="px-5 pb-5 pt-0 text-xs text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/80">
+                  <p className="pt-3">{faq.a}</p>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </section>
   );

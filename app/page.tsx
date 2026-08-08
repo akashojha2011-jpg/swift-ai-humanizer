@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Sparkles, ShieldCheck, Wand2, Layers, ArrowRight, CheckCircle2, FileCheck, BookOpen, RefreshCw, Cpu, Award } from "lucide-react";
 import { HumanizerTool } from "@/components/HumanizerTool";
+import { DetectorMarquee } from "@/components/DetectorMarquee";
 import { FAQSection } from "@/components/FAQSection";
 import { UseCases } from "@/components/UseCases";
 import { SEOContentSection } from "@/components/SEOContentSection";
@@ -51,6 +52,9 @@ export default function Home() {
 
         {/* Section 4: Tool Widget */}
         <HumanizerTool />
+
+        {/* Animated Detector Marquee Widget directly below Tool */}
+        <DetectorMarquee />
 
         {/* Performance Stats Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 rounded-3xl p-8 shadow-float max-w-6xl mx-auto text-center transition-colors">

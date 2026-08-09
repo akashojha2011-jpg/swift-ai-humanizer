@@ -116,14 +116,14 @@ export function DetectorMarquee() {
         <div className="absolute top-0 left-0 bottom-0 w-16 bg-gradient-to-r from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
         <div className="absolute top-0 right-0 bottom-0 w-16 bg-gradient-to-l from-white dark:from-slate-900 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex w-max items-center gap-4 sm:gap-6 animate-marquee hover:[animation-play-state:paused]">
+        <div className="flex w-max items-center gap-10 sm:gap-14 animate-marquee hover:[animation-play-state:paused]">
           {marqueeList.map((detector, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700/80 shrink-0 hover:border-emerald-500/40 dark:hover:border-emerald-500/40 transition-all shadow-2xs group"
+              className="flex items-center gap-2.5 shrink-0 opacity-85 hover:opacity-100 transition-opacity cursor-default group"
             >
               {detector.icon}
-              <span className={`font-heading font-bold text-xs sm:text-sm ${detector.color} group-hover:scale-105 transition-transform`}>
+              <span className={`font-heading font-bold text-sm sm:text-base ${detector.color} group-hover:scale-105 transition-transform`}>
                 {detector.name}
               </span>
             </div>

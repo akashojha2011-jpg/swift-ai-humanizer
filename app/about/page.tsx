@@ -128,6 +128,28 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Featured On Badge */}
+        <div className="flex flex-col items-center justify-center space-y-3 pt-4">
+          <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+            Featured On
+          </span>
+          <a
+            href="https://yo.directory"
+            target="_blank"
+            rel="dofollow noopener"
+            className="inline-block transition-transform hover:scale-105"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://assets.yo.directory/badges/yo-directory-featured-light.svg"
+              alt="Featured on Yo.directory"
+              width={260}
+              height={94}
+              className="block w-[260px] max-w-full h-auto border-0 outline-none"
+            />
+          </a>
+        </div>
+
         {/* Call to Action */}
         <div className="bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/80 rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-xs">
           <div className="space-y-1 text-center sm:text-left">

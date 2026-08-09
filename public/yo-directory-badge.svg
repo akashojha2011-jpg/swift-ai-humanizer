@@ -1,25 +1,28 @@
 <svg width="260" height="94" viewBox="0 0 260 94" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Card Background -->
-  <rect x="1" y="1" width="258" height="92" rx="26" fill="#FBFCF8" stroke="#E5EAE0" stroke-width="1.5"/>
-  <rect x="2" y="2" width="256" height="90" rx="25" stroke="#FFFFFF" stroke-width="1"/>
+  <!-- Soft Outer Card Container -->
+  <rect x="1.5" y="1.5" width="257" height="91" rx="26" fill="#FAFDF2" stroke="#E2EADE" stroke-width="1.5"/>
+  <rect x="3" y="3" width="254" height="88" rx="24.5" stroke="#FFFFFF" stroke-width="1.5"/>
 
-  <!-- Left Lime Circle Emblem -->
-  <circle cx="48" cy="47" r="26" fill="#C5F432"/>
-  <circle cx="48" cy="47" r="25" stroke="#B1E220" stroke-width="1.5"/>
-  
-  <!-- Stylized Y Logo Icon -->
-  <path d="M34 35L44 48V58H49V48L59 35H52L46.5 43.5L41 35H34Z" fill="#0F172A"/>
-  <circle cx="56" cy="40" r="3.5" fill="#0F172A"/>
-  <rect x="52" y="47" width="8" height="2.5" rx="1" fill="#0F172A"/>
+  <!-- Left Lime Green Circle Emblem -->
+  <circle cx="48" cy="47" r="26" fill="#C6F432"/>
 
-  <!-- Vertical Divider -->
-  <line x1="88" y1="31" x2="88" y2="63" stroke="#E2E8F0" stroke-width="1.5" stroke-linecap="round"/>
+  <!-- Y shape (left in circle) -->
+  <path d="M31 34H46L41 44V58H36V44L31 34Z" fill="#0F172A"/>
 
-  <!-- Text Section -->
-  <text x="100" y="40" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="700" letter-spacing="1" fill="#6B8E23">Featured On</text>
-  <text x="100" y="63" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" letter-spacing="-0.5" fill="#0F172A">yo.directory</text>
+  <!-- o shape (circle + line on right in circle) -->
+  <circle cx="56" cy="38" r="4.5" fill="#0F172A"/>
+  <rect x="50.5" y="47.5" width="11" height="3" rx="1" fill="#0F172A"/>
 
-  <!-- Small Lime Decorative Dots -->
-  <circle cx="198" cy="31" r="3.5" fill="#C5F432"/>
-  <circle cx="202" cy="61" r="2.5" fill="#C5F432" opacity="0.7"/>
+  <!-- Vertical Divider Line -->
+  <line x1="88" y1="28" x2="88" y2="66" stroke="#E2E8F0" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Text: Featured On -->
+  <text x="100" y="39" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="700" fill="#588000">Featured On</text>
+
+  <!-- Text: yo.directory -->
+  <text x="100" y="65" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="25" font-weight="900" letter-spacing="-0.8" fill="#0F172A">yo.directory</text>
+
+  <!-- Decorative Lime Dots -->
+  <circle cx="202" cy="29" r="4" fill="#C6F432"/>
+  <circle cx="206" cy="62" r="2.5" fill="#C6F432" opacity="0.6"/>
 </svg>

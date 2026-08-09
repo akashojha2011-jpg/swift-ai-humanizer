@@ -141,7 +141,7 @@ export default function AboutPage() {
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://assets.yo.directory/badges/yo-directory-featured-light.svg"
+              src="/yo-directory-badge.svg"
               alt="Featured on Yo.directory"
               width={260}
               height={94}

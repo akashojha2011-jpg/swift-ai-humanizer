@@ -128,26 +128,44 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Featured On Badge */}
-        <div className="flex flex-col items-center justify-center space-y-3 pt-4">
+        {/* Featured On Badges */}
+        <div className="flex flex-col items-center justify-center space-y-4 pt-4">
           <span className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
             Featured On
           </span>
-          <a
-            href="https://yo.directory"
-            target="_blank"
-            rel="dofollow noopener"
-            className="inline-block transition-transform hover:scale-105"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/yo-directory-badge.svg"
-              alt="Featured on Yo.directory"
-              width={260}
-              height={94}
-              className="block w-[260px] max-w-full h-auto border-0 outline-none"
-            />
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            <a
+              href="https://yo.directory"
+              target="_blank"
+              rel="dofollow noopener"
+              className="inline-block transition-transform hover:scale-105"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/yo-directory-badge.svg"
+                alt="Featured on Yo.directory"
+                width={260}
+                height={94}
+                className="block w-[240px] sm:w-[260px] max-w-full h-auto border-0 outline-none"
+              />
+            </a>
+
+            <a
+              href="https://dang.ai"
+              target="_blank"
+              rel="dofollow noopener"
+              className="inline-block transition-transform hover:scale-105"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/dang-verified-light.png"
+                alt="Verified on DANG!"
+                width={260}
+                height={94}
+                className="block w-[240px] sm:w-[260px] max-w-full h-auto border-0 outline-none"
+              />
+            </a>
+          </div>
         </div>
 
         {/* Call to Action */}

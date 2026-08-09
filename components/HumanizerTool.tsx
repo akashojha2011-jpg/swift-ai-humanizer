@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import confetti from "canvas-confetti";
 import {
   Sparkles,
   Zap,
@@ -107,11 +106,13 @@ export function HumanizerTool({ onOpenHistory }: HumanizerToolProps) {
       }
 
       if (res.afterMetrics.humanScore >= 90) {
-        confetti({
-          particleCount: 80,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ["#059669", "#10B981", "#34D399"],
+        import("canvas-confetti").then((module) => {
+          module.default({
+            particleCount: 80,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ["#059669", "#10B981", "#34D399"],
+          });
         });
       }
     } catch (e: any) {

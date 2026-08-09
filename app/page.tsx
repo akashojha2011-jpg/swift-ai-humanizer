@@ -1,12 +1,25 @@
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { Sparkles, ShieldCheck, Wand2, Layers, ArrowRight, CheckCircle2, FileCheck, BookOpen, RefreshCw, Cpu, Award } from "lucide-react";
 import { HumanizerTool } from "@/components/HumanizerTool";
 import { DetectorMarquee } from "@/components/DetectorMarquee";
-import { FAQSection } from "@/components/FAQSection";
-import { UseCases } from "@/components/UseCases";
-import { SEOContentSection } from "@/components/SEOContentSection";
-import { DifferentiatorsChart } from "@/components/DifferentiatorsChart";
-import { ComparisonTable } from "@/components/ComparisonTable";
+
+// Dynamically import heavy below-the-fold components for ultra-fast mobile initial page load (LCP)
+const DifferentiatorsChart = dynamic(() => import("@/components/DifferentiatorsChart").then((mod) => mod.DifferentiatorsChart), {
+  ssr: true,
+});
+const ComparisonTable = dynamic(() => import("@/components/ComparisonTable").then((mod) => mod.ComparisonTable), {
+  ssr: true,
+});
+const UseCases = dynamic(() => import("@/components/UseCases").then((mod) => mod.UseCases), {
+  ssr: true,
+});
+const SEOContentSection = dynamic(() => import("@/components/SEOContentSection").then((mod) => mod.SEOContentSection), {
+  ssr: true,
+});
+const FAQSection = dynamic(() => import("@/components/FAQSection").then((mod) => mod.FAQSection), {
+  ssr: true,
+});
 
 export default function Home() {
   return (

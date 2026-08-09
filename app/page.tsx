@@ -5,6 +5,9 @@ import { HumanizerTool } from "@/components/HumanizerTool";
 import { DetectorMarquee } from "@/components/DetectorMarquee";
 
 // Dynamically import heavy below-the-fold components for ultra-fast mobile initial page load (LCP)
+const AIHumanizerOverview = dynamic(() => import("@/components/AIHumanizerOverview").then((mod) => mod.AIHumanizerOverview), {
+  ssr: true,
+});
 const DifferentiatorsChart = dynamic(() => import("@/components/DifferentiatorsChart").then((mod) => mod.DifferentiatorsChart), {
   ssr: true,
 });
@@ -114,6 +117,9 @@ export default function Home() {
             </Link>
           </div>
         </section>
+
+        {/* What is an AI Humanizer & How can it help you? Section */}
+        <AIHumanizerOverview />
 
         {/* Why Swift AI Outperforms */}
         <div className="space-y-2 text-center max-w-6xl mx-auto">

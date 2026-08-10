@@ -44,9 +44,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Swift AI Team" }],
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/icon.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-48x48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
   openGraph: {
     title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
@@ -145,7 +150,12 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${jakarta.variable}`} suppressHydrationWarning>
       <head>
         <meta name="google-site-verification" content="Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />

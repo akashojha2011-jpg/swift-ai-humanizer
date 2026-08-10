@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { BLOG_POSTS } from "@/lib/blogData";
 import { parseBlogMarkdown } from "@/lib/markdown";
-import { TableOfContents } from "@/components/TableOfContents";
-import { Calendar, Clock, ArrowLeft, ArrowRight, UserCheck, Sparkles } from "lucide-react";
+import { InvestopediaTOC } from "@/components/InvestopediaTOC";
+import { ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
 
 interface BlogPostPageProps {
   params: {
@@ -71,90 +71,86 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   };
 
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 font-sans">
+    <div className="min-h-screen bg-[#FAFBFC] dark:bg-[#0B1120] font-sans transition-colors">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <Link
-        href="/blog"
-        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
-      >
-        <ArrowLeft className="w-3.5 h-3.5" />
-        <span>Back to Guides &amp; Benchmarks</span>
-      </Link>
-
-      {/* Post Header */}
-      <div className="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8">
-        <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
-          <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold">
-            {post.category}
-          </span>
-          <span className="flex items-center gap-1">
-            <Calendar className="w-3.5 h-3.5" />
-            {post.date}
-          </span>
-          <span className="flex items-center gap-1">
-            <Clock className="w-3.5 h-3.5" />
-            {post.readTime}
-          </span>
-        </div>
-
-        <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 dark:text-white leading-tight tracking-tight">
-          {post.title}
-        </h1>
-
-        {/* Author Bylines */}
-        <div className="flex items-center gap-3 pt-2">
-          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300 font-bold text-xs shrink-0">
-            <UserCheck className="w-5 h-5" />
-          </div>
-          <div>
-            <div className="font-heading font-bold text-sm text-slate-900 dark:text-white">
-              {post.author}
-            </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 font-sans">
-              {post.authorTitle}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Excerpt Lead Box */}
-      <div className="bg-emerald-50/60 dark:bg-slate-900/60 border-l-4 border-emerald-500 p-5 rounded-r-2xl text-sm sm:text-base text-slate-700 dark:text-slate-200 font-medium leading-relaxed shadow-2xs">
-        {post.excerpt}
-      </div>
-
-      {/* Collapsible H2-Only Table of Contents */}
-      <TableOfContents items={toc} />
-
-      {/* Main Content Body */}
-      <div
-        className="prose prose-slate dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed space-y-6"
-        dangerouslySetInnerHTML={{ __html: html }}
-      />
-
-      {/* Bottom Call to Action Banner */}
-      <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 rounded-3xl p-8 text-center text-white space-y-4 shadow-lg mt-12">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold font-mono">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Try Swift AI Humanizer Live</span>
-        </div>
-        <h3 className="font-heading font-extrabold text-2xl sm:text-3xl">
-          Humanize Your AI Drafts Free
-        </h3>
-        <p className="text-xs sm:text-sm opacity-90 max-w-md mx-auto font-sans">
-          Convert ChatGPT, Claude, and Gemini text into natural human writing with formatting preserved. Zero sign-up required.
-        </p>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        {/* Back Link */}
         <Link
-          href="/#humanizer"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-heading font-bold text-xs text-emerald-950 bg-white hover:bg-slate-50 transition-all hover:scale-105 shadow-md"
+          href="/blog"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-500 hover:text-brand-600 dark:hover:text-emerald-400 mb-8 transition-colors"
         >
-          <span>Humanize Your Text Now</span>
-          <ArrowRight className="w-4 h-4" />
+          <ArrowLeft className="w-3.5 h-3.5" />
+          <span>Back to Guides &amp; Benchmarks</span>
         </Link>
+
+        {/* Investopedia Header Layout */}
+        <header className="max-w-4xl space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8 mb-10">
+          <div className="inline-block px-3 py-1 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-bold font-mono uppercase tracking-wide">
+            {post.category}
+          </div>
+
+          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[46px] text-slate-900 dark:text-white leading-[1.15] tracking-tight">
+            {post.title}
+          </h1>
+
+          {/* Investopedia Byline: By AUTHOR Published DATE */}
+          <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans flex flex-wrap items-center gap-x-2 gap-y-1">
+            <span>By</span>
+            <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider underline underline-offset-2 decoration-slate-300 dark:decoration-slate-700">
+              {post.author}
+            </span>
+            <span className="text-slate-300 dark:text-slate-700">•</span>
+            <span>{post.authorTitle}</span>
+            <span className="text-slate-300 dark:text-slate-700">•</span>
+            <span>Published {post.date} 06:00 AM EDT</span>
+          </div>
+        </header>
+
+        {/* Investopedia 2-Column Main Content Layout */}
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
+          {/* Sticky Left Sidebar Table of Contents */}
+          <InvestopediaTOC items={toc} />
+
+          {/* Main Article Content Column */}
+          <main className="flex-1 max-w-3xl min-w-0 space-y-8">
+            {/* Excerpt Lead Box */}
+            <div className="bg-slate-100/80 dark:bg-slate-900/90 border-l-4 border-slate-900 dark:border-emerald-500 p-6 rounded-r-xl text-base sm:text-lg text-slate-800 dark:text-slate-100 font-medium leading-relaxed">
+              {post.excerpt}
+            </div>
+
+            {/* Markdown Body Output */}
+            <div
+              className="prose prose-slate dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
+
+            {/* Investopedia Bottom CTA Banner */}
+            <div className="bg-slate-900 dark:bg-slate-950 rounded-2xl p-8 text-center text-white space-y-4 shadow-md mt-14 border border-slate-800">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold font-mono">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Swift AI Humanizer Tool</span>
+              </div>
+              <h3 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+                Ready to Humanize Your AI Content?
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto font-sans">
+                Convert ChatGPT, Claude, and Gemini text into natural human writing with formatting preserved. 100% free with no account required.
+              </p>
+              <Link
+                href="/#humanizer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-heading font-bold text-xs text-slate-900 bg-white hover:bg-emerald-400 transition-all hover:scale-105 shadow-md"
+              >
+                <span>Try Swift AI Humanizer Free</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </main>
+        </div>
       </div>
-    </article>
+    </div>
   );
 }

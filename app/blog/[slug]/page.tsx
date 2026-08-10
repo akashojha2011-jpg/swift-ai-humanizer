@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { BLOG_POSTS } from "@/lib/blogData";
-import { Calendar, Clock, ArrowLeft, ArrowRight, UserCheck, ShieldCheck } from "lucide-react";
-import { convertMarkdownToHTML } from "@/lib/humanizerEngine";
+import { parseBlogMarkdown } from "@/lib/markdown";
+import { Calendar, Clock, ArrowLeft, ArrowRight, UserCheck, List, Sparkles } from "lucide-react";
 
 interface BlogPostPageProps {
   params: {
@@ -41,6 +41,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
+  const { html, toc } = parseBlogMarkdown(post.content);
+
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -76,13 +78,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
       <Link
         href="/blog"
-        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-brand-600 dark:hover:text-emerald-400 transition-colors"
+        className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
         <span>Back to Guides &amp; Benchmarks</span>
       </Link>
 
-      {/* Header */}
+      {/* Post Header */}
       <div className="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8">
         <div className="flex flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
           <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold">
@@ -98,19 +100,18 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           </span>
         </div>
 
-        <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 dark:text-white leading-tight">
+        <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 dark:text-white leading-tight tracking-tight">
           {post.title}
         </h1>
 
-        {/* E-E-A-T Author Bylines */}
+        {/* Author Bylines */}
         <div className="flex items-center gap-3 pt-2">
-          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300 font-bold text-xs">
+          <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-700 dark:text-emerald-300 font-bold text-xs shrink-0">
             <UserCheck className="w-5 h-5" />
           </div>
           <div>
-            <div className="font-heading font-bold text-sm text-slate-900 dark:text-white flex items-center gap-1.5">
-              <span>{post.author}</span>
-              <ShieldCheck className="w-4 h-4 text-emerald-600 dark:text-emerald-400" />
+            <div className="font-heading font-bold text-sm text-slate-900 dark:text-white">
+              {post.author}
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400 font-sans">
               {post.authorTitle}
@@ -119,30 +120,61 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
 
-      {/* Excerpt Lead Paragraph */}
-      <div className="bg-slate-50 dark:bg-slate-900/60 border-l-4 border-emerald-500 p-5 rounded-r-2xl text-sm sm:text-base text-slate-700 dark:text-slate-200 font-medium leading-relaxed">
+      {/* Excerpt Lead Box */}
+      <div className="bg-emerald-50/60 dark:bg-slate-900/60 border-l-4 border-emerald-500 p-5 rounded-r-2xl text-sm sm:text-base text-slate-700 dark:text-slate-200 font-medium leading-relaxed shadow-2xs">
         {post.excerpt}
       </div>
 
+      {/* Crawlable Table of Contents (TOC) Box */}
+      {toc.length > 0 && (
+        <nav className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xs space-y-3">
+          <div className="flex items-center gap-2 text-slate-900 dark:text-white font-heading font-bold text-base">
+            <List className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <span>Table of Contents</span>
+          </div>
+          <ul className="space-y-1.5 text-xs sm:text-sm font-sans pt-1">
+            {toc.map((item) => (
+              <li
+                key={item.id}
+                className={`transition-colors ${
+                  item.level === 3 ? "pl-4 text-slate-500 dark:text-slate-400" : "font-semibold text-slate-700 dark:text-slate-200"
+                }`}
+              >
+                <a
+                  href={`#${item.id}`}
+                  className="hover:text-emerald-600 dark:hover:text-emerald-400 hover:underline transition-colors block"
+                >
+                  {item.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+
       {/* Main Content Body */}
       <div
-        className="prose prose-slate dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed space-y-6 [&_h2]:font-heading [&_h2]:font-extrabold [&_h2]:text-2xl [&_h2]:pt-4 [&_h3]:font-heading [&_h3]:font-bold [&_h3]:text-lg [&_table]:w-full [&_table]:text-xs [&_table]:border-collapse [&_th]:border-b [&_th]:py-3 [&_th]:px-3 [&_td]:py-3 [&_td]:px-3 [&_td]:border-b [&_td]:border-slate-100 dark:[&_td]:border-slate-800"
-        dangerouslySetInnerHTML={{ __html: convertMarkdownToHTML(post.content) }}
+        className="prose prose-slate dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed space-y-6"
+        dangerouslySetInnerHTML={{ __html: html }}
       />
 
-      {/* Bottom CTA Banner */}
-      <div className="bg-gradient-to-r from-brand-600 to-brand-800 rounded-3xl p-8 text-center text-white space-y-4 shadow-lg mt-12">
-        <h3 className="font-heading font-extrabold text-2xl">
-          Humanize Your AI Text Free
+      {/* Bottom Call to Action Banner */}
+      <div className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 rounded-3xl p-8 text-center text-white space-y-4 shadow-lg mt-12">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold font-mono">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Try Swift AI Humanizer Live</span>
+        </div>
+        <h3 className="font-heading font-extrabold text-2xl sm:text-3xl">
+          Humanize Your AI Drafts Free
         </h3>
         <p className="text-xs sm:text-sm opacity-90 max-w-md mx-auto font-sans">
-          Convert ChatGPT, Claude, and Gemini drafts into 100% human writing with zero sign-up required.
+          Convert ChatGPT, Claude, and Gemini text into natural human writing with formatting preserved. Zero sign-up required.
         </p>
         <Link
           href="/#humanizer"
-          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-heading font-bold text-xs text-brand-900 bg-white hover:bg-slate-50 transition-all hover:scale-105"
+          className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-heading font-bold text-xs text-emerald-950 bg-white hover:bg-slate-50 transition-all hover:scale-105 shadow-md"
         >
-          <span>Try Swift AI Humanizer Free</span>
+          <span>Humanize Your Text Now</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

@@ -129,19 +129,19 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
     } else if (/^[-*•]\s+/.test(line)) {
       if (!inList || isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ul class="list-disc list-inside space-y-3.5 my-6 pl-6 sm:pl-10 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ul class="list-disc list-outside ml-8 sm:ml-12 space-y-3.5 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = false;
       }
-      html += `<li class="pl-2 my-1">${line.replace(/^[-*•]\s+/, "")}</li>`;
+      html += `<li>${line.replace(/^[-*•]\s+/, "")}</li>`;
     } else if (/^\d+\.\s+/.test(line)) {
       if (!inList || !isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ol class="list-decimal list-inside space-y-3.5 my-6 pl-6 sm:pl-10 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ol class="list-decimal list-outside ml-8 sm:ml-12 space-y-3.5 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = true;
       }
-      html += `<li class="pl-2 my-1">${line.replace(/^\d+\.\s+/, "")}</li>`;
+      html += `<li>${line.replace(/^\d+\.\s+/, "")}</li>`;
     } else {
       if (inList) {
         html += isOrdered ? "</ol>" : "</ul>";

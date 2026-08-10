@@ -49,7 +49,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
           inList = false;
         }
         if (inBlockquote) {
-          html += "-------------";
+          html += "</blockquote>";
           inBlockquote = false;
         }
         html += '<div class="overflow-x-auto my-8 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xs"><table class="w-full text-left text-sm border-collapse">';
@@ -129,26 +129,26 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
     } else if (/^[-*•]\s+/.test(line)) {
       if (!inList || isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ul class="list-disc pl-8 sm:pl-12 ml-2 sm:ml-4 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ul class="list-disc list-inside space-y-3.5 my-6 pl-6 sm:pl-10 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = false;
       }
-      html += `<li>${line.replace(/^[-*•]\s+/, "")}</li>`;
+      html += `<li class="pl-2 my-1">${line.replace(/^[-*•]\s+/, "")}</li>`;
     } else if (/^\d+\.\s+/.test(line)) {
       if (!inList || !isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ol class="list-decimal pl-8 sm:pl-12 ml-2 sm:ml-4 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ol class="list-decimal list-inside space-y-3.5 my-6 pl-6 sm:pl-10 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = true;
       }
-      html += `<li>${line.replace(/^\d+\.\s+/, "")}</li>`;
+      html += `<li class="pl-2 my-1">${line.replace(/^\d+\.\s+/, "")}</li>`;
     } else {
       if (inList) {
         html += isOrdered ? "</ol>" : "</ul>";
         inList = false;
       }
       if (line.trim().length > 0) {
-        html += `<p class="my-5 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">${line}</p>`;
+        html += `<p class="my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed block">${line}</p>`;
       }
     }
   }

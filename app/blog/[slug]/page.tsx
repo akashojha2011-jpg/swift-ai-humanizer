@@ -124,7 +124,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
             {/* Markdown Body Output */}
             <div
-              className="prose prose-slate dark:prose-invert max-w-none text-xs sm:text-sm leading-relaxed"
+              className="space-y-6 text-base sm:text-lg leading-relaxed text-slate-800 dark:text-slate-200"
               dangerouslySetInnerHTML={{ __html: html }}
             />
 

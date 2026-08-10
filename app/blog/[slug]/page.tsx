@@ -93,7 +93,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             {post.category}
           </div>
 
-          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-[46px] text-slate-900 dark:text-white leading-[1.15] tracking-tight">
+          <h1 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white leading-[1.15] tracking-tight">
             {post.title}
           </h1>
 
@@ -116,15 +116,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <InvestopediaTOC items={toc} />
 
           {/* Main Article Content Column */}
-          <main className="flex-1 max-w-3xl min-w-0 space-y-8">
+          <main className="flex-1 max-w-3xl min-w-0 space-y-6">
             {/* Excerpt Lead Box */}
-            <div className="bg-slate-100/80 dark:bg-slate-900/90 border-l-4 border-slate-900 dark:border-emerald-500 p-6 rounded-r-xl text-base sm:text-lg text-slate-800 dark:text-slate-100 font-medium leading-relaxed">
+            <div className="bg-slate-100/80 dark:bg-slate-900/90 border-l-4 border-slate-900 dark:border-emerald-500 p-5 rounded-r-xl text-sm sm:text-base text-slate-800 dark:text-slate-100 font-medium leading-relaxed">
               {post.excerpt}
             </div>
 
             {/* Markdown Body Output */}
             <div
-              className="prose prose-slate dark:prose-invert max-w-none text-base sm:text-lg leading-relaxed"
+              className="prose prose-slate dark:prose-invert max-w-none text-xs sm:text-sm leading-relaxed"
               dangerouslySetInnerHTML={{ __html: html }}
             />
 

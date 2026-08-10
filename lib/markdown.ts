@@ -52,23 +52,23 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
           html += "</blockquote>";
           inBlockquote = false;
         }
-        html += '<div className="overflow-x-auto my-8 border border-slate-200 dark:border-slate-800 rounded-xl shadow-2xs"><table className="w-full text-left text-xs sm:text-sm border-collapse">';
+        html += '<div class="overflow-x-auto my-8 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xs"><table class="w-full text-left text-xs sm:text-sm border-collapse">';
         inTable = true;
         tableHeaderProcessed = false;
       }
 
       if (!tableHeaderProcessed) {
-        html += '<thead className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-white font-bold border-b border-slate-200 dark:border-slate-800"><tr>';
+        html += '<thead class="bg-slate-100 dark:bg-slate-800/90 text-slate-900 dark:text-white font-bold border-b border-slate-200 dark:border-slate-800"><tr>';
         cells.forEach((c) => {
           let formattedCell = formatInline(c);
-          html += `<th className="py-3.5 px-4 font-heading font-bold text-xs sm:text-sm text-slate-900 dark:text-white border-r border-slate-200 dark:border-slate-800 last:border-r-0">${formattedCell}</th>`;
+          html += `<th class="px-5 py-3 font-heading font-bold text-xs sm:text-sm text-slate-900 dark:text-white border-r border-slate-200 dark:border-slate-800 last:border-r-0 whitespace-nowrap">${formattedCell}</th>`;
         });
-        html += "</tr></thead><tbody className='divide-y divide-slate-100 dark:divide-slate-800/80'>";
+        html += "</tr></thead><tbody class='divide-y divide-slate-100 dark:divide-slate-800/80'>";
       } else {
-        html += '<tr className="hover:bg-slate-50/80 dark:hover:bg-slate-900/50 transition-colors">';
+        html += '<tr class="hover:bg-slate-50/80 dark:hover:bg-slate-900/50 transition-colors">';
         cells.forEach((c) => {
           let formattedCell = formatInline(c);
-          html += `<td className="py-3 px-4 border-r border-slate-100 dark:border-slate-800/80 last:border-r-0 text-slate-800 dark:text-slate-200">${formattedCell}</td>`;
+          html += `<td class="px-5 py-3 border-r border-slate-100 dark:border-slate-800/80 last:border-r-0 text-slate-800 dark:text-slate-200 font-sans text-xs sm:text-sm">${formattedCell}</td>`;
         });
         html += "</tr>";
       }
@@ -90,7 +90,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
         inList = false;
       }
       if (!inBlockquote) {
-        html += '<blockquote class="my-6 p-5 border-l-4 border-slate-900 dark:border-emerald-500 bg-slate-50 dark:bg-slate-900/80 rounded-r-xl text-slate-800 dark:text-slate-200 italic text-base sm:text-lg leading-relaxed shadow-2xs">';
+        html += '<blockquote class="my-6 p-4 border-l-4 border-slate-900 dark:border-emerald-500 bg-slate-50 dark:bg-slate-900/80 rounded-r-xl text-slate-800 dark:text-slate-200 italic text-sm sm:text-base leading-relaxed shadow-2xs">';
         inBlockquote = true;
       }
       html += `<p class="my-1">${line.slice(2)}</p>`;
@@ -100,7 +100,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
       inBlockquote = false;
     }
 
-    // Headers (Investopedia Style)
+    // Headers (Investopedia Style with Generous Vertical Margins)
     if (line.startsWith("# ")) {
       if (inList) {
         html += isOrdered ? "</ol>" : "</ul>";
@@ -108,7 +108,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
       }
       const rawText = line.slice(2).replace(/<[^>]*>/g, "").trim();
       const id = slugify(rawText);
-      html += `<h1 id="${id}" class="scroll-mt-24 font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl text-slate-900 dark:text-white pt-6 pb-3 tracking-tight leading-tight">${line.slice(2)}</h1>`;
+      html += `<h1 id="${id}" class="scroll-mt-28 font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white mt-10 mb-4 tracking-tight leading-tight">${line.slice(2)}</h1>`;
     } else if (line.startsWith("## ")) {
       if (inList) {
         html += isOrdered ? "</ol>" : "</ul>";
@@ -117,7 +117,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
       const rawText = line.slice(3).replace(/<[^>]*>/g, "").trim();
       const id = slugify(rawText);
       toc.push({ id, text: rawText, level: 2 });
-      html += `<h2 id="${id}" class="scroll-mt-24 font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white pt-8 pb-2 tracking-tight border-b border-slate-200 dark:border-slate-800">${line.slice(3)}</h2>`;
+      html += `<h2 id="${id}" class="scroll-mt-28 font-heading font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white mt-10 mb-3 tracking-tight border-b border-slate-200 dark:border-slate-800 pb-2">${line.slice(3)}</h2>`;
     } else if (line.startsWith("### ")) {
       if (inList) {
         html += isOrdered ? "</ol>" : "</ul>";
@@ -125,11 +125,11 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
       }
       const rawText = line.slice(4).replace(/<[^>]*>/g, "").trim();
       const id = slugify(rawText);
-      html += `<h3 id="${id}" class="scroll-mt-24 font-heading font-bold text-xl sm:text-2xl text-slate-900 dark:text-white pt-6 pb-2 tracking-tight">${line.slice(4)}</h3>`;
+      html += `<h3 id="${id}" class="scroll-mt-28 font-heading font-bold text-lg sm:text-xl text-slate-900 dark:text-white mt-7 mb-2 tracking-tight">${line.slice(4)}</h3>`;
     } else if (/^[-*•]\s+/.test(line)) {
       if (!inList || isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ul class="list-disc pl-5 space-y-2.5 my-5 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ul class="list-disc pl-5 space-y-2 my-5 text-slate-800 dark:text-slate-200 font-sans text-xs sm:text-sm leading-relaxed">';
         inList = true;
         isOrdered = false;
       }
@@ -137,7 +137,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
     } else if (/^\d+\.\s+/.test(line)) {
       if (!inList || !isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ol class="list-decimal pl-5 space-y-2.5 my-5 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ol class="list-decimal pl-5 space-y-2 my-5 text-slate-800 dark:text-slate-200 font-sans text-xs sm:text-sm leading-relaxed">';
         inList = true;
         isOrdered = true;
       }
@@ -148,7 +148,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
         inList = false;
       }
       if (line.trim().length > 0) {
-        html += `<p class="my-4 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">${line}</p>`;
+        html += `<p class="mb-4 text-slate-800 dark:text-slate-200 font-sans text-xs sm:text-sm leading-relaxed">${line}</p>`;
       }
     }
   }

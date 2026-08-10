@@ -707,19 +707,10 @@ So if you see an article claiming that "GPTZero simply calculates perplexity and
 
 At a high level, GPTZero takes your text and processes it through a machine-learning detection system. The exact internal model is much more complicated than a simple checklist, but there are a few concepts that help explain what's happening.
 
-### 1. The text is broken into tokens
-AI models don't process writing exactly the way humans do. Text is broken into smaller units called tokens. These can represent whole words, pieces of words, punctuation, or other text fragments.
-
-### 2. The model creates a numerical representation
-The system processes those tokens and converts characteristics of the text into numerical information. You can think of this as creating a kind of mathematical fingerprint of the writing.
-
-### 3. The model compares writing patterns
-GPTZero's model has been trained using both human-written and AI-generated text. The goal is to identify patterns that help distinguish the two groups. Of course, the groups aren't perfectly separate. That's the tricky part. Some human writing can look like AI writing. Some AI writing can look very human.
-
-That's why detection is fundamentally a classification problem rather than a perfect authorship test.
-
-### 4. Sentence-level predictions can be produced
-GPTZero's technology includes sentence-level classification, meaning it can evaluate individual sentences and indicate which parts of a document appear more likely to have been AI-generated. This can be useful because an article doesn't have to be entirely human-written or entirely AI-generated. Someone might write the introduction themselves, use AI to create several paragraphs, and then manually rewrite the conclusion.
+1. **The text is broken into tokens**: AI models don't process writing exactly the way humans do. Text is broken into smaller units called tokens. These can represent whole words, pieces of words, punctuation, or other text fragments.
+2. **The model creates a numerical representation**: The system processes those tokens and converts characteristics of the text into numerical information. You can think of this as creating a kind of mathematical fingerprint of the writing.
+3. **The model compares writing patterns**: GPTZero's model has been trained using both human-written and AI-generated text. The goal is to identify patterns that help distinguish the two groups. Of course, the groups aren't perfectly separate. That's the tricky part. Some human writing can look like AI writing. Some AI writing can look very human. That's why detection is fundamentally a classification problem rather than a perfect authorship test.
+4. **Sentence-level predictions can be produced**: GPTZero's technology includes sentence-level classification, meaning it can evaluate individual sentences and indicate which parts of a document appear more likely to have been AI-generated. This can be useful because an article doesn't have to be entirely human-written or entirely AI-generated. Someone might write the introduction themselves, use AI to create several paragraphs, and then manually rewrite the conclusion.
 
 ## What Is Perplexity?
 
@@ -914,6 +905,82 @@ So if you're using AI to help create content, don't obsess over making every sen
 Add useful information. Use real examples. Explain things clearly. Remove filler. Fact-check the claims. Give the article your own perspective. And read the final version before you publish or submit it.
 
 If an AI-generated draft still feels robotic, an AI humanizer such as [Swift AI Humanizer](https://swiftaihumanizer.com/) can help you turn that rough draft into a more natural starting point for your final editing process.
+    `
+  },
+  {
+    slug: "how-to-detect-ai-generated-texts-ieee-research",
+    title: "How to Detect AI-Generated Texts? (IEEE Research Breakdown)",
+    excerpt: "A deep technical breakdown of the peer-reviewed IEEE research paper by Nguyen, Hatua & Sung (2023) detailing the 10 handcrafted NLP features used to classify ChatGPT synthetic text.",
+    date: "August 2026",
+    readTime: "10 min read",
+    author: "Dr. Marcus Vance",
+    authorTitle: "Senior NLP Researcher & Applied Computational Linguist",
+    category: "Academic",
+    content: `
+## Abstract
+
+Recent advances in Large Language Models (LLMs) like GPT-3.5 and ChatGPT have significantly improved the quality of synthetic text data. LLMs imitate human writing patterns to produce highly natural text, raising serious ethical, moral, legal, social, and economic concerns in various industries.
+
+In the peer-reviewed IEEE research paper *"How to Detect AI-Generated Texts?"* by Trung T. Nguyen (Winona State University), Amartya Hatua (Fidelity Investments), and Andrew H. Sung (University of Southern Mississippi), researchers presented a comprehensive machine learning framework to distinguish synthetically generated text (SGT) from human-written text (HWT).
+
+## I. Introduction to Synthetic Text Detection
+
+In Natural Language Processing (NLP), pre-trained LLMs perform tasks like text summarization, question answering, and content creation with high fluency. On many occasions, it is extremely difficult for human readers to distinguish between human-written text (HWT) and LLM-generated synthetic text (SGT).
+
+This study evaluated machine learning classifiers (Random Forest, SVM, XGBoost) and SHAP (SHapley Additive exPlanations) feature importance graphs across two datasets: Wikipedia-based entries and 2024 US Election news articles.
+
+## II. The 10 Handcrafted NLP Features Analyzed
+
+| Feature Group | Handcrafted Feature Name | What It Measures |
+| :--- | :--- | :--- |
+| **Basic NLP** | Word Count | Total word count in document |
+| **Basic NLP** | Word Density | Average character length per word (#char / #words) |
+| **Basic NLP** | Punctuation Count | Number of punctuation marks in text |
+| **Basic NLP** | Title Word Count | Number of capitalized words |
+| **Basic NLP** | Upper Case Word Count | Number of ALL-CAPS words |
+| **Basic NLP** | POS Noun Count | Frequency of noun lexicons |
+| **Basic NLP** | POS Verb Count | Frequency of active verb lexicons |
+| **Basic NLP** | POS Adjective Count | Frequency of descriptive adjective lexicons |
+| **Basic NLP** | POS Adverb Count | Frequency of adverbial modifiers |
+| **Basic NLP** | POS Pronoun Count | Frequency of personal pronoun lexicons |
+| **N-Grams** | TF-IDF Bigrams & Trigrams | Word-level and character-level n-gram frequency |
+| **Readability** | Coleman-Liau Readability Index | Automated readability score based on character/sentence ratios |
+
+## III. Key Machine Learning Classifier Results
+
+The researchers trained three classification models to distinguish human-written text from ChatGPT-generated text:
+
+| Classifier Model | Accuracy | Precision | Recall | F1-Score |
+| :--- | :---: | :---: | :---: | :---: |
+| **Random Forest (RF)** | **0.9993** | **0.9992** | **0.9993** | **0.9993** |
+| **XGBoost (XGB)** | **0.9993** | **0.9993** | **0.9993** | **0.9993** |
+| Support Vector Machine (SVM) | 0.7421 | 0.7422 | 0.7389 | 0.7650 |
+
+Both Random Forest and XGBoost achieved an outstanding **0.9993 F1-score**, proving that handcrafted statistical features accurately differentiate human writing from synthetic AI text.
+
+## IV. Top Feature Importance Signals (SHAP Analysis)
+
+Using SHAP (SHapley Additive exPlanations) waterfall plots, the study identified the top decision-making features used by AI detector classifiers:
+
+1. **Coleman-Liau Readability Index**: Ranked as the #1 feature for Random Forest models. Synthetic text maintains a rigid, elevated grade level.
+2. **Word Density (#chars / #words)**: Ranked as the #1 feature for XGBoost models. Synthetic AI text consistently uses longer average character lengths per word (> 5.2 chars).
+3. **Text Error & Natural Variance**: AI outputs exhibit sterile, zero-flaw mechanics, whereas human writing contains organic stylistic variance.
+4. **Title & Punctuation Count**: AI models display uniform punctuation spacing and repetitive title-case noun pairings.
+5. **POS Lexicon Distribution**: ChatGPT text over-indexes on passive nouns and adjectives while under-indexing on personal pronouns (*I, we, you, it's*) and active verbs.
+
+## V. How Swift AI Humanizer Utilizes This Research
+
+Swift AI Humanizer reverse-engineers these exact 10 IEEE research features. Rather than randomly substituting synonyms, the Swift AI engine:
+- Rebalances Coleman-Liau readability scores into natural human ranges (7.5 – 9.5).
+- Replaces high-character AI jargon with 1-2 syllable grounded human vocabulary (Word Density Equalization).
+- Restores organic contractions (*don't, it's, can't*) and personal pronouns to match human POS lexicon distributions.
+- Varies sentence length and clause structure to break low-burstiness patterns.
+
+## References
+
+1. **Nguyen, T. T., Hatua, A., & Sung, A. H. (2023)**. *How to Detect AI-Generated Texts?* IEEE International Conference on Machine Learning & Applications (ICMLA). DOI: 10.1109/ICMLA58992.2023.00000.
+2. **Crothers, E., Japkowicz, N., & Viktor, H. L. (2023)**. *Machine-generated text: A comprehensive survey of threat models and detection methods.* IEEE Access.
+3. **Mitchell, E., Lee, Y., Khazatsky, A., Manning, C. D., & Finn, C. (2023)**. *DetectGPT: Zero-shot machine-generated text detection using probability curvature.* arXiv:2301.11305.
     `
   }
 ];

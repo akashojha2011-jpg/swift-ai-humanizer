@@ -2,7 +2,8 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { BLOG_POSTS } from "@/lib/blogData";
 import { parseBlogMarkdown } from "@/lib/markdown";
-import { Calendar, Clock, ArrowLeft, ArrowRight, UserCheck, List, Sparkles } from "lucide-react";
+import { TableOfContents } from "@/components/TableOfContents";
+import { Calendar, Clock, ArrowLeft, ArrowRight, UserCheck, Sparkles } from "lucide-react";
 
 interface BlogPostPageProps {
   params: {
@@ -125,32 +126,8 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         {post.excerpt}
       </div>
 
-      {/* Crawlable Table of Contents (TOC) Box */}
-      {toc.length > 0 && (
-        <nav className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-6 shadow-xs space-y-3">
-          <div className="flex items-center gap-2 text-slate-900 dark:text-white font-heading font-bold text-base">
-            <List className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
-            <span>Table of Contents</span>
-          </div>
-          <ul className="space-y-1.5 text-xs sm:text-sm font-sans pt-1">
-            {toc.map((item) => (
-              <li
-                key={item.id}
-                className={`transition-colors ${
-                  item.level === 3 ? "pl-4 text-slate-500 dark:text-slate-400" : "font-semibold text-slate-700 dark:text-slate-200"
-                }`}
-              >
-                <a
-                  href={`#${item.id}`}
-                  className="hover:text-emerald-600 dark:hover:text-emerald-400 hover:underline transition-colors block"
-                >
-                  {item.text}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      )}
+      {/* Collapsible H2-Only Table of Contents */}
+      <TableOfContents items={toc} />
 
       {/* Main Content Body */}
       <div

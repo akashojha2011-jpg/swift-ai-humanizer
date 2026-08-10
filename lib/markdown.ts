@@ -49,7 +49,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
           inList = false;
         }
         if (inBlockquote) {
-          html += "</blockquote>";
+          html += "-------------";
           inBlockquote = false;
         }
         html += '<div class="overflow-x-auto my-8 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xs"><table class="w-full text-left text-sm border-collapse">';
@@ -129,7 +129,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
     } else if (/^[-*•]\s+/.test(line)) {
       if (!inList || isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ul class="list-disc pl-6 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ul class="list-disc pl-8 sm:pl-12 ml-2 sm:ml-4 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = false;
       }
@@ -137,7 +137,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
     } else if (/^\d+\.\s+/.test(line)) {
       if (!inList || !isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ol class="list-decimal pl-6 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ol class="list-decimal pl-8 sm:pl-12 ml-2 sm:ml-4 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = true;
       }

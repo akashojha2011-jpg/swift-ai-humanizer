@@ -49,7 +49,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
           inList = false;
         }
         if (inBlockquote) {
-          html += "</blockquote>";
+          html += "-------------";
           inBlockquote = false;
         }
         html += '<div class="overflow-x-auto my-8 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xs"><table class="w-full text-left text-sm border-collapse">';
@@ -134,7 +134,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
         isOrdered = false;
       }
       const itemContent = line.replace(/^[-*•]\s+/, "");
-      html += `<li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-slate-700 dark:bg-slate-300 mt-2.5 shrink-0"></span><span class="flex-1">${itemContent}</span></li>`;
+      html += `<li class="flex items-start gap-2.5"><span class="font-bold text-slate-800 dark:text-slate-200 text-lg leading-none mt-1 select-none shrink-0">•</span><span class="flex-1">${itemContent}</span></li>`;
     } else if (/^\d+\.\s+/.test(line)) {
       if (!inList || !isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
@@ -156,7 +156,7 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
 
   if (inList) html += isOrdered ? "</ol>" : "</ul>";
   if (inTable) html += "</tbody></table></div>";
-  if (inBlockquote) html += "</blockquote>";
+  if (inBlockquote) html += "----------------";
 
   return { html, toc };
 }

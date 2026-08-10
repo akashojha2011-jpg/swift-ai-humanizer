@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { LayoutWrapper } from "@/components/LayoutWrapper";
+import { FAQS_DATA } from "@/components/FAQSection";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -97,7 +98,63 @@ export default function RootLayout({
     "@type": "Organization",
     "name": "Swift AI Humanizer",
     "url": "https://swiftaihumanizer.com",
-    "logo": "https://swiftaihumanizer.com/icon.png"
+    "logo": "https://swiftaihumanizer.com/icon.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/swift-ai-humanizer",
+      "https://whatsapp.com/channel/0029VaX78swIf-PskXW9mR1N",
+      "https://x.com/swiftaihumanizer",
+      "https://www.instagram.com/swiftaihumanizer"
+    ]
+  };
+
+  const faqPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS_DATA.map((item) => ({
+      "@type": "Question",
+      "name": item.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://swiftaihumanizer.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Bulk Rewriter",
+        "item": "https://swiftaihumanizer.com/bulk-rewriter"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Tone Customizer",
+        "item": "https://swiftaihumanizer.com/tone-customizer"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "AI Detector Scanner",
+        "item": "https://swiftaihumanizer.com/ai-detector"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Blog & Guides",
+        "item": "https://swiftaihumanizer.com/blog"
+      }
+    ]
   };
 
   const softwareSchema = {
@@ -191,6 +248,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
       </head>
       <body className="min-h-screen bg-[#F9FAFB] dark:bg-[#0F172A] text-slate-900 dark:text-slate-100 selection:bg-brand-100 selection:text-brand-900 transition-colors font-sans">

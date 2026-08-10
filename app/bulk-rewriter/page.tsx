@@ -3,20 +3,20 @@
 import { useState } from "react";
 import { BulkMode } from "@/components/BulkMode";
 import { HumanizeTone, HumanizeMode } from "@/lib/humanizerEngine";
-import { Layers, ChevronDown } from "lucide-react";
+import { Layers, ChevronDown, CheckCircle2, FileText } from "lucide-react";
 
 export default function BulkRewriterPage() {
   const [tone, setTone] = useState<HumanizeTone>("casual");
   const [mode, setMode] = useState<HumanizeMode>("quick");
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8 font-sans">
-      <div className="text-center max-w-3xl mx-auto space-y-3">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10 font-sans">
+      <div className="text-center max-w-3xl mx-auto space-y-4">
         <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-slate-900 dark:text-white">
-          Bulk Article & Document Rewriter
+          Bulk AI Text Rewriter — Humanize Full Articles &amp; Documents Free
         </h1>
-        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Upload Word documents (.docx, .txt) or paste multiple article snippets to humanize full batches simultaneously.
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+          Swift AI Bulk Rewriter converts multi-paragraph documents and .docx files into natural, human-written text in a single pass. It preserves headers, bullet points, and formatting across your entire batch while bypassing AI detectors like Turnitin and GPTZero.
         </p>
       </div>
 
@@ -25,7 +25,7 @@ export default function BulkRewriterPage() {
         <div className="flex items-center gap-2">
           <Layers className="w-5 h-5 text-brand-600 dark:text-emerald-400" />
           <span className="font-heading font-bold text-sm text-slate-900 dark:text-white">
-            Batch Settings
+            Batch Rewriter Controls
           </span>
         </div>
 
@@ -73,6 +73,48 @@ export default function BulkRewriterPage() {
 
       {/* Main Bulk Workbench */}
       <BulkMode tone={tone} mode={mode} />
+
+      {/* Crawlable Informational Explainer */}
+      <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 space-y-6 shadow-xs">
+        <h2 className="font-heading font-extrabold text-2xl text-slate-900 dark:text-white">
+          How Bulk AI Text Rewriting Works
+        </h2>
+        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+          Bulk AI rewriting splits long documents into contextual blocks, processing each section while maintaining consistent terminology, narrative flow, and paragraph hierarchy. This ensures long-form essays, ebooks, and blog series pass AI detection without losing coherence.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div className="space-y-2">
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Multi-Paragraph Processing</span>
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Rewrite thousands of words simultaneously across multiple article drafts without copying section by section.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <FileText className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Word Document (.docx) Support</span>
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Upload Microsoft Word files directly to convert AI text into natural human writing with formatting preserved.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
+              <Layers className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span>Batch Tone Uniformity</span>
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Apply a single writing tone across all uploaded sections to maintain a cohesive voice throughout your entire project.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

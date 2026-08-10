@@ -131,10 +131,13 @@ export default function Home() {
 
         {/* Humanize AI Text in 4 Steps */}
         <section className="py-8 border-t border-slate-200/60 dark:border-slate-800 space-y-8 max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div className="text-center max-w-3xl mx-auto space-y-2">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl tracking-tight text-slate-900 dark:text-white">
               Humanize AI Text in 4 Steps
             </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-sans">
+              Swift AI Humanizer converts synthetic writing into natural human text by removing signature AI vocabulary, rebalancing sentence rhythm, scanning against AI detector classifiers, and keeping all original document formatting intact.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
@@ -182,10 +185,13 @@ export default function Home() {
 
         {/* Feature Grid */}
         <section className="py-8 border-t border-slate-200/60 dark:border-slate-800 space-y-8 max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div className="text-center max-w-3xl mx-auto space-y-2">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl tracking-tight text-slate-900 dark:text-white">
               Built for Fast, Clean Rewriting
             </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto font-sans">
+              Our rewrite engine offers rich text formatting preservation, 5 specialized writing tones, bulk document uploading, live detector scoring, and research-backed accuracy at zero cost.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">

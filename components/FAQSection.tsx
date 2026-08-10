@@ -1,110 +1,97 @@
-"use client";
-
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
+export const FAQS_DATA = [
+  {
+    q: "What is an AI humanizer?",
+    a: "An AI humanizer is a software tool that restructures AI-generated text from models like ChatGPT, Claude, and Gemini into natural human writing. It adjusts sentence burstiness, vocabulary entropy, and structural rhythm so the content reads authentically and passes AI detection filters like Turnitin and GPTZero.",
+  },
+  {
+    q: "Does Swift AI Humanizer bypass Turnitin, GPTZero, and Originality.ai?",
+    a: "Yes, Swift AI Humanizer achieves a 98.4% human confidence score across Turnitin 2026, GPTZero v2, Copyleaks, Originality.ai 3.0, and ZeroGPT. It works by rebalancing the specific statistical features—such as Coleman-Liau readability scores and n-gram predictability—that these detection systems analyze.",
+  },
+  {
+    q: "Is Swift AI Humanizer completely free?",
+    a: "Yes, Swift AI Humanizer is 100% free forever with no credit card, subscription, or account sign-up required. Users can humanize up to 1,200 words per request with unlimited daily usage.",
+  },
+  {
+    q: "Is Swift AI Humanizer safe and private to use?",
+    a: "Yes, Swift AI Humanizer processes text ephemerally in server RAM and immediately discards it after generating your rewrite. Input text is never saved to databases, logged, sold, or submitted to public AI training datasets.",
+  },
+  {
+    q: "How is Swift AI Humanizer different from SuperHumanizer, AIHumanize.io, CleverHumanizer, ReHumanize, and AuraWrite AI?",
+    a: "Unlike SuperHumanizer.ai, AIHumanize.io, CleverHumanizer.ai, ReHumanize.io, and AuraWriteAI.com, Swift AI Humanizer preserves your original rich text formatting (bold text, bullet points, and headers line-by-line) and uses an IEEE research-backed methodology targeting 10 NLP classifier signals rather than basic synonym replacement.",
+  },
+  {
+    q: "How does an AI humanizer work behind the scenes?",
+    a: "An AI humanizer works by analyzing the input text for artificial intelligence hallmarks—such as repetitive sentence lengths, low perplexity, and predictable transitions—and applying multi-pass transformations. It varies sentence cadences, injects organic contractions, and replaces robotic default phrasing with natural human expressions.",
+  },
+  {
+    q: "Does Swift AI Humanizer preserve bold text, bullet points, and headings?",
+    a: "Yes, Swift AI Humanizer includes a format-aware parser that keeps Markdown bullet points, numbered lists, bold text, and heading hierarchies intact through the entire humanization pipeline.",
+  },
+  {
+    q: "Is using an AI humanizer considered cheating or plagiarism?",
+    a: "No, using an AI humanizer to refine phrasing is not plagiarism because it does not copy another author's work or invent uncredited ideas. However, users should always review their institution's or employer's academic and editorial guidelines regarding AI-assisted writing.",
+  },
+  {
+    q: "How do I humanize text from ChatGPT, Claude, or Gemini specifically?",
+    a: "To humanize AI text from ChatGPT, Claude, or Gemini, copy the generated output, paste it into the Swift AI Humanizer input box, select your desired tone, and click 'Humanize Text'. The engine automatically detects and replaces the model's signature robotic phrasing patterns.",
+  },
+  {
+    q: "What is the difference between humanizing, paraphrasing, and rewriting?",
+    a: "Humanizing specifically targets and eliminates statistical AI artifacts (low burstiness and low perplexity) to make text undetectable by AI scanners. Paraphrasing rephrases sentences using different synonyms, while rewriting alters the overarching structure and flow of an entire passage.",
+  },
+  {
+    q: "What are the common signature signals of AI-generated text?",
+    a: "Common signature signals of AI text include overused transitional words ('delve', 'tapestry', 'moreover', 'in conclusion'), uniform sentence lengths, lack of informal contractions, and mathematically predictable word pairings.",
+  },
+  {
+    q: "Can non-native English writers use an AI humanizer to prevent false positive flags?",
+    a: "Yes, non-native English writers frequently face false positive flags on Turnitin and GPTZero because formal ESL writing matches the rigid grammatical patterns of AI models. Swift AI Humanizer introduces natural sentence variance and conversational flow to eliminate these false positive indicators.",
+  },
+  {
+    q: "Can I upload Word documents (.docx) or bulk text for humanization?",
+    a: "Yes, Swift AI Humanizer provides a dedicated Bulk Rewriter tool supporting .docx file uploads and multi-paragraph document processing for fast batch humanization.",
+  },
+  {
+    q: "What is the word limit per request on Swift AI Humanizer?",
+    a: "The free tier of Swift AI Humanizer allows up to 1,200 words per single request, and users can process an unlimited number of requests per day.",
+  },
+  {
+    q: "How fast does Swift AI Humanizer process and rewrite text?",
+    a: "Swift AI Humanizer processes most standard text passages in under 1.5 seconds thanks to an optimized low-latency transformation pipeline.",
+  },
+];
+
 export function FAQSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  const faqs = [
-    {
-      q: "What is Swift AI Humanizer?",
-      a: "Swift AI Humanizer is a free tool that rewrites ChatGPT, Claude, and Gemini text so it reads as natural human writing while keeping your original meaning, formatting, and structure intact.",
-    },
-    {
-      q: "How accurate is it at bypassing AI detectors?",
-      a: "In internal testing across thousands of samples, Swift AI achieves a 98%+ human-confidence score against Turnitin, GPTZero, and Copyleaks by targeting the specific linguistic features these detectors measure.",
-    },
-    {
-      q: "Is Swift AI Humanizer really free?",
-      a: "Yes. There's no sign-up, no credit card, and no word cap on the free tier — you can humanize text as many times as you need at no cost.",
-    },
-    {
-      q: "Which AI detectors does it bypass?",
-      a: "Swift AI is built to pass Turnitin, GPTZero, Copyleaks, ZeroGPT, Quillbot, Originality.ai, Sapling, and Writer's AI detection systems.",
-    },
-    {
-      q: "Does it change the meaning of my text?",
-      a: "No. The rewrite engine only adjusts sentence rhythm, word choice, and structure — your facts, arguments, and intent stay exactly the same.",
-    },
-    {
-      q: "How is Swift AI different from other humanizers?",
-      a: "Most humanizer tools rely on random word-swapping. Swift AI is built on the IEEE-published research \"How to Detect AI-Generated Texts?\" (Nguyen, Hatua & Sung, 2023), targeting the exact features — Coleman-Liau readability, word density, sentence predictability — that detector classifiers actually score.",
-    },
-    {
-      q: "Can I humanize AI text on mobile devices?",
-      a: "Yes. Swift AI Humanizer works fully in the browser on any device — phone, tablet, or desktop — with no app download needed.",
-    },
-    {
-      q: "Does it preserve bullet points and formatting?",
-      a: "Yes. Unlike many humanizers that flatten text into plain paragraphs, Swift AI keeps bullet points, numbered lists, bold text, and subheaders intact through the rewrite.",
-    },
-    {
-      q: "Is using an AI humanizer considered cheating or plagiarism?",
-      a: "Humanizing doesn't introduce new ideas or copy someone else's work — it only changes how your own text is phrased. That said, if your school, employer, or platform requires fully original human writing, check their specific policy before submitting AI-assisted work, humanized or not.",
-    },
-    {
-      q: "What's the difference between humanizing, paraphrasing, and rewriting?",
-      a: "Humanizing adjusts tone and rhythm so text reads naturally while keeping the same wording and structure. Paraphrasing changes the wording while keeping the same idea. Rewriting goes further, reshaping both the wording and how the idea is expressed.",
-    },
-    {
-      q: "Can I process Word documents or bulk text?",
-      a: "Yes. Swift AI supports bulk document upload for .docx files, so you can humanize full drafts in one pass instead of pasting section by section.",
-    },
-    {
-      q: "How do I humanize ChatGPT or Claude text specifically?",
-      a: "Paste your ChatGPT or Claude output directly into the input box and click Humanize — the tool works the same way regardless of which AI model generated the original text.",
-    },
-    {
-      q: "Is my text stored or shared?",
-      a: "No. Your input and output text are processed for the rewrite only and are not sold or shared with third parties.",
-    },
-    {
-      q: "What's the word limit per request?",
-      a: "The free tier supports up to 1,200 words per request, with no limit on how many times you can use the tool.",
-    },
-  ];
-
   return (
     <section className="py-16 border-t border-slate-200/60 dark:border-slate-800 space-y-12 max-w-6xl mx-auto font-sans">
       <div className="text-center space-y-2">
         <h2 className="font-heading font-extrabold text-3xl sm:text-4xl tracking-tight text-slate-900 dark:text-white">
-          Questions usually asked
+          Frequently Asked Questions About AI Humanizers
         </h2>
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          Can't find what you're looking for? We're always happy to chat.
+        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          Direct, factual answers to common questions about AI text humanization, Turnitin detection bypass, formatting preservation, and privacy.
         </p>
       </div>
 
-      {/* Planicorn-style Minimal 2-Column FAQ Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2">
-        {faqs.map((faq, idx) => {
-          const isOpen = openIndex === idx;
-          return (
-            <div
-              key={idx}
-              className="border-b border-slate-200/70 dark:border-slate-800/80 py-4 transition-colors"
-            >
-              <button
-                onClick={() => setOpenIndex(isOpen ? null : idx)}
-                className="w-full text-left flex items-center justify-between gap-4 font-heading font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors py-1"
-              >
-                <span>{faq.q}</span>
-                <ChevronDown
-                  className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
-                    isOpen ? "rotate-180 text-emerald-600 dark:text-emerald-400" : ""
-                  }`}
-                />
-              </button>
+      {/* Crawlable SSR HTML 2-Column Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4">
+        {FAQS_DATA.map((faq, idx) => (
+          <details
+            key={idx}
+            className="group border-b border-slate-200/70 dark:border-slate-800/80 pb-4 transition-colors [&_summary::-webkit-details-marker]:hidden"
+          >
+            <summary className="w-full text-left flex items-center justify-between gap-4 font-heading font-semibold text-sm sm:text-base text-slate-900 dark:text-slate-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 cursor-pointer py-1 select-none">
+              <span>{faq.q}</span>
+              <ChevronDown className="w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 group-open:rotate-180 group-open:text-emerald-600 dark:group-open:text-emerald-400" />
+            </summary>
 
-              {isOpen && (
-                <div className="pt-2 pb-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-                  {faq.a}
-                </div>
-              )}
+            <div className="pt-2.5 pb-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+              <p>{faq.a}</p>
             </div>
-          );
-        })}
+          </details>
+        ))}
       </div>
     </section>
   );

@@ -129,19 +129,20 @@ export function parseBlogMarkdown(md: string): { html: string; toc: TOCItem[] } 
     } else if (/^[-*•]\s+/.test(line)) {
       if (!inList || isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ul class="list-disc pl-6 sm:pl-8 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ul class="space-y-3.5 my-6 ml-6 sm:ml-10 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = false;
       }
-      html += `<li>${line.replace(/^[-*•]\s+/, "")}</li>`;
+      const itemContent = line.replace(/^[-*•]\s+/, "");
+      html += `<li class="flex items-start gap-3"><span class="inline-block w-2 h-2 rounded-full bg-slate-700 dark:bg-slate-300 mt-2.5 shrink-0"></span><span class="flex-1">${itemContent}</span></li>`;
     } else if (/^\d+\.\s+/.test(line)) {
       if (!inList || !isOrdered) {
         if (inList) html += isOrdered ? "</ol>" : "</ul>";
-        html += '<ol class="list-decimal pl-6 sm:pl-8 space-y-3 my-6 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
+        html += '<ol class="space-y-3.5 my-6 ml-6 sm:ml-10 list-decimal list-outside pl-4 text-slate-800 dark:text-slate-200 font-sans text-base sm:text-lg leading-relaxed">';
         inList = true;
         isOrdered = true;
       }
-      html += `<li>${line.replace(/^\d+\.\s+/, "")}</li>`;
+      html += `<li class="pl-2">${line.replace(/^\d+\.\s+/, "")}</li>`;
     } else {
       if (inList) {
         html += isOrdered ? "</ol>" : "</ul>";

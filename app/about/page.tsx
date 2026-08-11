@@ -165,6 +165,22 @@ export default function AboutPage() {
                 className="block w-[240px] sm:w-[260px] max-w-full h-auto border-0 outline-none"
               />
             </a>
+
+            <a
+              href="https://saascity.io"
+              target="_blank"
+              rel="dofollow noopener"
+              className="inline-block transition-transform hover:scale-105"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="https://saascity.io/badges/featured-light.svg"
+                alt="Featured on SaaSCity"
+                width={150}
+                height={54}
+                className="block w-[150px] max-w-full h-auto border-0 outline-none"
+              />
+            </a>
           </div>
         </div>
 

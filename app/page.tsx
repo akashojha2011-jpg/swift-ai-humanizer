@@ -4,6 +4,9 @@ import { Sparkles, ShieldCheck, Wand2, Layers, ArrowRight, CheckCircle2, FileChe
 import { HumanizerTool } from "@/components/HumanizerTool";
 import { DetectorMarquee } from "@/components/DetectorMarquee";
 
+import { WhySwiftAISection } from "@/components/WhySwiftAISection";
+import { HowToHumanizeSection } from "@/components/HowToHumanizeSection";
+
 // Dynamically import heavy below-the-fold components for ultra-fast mobile initial page load (LCP)
 const AIHumanizerOverview = dynamic(() => import("@/components/AIHumanizerOverview").then((mod) => mod.AIHumanizerOverview), {
   ssr: true,
@@ -71,6 +74,12 @@ export default function Home() {
 
         {/* Animated Detector Marquee Widget */}
         <DetectorMarquee />
+
+        {/* Section 1: Why Swift AI Humanizer */}
+        <WhySwiftAISection />
+
+        {/* Section 2: How to Humanize AI Text for Free */}
+        <HowToHumanizeSection />
 
         {/* Planicorn Minimal Performance Stats Bar */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white dark:bg-slate-900 border border-slate-200/70 dark:border-slate-800 rounded-3xl p-8 shadow-xs max-w-6xl mx-auto text-center transition-colors">

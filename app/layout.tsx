@@ -18,7 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   title: "Humanize AI text: Free AI Humanizer | Swift AI Humanizer",
-  description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
+  description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero, backed by IEEE research, no sign-up.",
   verification: {
     google: "Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8",
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Humanize AI text: Free AI Humanizer | Swift AI Humanizer",
-    description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
+    description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero, backed by IEEE research, no sign-up.",
     url: "https://swiftaihumanizer.com",
     siteName: "Swift AI Humanizer",
     type: "website",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Humanize AI text: Free AI Humanizer | Swift AI Humanizer",
-    description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
+    description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero, backed by IEEE research, no sign-up.",
   },
   robots: {
     index: true,
@@ -168,7 +168,7 @@ export default function RootLayout({
       "price": "0.00",
       "priceCurrency": "USD"
     },
-    "description": "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
+    "description": "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero, backed by IEEE research, no sign-up.",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",

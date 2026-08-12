@@ -7,7 +7,7 @@ export const FAQS_DATA = [
   },
   {
     q: "Does Swift AI Humanizer bypass Turnitin, GPTZero, and Originality.ai?",
-    a: "Yes, Swift AI Humanizer achieves a 98.4% human confidence score across Turnitin 2026, GPTZero v2, Copyleaks, Originality.ai 3.0, and ZeroGPT. It works by rebalancing the specific statistical features—such as Coleman-Liau readability scores and n-gram predictability—that these detection systems analyze.",
+    a: "Yes, Swift AI Humanizer achieves a 98.4% human confidence score across Turnitin 2026, GPTZero v2, Copyleaks, Originality.ai 3.0, and ZeroGPT. It works by rebalancing the specific statistical features, such as Coleman-Liau readability scores and n-gram predictability, that these detection systems analyze.",
   },
   {
     q: "Is Swift AI Humanizer completely free?",
@@ -23,7 +23,7 @@ export const FAQS_DATA = [
   },
   {
     q: "How does an AI humanizer work behind the scenes?",
-    a: "An AI humanizer works by analyzing the input text for artificial intelligence hallmarks—such as repetitive sentence lengths, low perplexity, and predictable transitions—and applying multi-pass transformations. It varies sentence cadences, injects organic contractions, and replaces robotic default phrasing with natural human expressions.",
+    a: "An AI humanizer works by analyzing the input text for artificial intelligence hallmarks, such as repetitive sentence lengths, low perplexity, and predictable transitions, and applying multi-pass transformations. It varies sentence cadences, injects organic contractions, and replaces robotic default phrasing with natural human expressions.",
   },
   {
     q: "Does Swift AI Humanizer preserve bold text, bullet points, and headings?",

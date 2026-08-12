@@ -81,11 +81,11 @@ export function WhySwiftAISection() {
             </p>
 
             <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-              Unlike basic rewriter tools that randomly swap words for bizarre synonyms, mangle grammar, or ruin your document&apos;s layout, Swift AI uses advanced natural language syntax rebalancing. Our engine specifically targets and neutralizes subtle AI hallmarks—like uniform sentence rhythm, cliché transitions, and robotic vocabulary density—delivering clean, publication-ready text that feels genuinely human.
+              Unlike basic rewriter tools that randomly swap words for bizarre synonyms, mangle grammar, or ruin your document&apos;s layout, Swift AI uses advanced natural language syntax rebalancing. Our engine specifically targets and neutralizes subtle AI hallmarks, such as uniform sentence rhythm, cliché transitions, and robotic vocabulary density, delivering clean, publication-ready text that feels genuinely human.
             </p>
 
             <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-              <strong className="text-slate-900 dark:text-white font-bold">The Truth About AI Detection:</strong> We believe in total transparency. AI detectors update their algorithms constantly, and no tool on the market can guarantee a permanent 100% human score on every single classifier. That&apos;s why our primary objective is superior writing quality—crafting text that sounds authentic, engages your readers, and easily passes major detection checkers without resorting to artificial errors or awkward phrasing.
+              <strong className="text-slate-900 dark:text-white font-bold">The Truth About AI Detection:</strong> We believe in total transparency. AI detectors update their algorithms constantly, and no tool on the market can guarantee a permanent 100% human score on every single classifier. That&apos;s why our primary objective is superior writing quality: crafting text that sounds authentic, engages your readers, and easily passes major detection checkers without resorting to artificial errors or awkward phrasing.
             </p>
 
             {/* Site Theme CTA Button: Humanize AI text */}
@@ -117,7 +117,7 @@ export function WhySwiftAISection() {
                 </p>
 
                 <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
-                  Transform stiff ChatGPT, Claude, or Gemini drafts into natural, human-sounding prose in seconds. Swift AI Humanizer restructures syntax, adjusts sentence cadence, and cleans up robotic phrasing while keeping all your original headings, lists, and bold text perfectly intact. Validated against leading AI checkers including Turnitin, GPTZero, Copyleaks, and Grammarly—completely free, forever.
+                  Transform stiff ChatGPT, Claude, or Gemini drafts into natural, human-sounding prose in seconds. Swift AI Humanizer restructures syntax, adjusts sentence cadence, and cleans up robotic phrasing while keeping all your original headings, lists, and bold text perfectly intact. Validated against leading AI checkers including Turnitin, GPTZero, Copyleaks, and Grammarly (completely free, forever).
                 </p>
               </div>
 

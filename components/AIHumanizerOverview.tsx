@@ -24,7 +24,7 @@ export function AIHumanizerOverview() {
               What does it mean to humanize AI text?
             </h3>
             <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-              Humanizing is calibration, not scrambling. The underlying thoughts remain identical — the voice transforms to sound effortless and authentic.
+              Humanizing is calibration, not scrambling. The underlying thoughts remain identical: the voice transforms to sound effortless and authentic.
             </p>
           </div>
         </div>

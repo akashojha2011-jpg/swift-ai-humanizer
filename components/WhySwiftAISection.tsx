@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FileText, Sparkles, CheckCircle2, ArrowRight } from "lucide-react";
+import { FileText, Sparkles } from "lucide-react";
 
 export interface GaugeChartProps {
   score?: number;
@@ -10,47 +10,44 @@ export interface GaugeChartProps {
 }
 
 export function GaugeChart({ score = 0, label = "AI GPT*" }: GaugeChartProps) {
-  // Angle calculation for SVG semi-circle gauge arc (0% -> -180 deg to 0 deg)
   const clampedScore = Math.min(100, Math.max(0, score));
-  const strokeDasharray = 283; // Circumference for r=45 semi-circle
-  const strokeDashoffset = strokeDasharray - (strokeDasharray * (100 - clampedScore)) / 100;
+  // Total arc length for semi-circle with r=38
+  const arcLength = 119.38;
+  // Offset: 0% AI score displays full green arc (100% human confidence)
+  const strokeDashoffset = (arcLength * clampedScore) / 100;
 
   return (
-    <div className="flex flex-col items-center justify-center relative my-4">
-      <div className="relative w-48 h-28 flex items-end justify-center overflow-hidden">
-        <svg className="w-48 h-48 transform -rotate-90" viewBox="0 0 100 100">
+    <div className="flex flex-col items-center justify-center relative my-2">
+      <div className="relative w-48 h-24 flex items-end justify-center">
+        <svg className="w-48 h-28 overflow-visible" viewBox="0 0 100 55">
           {/* Background Track Arc */}
-          <circle
-            cx="50"
-            cy="50"
-            r="42"
+          <path
+            d="M 12 50 A 38 38 0 0 1 88 50"
             fill="none"
             stroke="#E2E8F0"
-            strokeWidth="10"
-            strokeDasharray="132 283"
-            strokeDashoffset="0"
+            strokeWidth="8"
             strokeLinecap="round"
             className="dark:stroke-slate-800"
           />
-          {/* Active Score Fill Arc */}
-          <circle
-            cx="50"
-            cy="50"
-            r="42"
+          {/* Active Score Green Fill Arc */}
+          <path
+            d="M 12 50 A 38 38 0 0 1 88 50"
             fill="none"
             stroke="#10B981"
-            strokeWidth="10"
-            strokeDasharray="132 283"
+            strokeWidth="8"
+            strokeDasharray={arcLength}
             strokeDashoffset={strokeDashoffset}
             strokeLinecap="round"
             className="transition-all duration-700 ease-out"
           />
         </svg>
-        <div className="absolute bottom-2 text-center flex flex-col items-center">
-          <span className="font-heading font-extrabold text-3xl text-slate-900 dark:text-white leading-none">
+
+        {/* Centered Readout Label inside semi-circle */}
+        <div className="absolute bottom-0 inset-x-0 text-center flex flex-col items-center justify-end pb-1">
+          <span className="font-heading font-extrabold text-3xl text-slate-900 dark:text-white leading-none tracking-tight">
             {score}%
           </span>
-          <span className="text-xs font-bold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
+          <span className="text-[11px] font-bold text-slate-400 dark:text-slate-500 mt-1 uppercase tracking-wider">
             {label}
           </span>
         </div>
@@ -92,16 +89,14 @@ export function WhySwiftAISection() {
               <strong className="text-slate-900 dark:text-white font-bold">A note on AI detection:</strong> We are often asked if our tool guarantees any specific result using AI detectors. The answer is no; in fact, you should not trust anyone who promises such results. Different tools use different methods, and are constantly updated, so it is hard to promise specific results. However, no matter how you slice it, we always focus on one thing: making your text sound as natural and pleasant to read as possible.
             </p>
 
-            {/* Black Pill CTA Button with Feather Icon Badge */}
+            {/* Site Theme CTA Button: Try Swift Free */}
             <div className="pt-2">
               <Link
                 href="#humanizer"
-                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white dark:text-slate-900 text-white font-heading font-bold text-sm shadow-lg transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm shadow-md transition-all hover:scale-105 active:scale-95"
               >
-                <span className="w-6 h-6 rounded-full bg-amber-400 text-slate-900 flex items-center justify-center font-bold text-xs shrink-0">
-                  ✏️
-                </span>
-                <span>Get started</span>
+                <Sparkles className="w-4 h-4 text-emerald-200" />
+                <span>Try Swift Free</span>
               </Link>
             </div>
           </div>
@@ -114,7 +109,7 @@ export function WhySwiftAISection() {
                 Your Text is Human written
               </h3>
 
-              {/* Dynamic Semi-Circle Gauge Component */}
+              {/* Dynamic Fixed Arc Semi-Circle Gauge Component */}
               <GaugeChart score={aiScore} label="AI GPT*" />
 
               {/* Sub-headline & Marketing Explanation Copy */}
@@ -128,22 +123,17 @@ export function WhySwiftAISection() {
                 </p>
               </div>
 
-              {/* Footer Notice & PDF Export Row */}
+              {/* Footer Notice & Placeholder PDF Export */}
               <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
                 <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
                   <span className="w-3.5 h-3.5 bg-yellow-400 rounded-xs shrink-0" />
                   <span>Highlighted text is suspected to be most likely generated by AI*</span>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={() => window.print()}
-                  className="flex items-center gap-1.5 font-bold text-slate-900 dark:text-white hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors shrink-0 cursor-pointer"
-                  aria-label="Export report to PDF"
-                >
-                  <FileText className="w-4 h-4 text-red-500" />
+                <span className="flex items-center gap-1.5 font-bold text-xs text-slate-400 dark:text-slate-500 shrink-0 cursor-default">
+                  <FileText className="w-3.5 h-3.5 text-slate-400" />
                   <span>Export to PDF</span>
-                </button>
+                </span>
               </div>
 
               {/* Stats Line */}

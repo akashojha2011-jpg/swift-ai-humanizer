@@ -1,49 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Trash2, ThumbsUp, ThumbsDown, CheckCircle2, Download, Info, ArrowRight } from "lucide-react";
-
-export interface LanguageTabsProps {
-  activeTab?: string;
-  onTabChange?: (tab: string) => void;
-}
-
-const LANGUAGES = ["English", "French", "Spanish", "German", "Dutch", "Portuguese"];
-
-export function LanguageTabs({ activeTab = "English", onTabChange }: LanguageTabsProps) {
-  const [selected, setSelected] = useState(activeTab);
-
-  const handleSelect = (lang: string) => {
-    setSelected(lang);
-    if (onTabChange) onTabChange(lang);
-  };
-
-  return (
-    <div className="flex items-center gap-6 overflow-x-auto border-b border-slate-100 dark:border-slate-800 px-6 py-3 scrollbar-none text-xs font-semibold">
-      {LANGUAGES.map((lang) => (
-        <button
-          key={lang}
-          type="button"
-          onClick={() => handleSelect(lang)}
-          className={`pb-1 whitespace-nowrap transition-colors border-b-2 cursor-pointer ${
-            selected === lang
-              ? "border-slate-900 text-slate-900 dark:border-white dark:text-white font-bold"
-              : "border-transparent text-slate-400 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-300"
-          }`}
-        >
-          {lang}
-        </button>
-      ))}
-    </div>
-  );
-}
+import { Trash2, ThumbsUp, ThumbsDown, CheckCircle2, Download, Info, Sparkles } from "lucide-react";
 
 export interface StatItem {
   label: string;
   dotColor: string;
   percentage: number;
-  infoTip?: string;
 }
 
 export interface StatBarProps {
@@ -82,7 +45,7 @@ export function StepList({ steps }: StepListProps) {
     <div className="space-y-3 font-sans">
       {steps.map((step) => (
         <div key={step.number} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-slate-800 dark:bg-slate-200 mt-2 shrink-0" />
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-600 dark:bg-emerald-400 mt-2 shrink-0" />
           <p>
             <strong className="font-bold text-slate-900 dark:text-white">Step {step.number}: </strong>
             {step.text}
@@ -143,11 +106,8 @@ export function HowToHumanizeSection() {
           <div className="lg:col-span-7">
             <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
               
-              {/* Language Tabs Row */}
-              <LanguageTabs />
-
-              {/* Split Panel */}
-              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-slate-800 p-5 gap-6">
+              {/* Split Panel (Multilanguage tabs removed as requested) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-slate-800 p-6 gap-6">
                 
                 {/* Left Pane: Sample Input Text */}
                 <div className="space-y-4 flex flex-col justify-between pr-0 md:pr-2">
@@ -156,9 +116,7 @@ export function HowToHumanizeSection() {
                       <h4 className="font-bold text-xs text-slate-800 dark:text-slate-200 font-heading">
                         Why is Swift AI Humanizer considered the best Free AI Humanizer?
                       </h4>
-                      <button type="button" aria-label="Delete text" className="text-slate-400 hover:text-red-500 transition-colors p-1 cursor-pointer">
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
+                      <Trash2 className="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 shrink-0" />
                     </div>
 
                     <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed font-sans space-y-2 max-h-[260px] overflow-y-auto pr-1">
@@ -175,12 +133,8 @@ export function HowToHumanizeSection() {
                   <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-400 font-medium">
                     <span>146 Words</span>
                     <div className="flex items-center gap-2">
-                      <button type="button" aria-label="Thumbs up" className="hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer">
-                        <ThumbsUp className="w-3.5 h-3.5" />
-                      </button>
-                      <button type="button" aria-label="Thumbs down" className="hover:text-slate-700 dark:hover:text-slate-200 transition-colors cursor-pointer">
-                        <ThumbsDown className="w-3.5 h-3.5" />
-                      </button>
+                      <ThumbsUp className="w-3.5 h-3.5 text-slate-300 dark:text-slate-600" />
+                      <ThumbsDown className="w-3.5 h-3.5 text-slate-300 dark:text-slate-600" />
                       <span className="flex items-center gap-1 text-emerald-600 dark:text-emerald-400 font-bold ml-2">
                         <CheckCircle2 className="w-3.5 h-3.5" />
                         <span>Analysis complete</span>
@@ -208,21 +162,17 @@ export function HowToHumanizeSection() {
                       <span className="text-[10px] font-semibold text-slate-400">AI</span>
                     </div>
                     <div className="flex flex-col items-center gap-1 h-full justify-end">
-                      <div className="w-8 bg-slate-200 dark:bg-slate-700 rounded-t-sm h-full" />
-                      <span className="text-[10px] font-semibold text-slate-600 dark:text-slate-300">Human</span>
+                      <div className="w-8 bg-emerald-500 dark:bg-emerald-600 rounded-t-sm h-full" />
+                      <span className="text-[10px] font-semibold text-slate-700 dark:text-slate-200">Human</span>
                     </div>
                   </div>
 
-                  {/* Download Report Link */}
+                  {/* Placeholder Download Report */}
                   <div className="text-center">
-                    <button
-                      type="button"
-                      onClick={() => window.print()}
-                      className="inline-flex items-center gap-1 text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:underline cursor-pointer"
-                    >
+                    <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-400 dark:text-slate-500 cursor-default">
                       <Download className="w-3.5 h-3.5" />
                       <span>Download report</span>
-                    </button>
+                    </span>
                   </div>
 
                   {/* Breakdown Stat List */}
@@ -241,7 +191,7 @@ export function HowToHumanizeSection() {
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs transition-transform hover:scale-105 shrink-0 shadow-xs"
                 >
                   <span>Refine with Paraphraser</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-200" />
                 </Link>
               </div>
 
@@ -261,16 +211,14 @@ export function HowToHumanizeSection() {
             {/* Componentized StepList */}
             <StepList steps={DEFAULT_STEPS} />
 
-            {/* Black Pill CTA Button with Feather Icon Badge */}
+            {/* Site Theme CTA Button: Try Swift Free */}
             <div className="pt-2">
               <Link
                 href="#humanizer"
-                className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-slate-100 dark:hover:bg-white dark:text-slate-900 text-white font-heading font-bold text-sm shadow-lg transition-transform hover:scale-105 active:scale-95"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm shadow-md transition-all hover:scale-105 active:scale-95"
               >
-                <span className="w-6 h-6 rounded-full bg-amber-400 text-slate-900 flex items-center justify-center font-bold text-xs shrink-0">
-                  ✏️
-                </span>
-                <span>Get started</span>
+                <Sparkles className="w-4 h-4 text-emerald-200" />
+                <span>Try Swift Free</span>
               </Link>
             </div>
           </div>

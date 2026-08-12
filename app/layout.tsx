@@ -17,7 +17,7 @@ const jakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
+  title: "Humanize AI text: Free AI Humanizer | Swift AI Humanizer",
   description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
   verification: {
     google: "Q7t__lMAWQEgaCl8IcVh58OwV254zz5chfeJyfq7ag8",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
+    title: "Humanize AI text: Free AI Humanizer | Swift AI Humanizer",
     description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
     url: "https://swiftaihumanizer.com",
     siteName: "Swift AI Humanizer",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Humanizer – Free AI Text to Human Converter | Swift AI",
+    title: "Humanize AI text: Free AI Humanizer | Swift AI Humanizer",
     description: "Free AI humanizer that turns ChatGPT, Claude & Gemini text into 100% human writing. Bypass Turnitin & GPTZero — backed by IEEE research, no sign-up.",
   },
   robots: {

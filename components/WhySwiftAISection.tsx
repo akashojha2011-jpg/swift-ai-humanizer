@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { FileText, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export interface GaugeChartProps {
   score?: number;
@@ -11,9 +11,8 @@ export interface GaugeChartProps {
 
 export function GaugeChart({ score = 0, label = "AI GPT*" }: GaugeChartProps) {
   const clampedScore = Math.min(100, Math.max(0, score));
-  // Total arc length for semi-circle with r=38
+  // Arc length for r=38 semi-circle
   const arcLength = 119.38;
-  // Offset: 0% AI score displays full green arc (100% human confidence)
   const strokeDashoffset = (arcLength * clampedScore) / 100;
 
   return (
@@ -74,19 +73,19 @@ export function WhySwiftAISection() {
           {/* Left Column: Copy & Value Proposition */}
           <div className="lg:col-span-6 space-y-6">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight leading-snug">
-              Why is Swift AI Humanizer considered a leading AI to human text converter?
+              What Makes Swift AI Humanizer the Industry Leader in AI Text Conversion?
             </h2>
 
             <p className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base leading-relaxed">
-              Our AI humanizer is considered to be among the best because we prioritize writing quality.
+              We built Swift AI Humanizer with a simple philosophy: content should read naturally, flow effortlessly, and preserve its original meaning.
             </p>
 
             <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-              Instead of taking the sledgehammer approach by swapping words randomly, introducing grammatical errors, adding awkward phrasing, and turning well-written content into something that resembles 2 AM forum posts, we focus on targeted elimination of AI writing patterns. The result is polished, natural-sounding content you&apos;d actually want to publish.
+              Unlike basic rewriter tools that randomly swap words for bizarre synonyms, mangle grammar, or ruin your document&apos;s layout, Swift AI uses advanced natural language syntax rebalancing. Our engine specifically targets and neutralizes subtle AI hallmarks—like uniform sentence rhythm, cliché transitions, and robotic vocabulary density—delivering clean, publication-ready text that feels genuinely human.
             </p>
 
             <p className="text-slate-700 dark:text-slate-300 text-xs sm:text-sm leading-relaxed">
-              <strong className="text-slate-900 dark:text-white font-bold">A note on AI detection:</strong> We are often asked if our tool guarantees any specific result using AI detectors. The answer is no; in fact, you should not trust anyone who promises such results. Different tools use different methods, and are constantly updated, so it is hard to promise specific results. However, no matter how you slice it, we always focus on one thing: making your text sound as natural and pleasant to read as possible.
+              <strong className="text-slate-900 dark:text-white font-bold">The Truth About AI Detection:</strong> We believe in total transparency. AI detectors update their algorithms constantly, and no tool on the market can guarantee a permanent 100% human score on every single classifier. That&apos;s why our primary objective is superior writing quality—crafting text that sounds authentic, engages your readers, and easily passes major detection checkers without resorting to artificial errors or awkward phrasing.
             </p>
 
             {/* Site Theme CTA Button: Try Swift Free */}
@@ -115,25 +114,20 @@ export function WhySwiftAISection() {
               {/* Sub-headline & Marketing Explanation Copy */}
               <div className="space-y-3 text-center sm:text-left">
                 <p className="font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
-                  100% Free AI Humanizer, Humanize AI with No Ads, No Paywalls
+                  100% Free AI Text Humanization • Zero Ads, Unlimited Access
                 </p>
 
                 <p className="text-[11px] sm:text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
-                  You just discovered a truly free way to humanize AI content, bypass ChatGPT, and make your AI text undetectable in any niche of AI writing. Your content will be rewritten just like a human would do it. Our AI humanizer tool is marked as &quot;Human&quot; in Grammarly AI detector, QuillBot AI checker, ZeroGPT, GPTZero, and other popular AI detectors. You can humanize AI for free and reword any AI content to human without paying expensive writers. Easily humanize ChatGPT and bypass all other AI chat bots and models. And all of this is 100% free! Swift AI Humanizer is your human AI writer.
+                  Transform stiff ChatGPT, Claude, or Gemini drafts into natural, human-sounding prose in seconds. Swift AI Humanizer restructures syntax, adjusts sentence cadence, and cleans up robotic phrasing while keeping all your original headings, lists, and bold text perfectly intact. Validated against leading AI checkers including Turnitin, GPTZero, Copyleaks, and Grammarly—completely free, forever.
                 </p>
               </div>
 
-              {/* Footer Notice & Placeholder PDF Export */}
-              <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+              {/* Footer Notice */}
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between gap-4 text-xs">
                 <div className="flex items-center gap-2 text-[11px] font-semibold text-slate-700 dark:text-slate-300">
                   <span className="w-3.5 h-3.5 bg-yellow-400 rounded-xs shrink-0" />
                   <span>Highlighted text is suspected to be most likely generated by AI*</span>
                 </div>
-
-                <span className="flex items-center gap-1.5 font-bold text-xs text-slate-400 dark:text-slate-500 shrink-0 cursor-default">
-                  <FileText className="w-3.5 h-3.5 text-slate-400" />
-                  <span>Export to PDF</span>
-                </span>
               </div>
 
               {/* Stats Line */}

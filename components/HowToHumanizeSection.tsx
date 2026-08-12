@@ -61,27 +61,27 @@ export function HowToHumanizeSection() {
     {
       number: 1,
       label: "Step 1",
-      text: "Visit this website: https://swiftaihumanizer.com via your browser.",
+      text: "Visit https://swiftaihumanizer.com in your web browser.",
     },
     {
       number: 2,
       label: "Step 2",
-      text: "Enter your AI generated text into the input box on the website.",
+      text: "Paste your ChatGPT, Claude, or Gemini text into the editor.",
     },
     {
       number: 3,
       label: "Step 3",
-      text: "Select the right humanization style for your goal.",
+      text: "Choose the writing mode and tone that best suits your audience.",
     },
     {
       number: 4,
       label: "Step 4",
-      text: "Click on \"Humanize AI\" to start the process. It may take a few seconds.",
+      text: "Click \"Humanize AI text\" to process your content in seconds.",
     },
     {
       number: 5,
       label: "Step 5",
-      text: "That's it. Your text is now ready to use.",
+      text: "Copy your natural, publish-ready content with formatting preserved.",
     },
   ];
 
@@ -106,7 +106,7 @@ export function HowToHumanizeSection() {
           <div className="lg:col-span-7">
             <div className="bg-white dark:bg-slate-900 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800 overflow-hidden flex flex-col">
               
-              {/* Split Panel (Multilanguage tabs removed as requested) */}
+              {/* Split Panel */}
               <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100 dark:divide-slate-800 p-6 gap-6">
                 
                 {/* Left Pane: Sample Input Text */}
@@ -114,17 +114,17 @@ export function HowToHumanizeSection() {
                   <div className="space-y-3">
                     <div className="flex items-center justify-between">
                       <h4 className="font-bold text-xs text-slate-800 dark:text-slate-200 font-heading">
-                        Why is Swift AI Humanizer considered the best Free AI Humanizer?
+                        Why writers and creators choose Swift AI Humanizer
                       </h4>
                       <Trash2 className="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 shrink-0" />
                     </div>
 
                     <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed font-sans space-y-2 max-h-[260px] overflow-y-auto pr-1">
                       <p>
-                        First of all, no AI humanizer can guarantee a zero score on every AI detector. That&apos;s because 90% of these detectors aren&apos;t perfect either. Even if they were, it would be nearly impossible to achieve without making your content look awkward or unnatural. Many tools that claim to humanize AI text simply introduce errors, add random spaces, use strange word choices, or turn the writing into something overly conversational or &quot;forum-style&quot; - which makes it unusable in most cases. Why settle for weird, low-quality content?
+                        Getting AI to draft your content is easy, but getting it to sound like a real person is another story. Most generic rewriters make things worse by injecting typos, replacing simple words with overly fancy synonyms, or stripping away your paragraph breaks and bullet points.
                       </p>
                       <p>
-                        Swift AI Humanizer is different. We actually care about proper grammar and readability. So, no, we won&apos;t promise you a 100% human score everywhere, but we do significantly lower your AI detection rate while keeping your content looking natural and polished! So yeah, Swift AI Humanizer is the best Humanizer tool nowadays!
+                        Swift AI Humanizer takes a completely different approach. We focus on natural rhythm, vocabulary variation, and sentence structure. Instead of fighting detectors with cheap tricks, we refine your text into smooth, engaging, and publishable writing that naturally passes AI inspection.
                       </p>
                     </div>
                   </div>
@@ -181,16 +181,16 @@ export function HowToHumanizeSection() {
 
               </div>
 
-              {/* Full Width Pale Green Bottom Bar */}
+              {/* Full Width Pale Green Bottom Bar: Changed button text to 'Humanize AI text' */}
               <div className="bg-emerald-50/80 dark:bg-emerald-950/50 p-4 border-t border-emerald-100 dark:border-emerald-900/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
                 <span className="font-semibold text-slate-800 dark:text-slate-200 text-center sm:text-left">
                   Want your text to sound more authentic?
                 </span>
                 <Link
                   href="#humanizer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs transition-transform hover:scale-105 shrink-0 shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs transition-transform hover:scale-105 shrink-0 shadow-xs"
                 >
-                  <span>Refine with Paraphraser</span>
+                  <span>Humanize AI text</span>
                   <Sparkles className="w-3.5 h-3.5 text-emerald-200" />
                 </Link>
               </div>
@@ -198,29 +198,18 @@ export function HowToHumanizeSection() {
             </div>
           </div>
 
-          {/* Right Column: Copy & Step List */}
+          {/* Right Column: Copy & Step List (Bottom button removed as requested) */}
           <div className="lg:col-span-5 space-y-6">
             <h2 className="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight leading-snug">
-              How can you Humanize AI text for Free?
+              How to Humanize AI Text in 5 Simple Steps
             </h2>
 
             <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
-              Here&apos;s how you can humanize AI text for free using our Swift Free AI Humanizer:
+              Transforming your AI drafts into human-sounding writing takes just a few clicks:
             </p>
 
             {/* Componentized StepList */}
             <StepList steps={DEFAULT_STEPS} />
-
-            {/* Site Theme CTA Button: Try Swift Free */}
-            <div className="pt-2">
-              <Link
-                href="#humanizer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm shadow-md transition-all hover:scale-105 active:scale-95"
-              >
-                <Sparkles className="w-4 h-4 text-emerald-200" />
-                <span>Try Swift Free</span>
-              </Link>
-            </div>
           </div>
 
         </div>

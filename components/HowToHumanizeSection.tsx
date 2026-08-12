@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Trash2, ThumbsUp, ThumbsDown, CheckCircle2, Download, Info, Sparkles } from "lucide-react";
+import { Trash2, ThumbsUp, ThumbsDown, CheckCircle2, Download, Info } from "lucide-react";
 
 export interface StatItem {
   label: string;
@@ -188,10 +188,9 @@ export function HowToHumanizeSection() {
                 </span>
                 <Link
                   href="#humanizer"
-                  className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs transition-transform hover:scale-105 shrink-0 shadow-xs"
+                  className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-xs transition-transform hover:scale-105 shrink-0 shadow-xs"
                 >
                   <span>Humanize AI text</span>
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-200" />
                 </Link>
               </div>
 

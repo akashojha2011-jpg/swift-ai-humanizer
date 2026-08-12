@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+
 
 export interface GaugeChartProps {
   score?: number;
@@ -88,14 +88,13 @@ export function WhySwiftAISection() {
               <strong className="text-slate-900 dark:text-white font-bold">The Truth About AI Detection:</strong> We believe in total transparency. AI detectors update their algorithms constantly, and no tool on the market can guarantee a permanent 100% human score on every single classifier. That&apos;s why our primary objective is superior writing quality—crafting text that sounds authentic, engages your readers, and easily passes major detection checkers without resorting to artificial errors or awkward phrasing.
             </p>
 
-            {/* Site Theme CTA Button: Try Swift Free */}
+            {/* Site Theme CTA Button: Humanize AI text */}
             <div className="pt-2">
               <Link
                 href="#humanizer"
-                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm shadow-md transition-all hover:scale-105 active:scale-95"
+                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-heading font-bold text-sm shadow-md transition-all hover:scale-105 active:scale-95"
               >
-                <Sparkles className="w-4 h-4 text-emerald-200" />
-                <span>Try Swift Free</span>
+                <span>Humanize AI text</span>
               </Link>
             </div>
           </div>

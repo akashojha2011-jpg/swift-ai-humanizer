@@ -19,7 +19,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "August 2026",
     readTime: "8 min read",
     author: "Elena Rostova",
-    authorTitle: "Lead Content Strategist & Stylistics Editor",
+    authorTitle: "Content Writer",
     authorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80",
     category: "Comparison",
     content: `
@@ -298,7 +298,7 @@ Use the same text. Test the same conditions. Read every output. Then choose the 
     date: "August 2026",
     readTime: "9 min read",
     author: "Sarah Jenkins",
-    authorTitle: "AI Ethics & Readability Benchmarks Lead",
+    authorTitle: "Content Strategist",
     authorAvatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=120&q=80",
     category: "Writing Tips",
     content: `
@@ -996,7 +996,7 @@ If the answer is yes, you're on the right track.
     date: "August 2026",
     readTime: "8 min read",
     author: "Dr. Marcus Vance",
-    authorTitle: "Head of NLP & AI Safety Research",
+    authorTitle: "AI Researcher",
     authorAvatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
     category: "Algorithms",
     content: `
@@ -1556,7 +1556,7 @@ It's writing that makes a real reader want to keep reading.
     date: "August 2026",
     readTime: "7 min read",
     author: "David K. Sterling",
-    authorTitle: "Senior Machine Learning Engineer",
+    authorTitle: "SEO Specialist",
     authorAvatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80",
     category: "Comparison",
     content: `

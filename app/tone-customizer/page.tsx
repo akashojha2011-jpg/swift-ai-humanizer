@@ -1,181 +1,116 @@
-"use client";
+import { Metadata } from "next";
+import { ToneCustomizerStudio } from "@/components/ToneCustomizerStudio";
+import { BookOpen, Briefcase, Megaphone, Feather, GraduationCap } from "lucide-react";
 
-import { useState } from "react";
-import { Sliders, Wand2, Copy, Check, Sparkles, FileText, FileCheck } from "lucide-react";
-import { humanizeText, HumanizeTone, convertMarkdownToHTML } from "@/lib/humanizerEngine";
+export const metadata: Metadata = {
+  title: "AI Writing Tone Customizer — Academic, Business & Creative Modes",
+  description: "Fine-tune your AI humanization tone across 5 specialized modes: Academic Paper, Conversational, Professional Business, Persuasive Marketing, and Creative Storytelling.",
+  openGraph: {
+    title: "AI Writing Tone Customizer — Academic, Business & Creative Modes",
+    description: "Fine-tune your AI humanization tone across 5 specialized modes: Academic Paper, Conversational, Professional Business, Persuasive Marketing, and Creative Storytelling.",
+    url: "https://swiftaihumanizer.com/tone-customizer",
+  },
+  twitter: {
+    title: "AI Writing Tone Customizer — Academic, Business & Creative Modes",
+    description: "Fine-tune your AI humanization tone across 5 specialized modes: Academic Paper, Conversational, Professional Business, Persuasive Marketing, and Creative Storytelling.",
+  },
+};
 
 export default function ToneCustomizerPage() {
-  const [input, setInput] = useState(
-    "Furthermore, it is important to note that artificial intelligence plays a crucial role in modern educational paradigms, fostering enhanced engagement and robust learning outcomes."
-  );
-  const [selectedTone, setSelectedTone] = useState<HumanizeTone>("academic");
-  const [output, setOutput] = useState("");
-  const [isProcessing, setIsProcessing] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const tones: { id: HumanizeTone; title: string; desc: string; sample: string }[] = [
-    {
-      id: "academic",
-      title: "Academic Paper",
-      desc: "Formal scholarly prose suitable for research essays, dissertations, and journal submissions.",
-      sample: "Keeps formal terminology while eliminating robotic LLM transition markers.",
-    },
-    {
-      id: "casual",
-      title: "Conversational / General",
-      desc: "Natural spoken English with contractions, varied sentence rhythms, and warm tone.",
-      sample: "Great for blog posts, social media, medium articles, and personal writing.",
-    },
-    {
-      id: "professional",
-      title: "Professional Business",
-      desc: "Clear, concise corporate communication for emails, proposals, and executive summaries.",
-      sample: "Polished and direct without corporate jargon or artificial AI fluff.",
-    },
-    {
-      id: "marketing",
-      title: "Persuasive Marketing",
-      desc: "High-converting copy designed to captivate readers and prompt clear action.",
-      sample: "Engaging and punchy phrasing for landing pages and promotional emails.",
-    },
-    {
-      id: "creative",
-      title: "Creative Story",
-      desc: "Expressive prose with rich sensory details, varied pacing, and narrative flair.",
-      sample: "Vivid sentence structures that bring fiction and personal narratives to life.",
-    },
-  ];
-
-  const handleTune = async () => {
-    if (!input.trim()) return;
-    setIsProcessing(true);
-    try {
-      const res = await humanizeText(input, { tone: selectedTone, mode: "deep" });
-      setOutput(res.humanizedText);
-    } catch (e) {
-      console.error(e);
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
-  const handleCopy = () => {
-    if (!output) return;
-    navigator.clipboard.writeText(output);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10 font-sans">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 font-sans">
+      
+      {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-slate-900 dark:text-white">
-          Tone Customization Studio
+        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-slate-900 dark:text-white tracking-tight">
+          AI Writing Tone Customization Studio
         </h1>
-        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Fine-tune the exact writing personality of your output across 5 specialized tones with zero meaning or bullet loss.
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+          Fine-tune the exact authorial voice of your humanized prose across 5 specialized writing personas while preserving 100% of original formatting and subheadings.
         </p>
       </div>
 
-      {/* Tone Cards Selector */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        {tones.map((t) => (
-          <button
-            key={t.id}
-            onClick={() => setSelectedTone(t.id)}
-            className={`p-4 rounded-2xl text-left border transition-all flex flex-col justify-between space-y-2 ${
-              selectedTone === t.id
-                ? "bg-brand-50/90 dark:bg-emerald-950/80 border-brand-500 dark:border-emerald-600 shadow-md scale-[1.02]"
-                : "bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
-            }`}
-          >
-            <div className="space-y-1">
-              <span className={`text-xs font-heading font-extrabold block ${
-                selectedTone === t.id ? "text-brand-900 dark:text-emerald-300" : "text-slate-900 dark:text-white"
-              }`}>
-                {t.title}
-              </span>
-              <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3">
-                {t.desc}
-              </p>
-            </div>
-            {selectedTone === t.id && (
-              <span className="text-[10px] font-mono font-bold text-brand-600 dark:text-emerald-400 flex items-center gap-1">
-                <Check className="w-3 h-3" /> Active Tone
-              </span>
-            )}
-          </button>
-        ))}
-      </div>
+      {/* Interactive Studio Component */}
+      <ToneCustomizerStudio />
 
-      {/* Main Workbench */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-3xl shadow-float">
-        {/* Left: Input */}
-        <div className="space-y-4 flex flex-col justify-between">
-          <div className="space-y-2">
-            <label className="font-heading font-extrabold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-              <FileText className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
-              <span>Input Draft</span>
-            </label>
-            <textarea
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Paste text here to tune tone..."
-              className="w-full h-64 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-brand-500 resize-none font-sans leading-relaxed"
-            />
-          </div>
-
-          <button
-            onClick={handleTune}
-            disabled={isProcessing || !input.trim()}
-            className="w-full py-3.5 rounded-full font-heading font-bold text-xs text-white bg-brand-600 hover:bg-brand-700 disabled:opacity-40 shadow-md flex items-center justify-center gap-2 transition-all"
-          >
-            <Wand2 className="w-4 h-4" />
-            <span>{isProcessing ? "Tuning Tone..." : `Apply ${selectedTone.toUpperCase()} Tone`}</span>
-          </button>
+      {/* Crawlable Informational Explainer (Bumps word count to 500+ words) */}
+      <section className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8 sm:p-10 space-y-8 shadow-xs">
+        
+        <div className="space-y-3">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight">
+            How Specialized Writing Tones Work
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+            AI text humanization is not one-size-fits-all. An academic paper submitted to Turnitin requires formal scholarly vocabulary without colloquialisms, whereas a viral blog post or marketing email needs punchy sentence rhythms, contractions, and direct audience engagement. Swift AI Tone Customizer rebalances POS distributions, sentence length variance, and transition markers tailored to your specific audience.
+          </p>
         </div>
 
-        {/* Right: Output */}
-        <div className="space-y-4 flex flex-col justify-between">
-          <div className="space-y-2">
-            <div className="flex items-center justify-between">
-              <label className="font-heading font-extrabold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-amber-500" />
-                <span>Tuned Result</span>
-              </label>
-              {output && (
-                <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/80 px-2.5 py-0.5 rounded-full border border-emerald-200 dark:border-emerald-800 font-bold">
-                  Tone Applied
-                </span>
-              )}
+        {/* 5 Tone Breakdown Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
+          
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold mb-1">
+              <GraduationCap className="w-4 h-4" />
             </div>
-
-            <div className="w-full h-64 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-sm text-slate-800 dark:text-slate-200 overflow-y-auto leading-relaxed font-sans">
-              {output ? (
-                <div
-                  className="prose prose-slate dark:prose-invert max-w-none text-sm"
-                  dangerouslySetInnerHTML={{ __html: convertMarkdownToHTML(output) }}
-                />
-              ) : (
-                <div className="h-full flex flex-col items-center justify-center text-center space-y-2">
-                  <Sliders className="w-6 h-6 text-slate-400 animate-pulse" />
-                  <p className="text-xs text-slate-400 font-medium">Select a tone and click Apply to preview tuned prose</p>
-                </div>
-              )}
-            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Academic Paper Mode
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Maintains formal scholarly terminology and precise objective reasoning while purging robotic ChatGPT transitions (&quot;furthermore,&quot; &quot;in conclusion,&quot; &quot;testament to&quot;).
+            </p>
           </div>
 
-          {output && (
-            <button
-              onClick={handleCopy}
-              className="w-full py-3.5 rounded-full font-heading font-bold text-xs text-brand-900 dark:text-emerald-200 bg-brand-50 dark:bg-emerald-950 border border-brand-200 dark:border-emerald-800 hover:bg-brand-100 flex items-center justify-center gap-2 transition-all"
-            >
-              {copied ? <Check className="w-4 h-4 text-emerald-600" /> : <Copy className="w-4 h-4 text-brand-600" />}
-              <span>{copied ? "Copied Tuned Output!" : "Copy Tuned Output"}</span>
-            </button>
-          )}
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold mb-1">
+              <BookOpen className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Conversational / General
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Employs natural spoken English cadences, natural contractions, and varied sentence lengths. Ideal for Medium articles, personal blogs, and everyday writing.
+            </p>
+          </div>
+
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-slate-200 dark:bg-slate-700 text-slate-700 dark:text-slate-200 flex items-center justify-center font-bold mb-1">
+              <Briefcase className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Professional Business
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Delivers concise, executive-ready communication for corporate emails, stakeholder updates, and strategy proposals without unnecessary AI filler.
+            </p>
+          </div>
+
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold mb-1">
+              <Megaphone className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Persuasive Marketing
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              High-converting, action-oriented copy that builds emotional resonance with readers. Perfect for landing pages, ad copy, and sales outreach campaigns.
+            </p>
+          </div>
+
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold mb-1">
+              <Feather className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Creative Story Mode
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-sans">
+              Rich sensory descriptions, dynamic narrative pacing, and vivid sentence structures that bring personal essays and creative fiction to life.
+            </p>
+          </div>
+
         </div>
-      </div>
+
+      </section>
     </div>
   );
 }

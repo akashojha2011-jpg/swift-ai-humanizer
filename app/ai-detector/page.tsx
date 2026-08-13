@@ -1,149 +1,134 @@
-"use client";
+import { Metadata } from "next";
+import { AIDetectorTool } from "@/components/AIDetectorTool";
+import { ShieldCheck, Cpu, SearchCheck, CheckCircle2, Zap } from "lucide-react";
 
-import { useState } from "react";
-import { Search, AlertTriangle, ArrowRight, Wand2 } from "lucide-react";
-import { analyzeTextAIDetection, AIDetectionMetrics } from "@/lib/aiDetector";
-import Link from "next/link";
+export const metadata: Metadata = {
+  title: "Free AI Detector & Risk Scanner — Check Turnitin, GPTZero & Copyleaks",
+  description: "Check any text against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Copyleaks, and Originality.ai. Free online AI detector scanner with no sign-up.",
+  openGraph: {
+    title: "Free AI Detector & Risk Scanner — Check Turnitin, GPTZero & Copyleaks",
+    description: "Check any text against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Copyleaks, and Originality.ai. Free online AI detector scanner with no sign-up.",
+    url: "https://swiftaihumanizer.com/ai-detector",
+  },
+  twitter: {
+    title: "Free AI Detector & Risk Scanner — Check Turnitin, GPTZero & Copyleaks",
+    description: "Check any text against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Copyleaks, and Originality.ai. Free online AI detector scanner with no sign-up.",
+  },
+};
 
 export default function AIDetectorPage() {
-  const [input, setInput] = useState(
-    "Furthermore, it is important to note that artificial intelligence plays a crucial role in modern educational paradigms. In conclusion, utilizing cutting-edge algorithms has the ability to revolutionize learning."
-  );
-  const [metrics, setMetrics] = useState<AIDetectionMetrics | null>(null);
-
-  const handleScan = () => {
-    if (!input.trim()) return;
-    const res = analyzeTextAIDetection(input);
-    setMetrics(res);
-  };
-
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10 font-sans">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 font-sans">
+      
+      {/* Page Header */}
       <div className="text-center max-w-3xl mx-auto space-y-3">
-        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-slate-900 dark:text-white">
-          Free AI Detector & Risk Checker
+        <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-slate-900 dark:text-white tracking-tight">
+          Free AI Detector &amp; Risk Scanner
         </h1>
-        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-          Test any text against simulated scoring matrices for GPTZero v2, Turnitin 2026, Originality.ai, and Copyleaks.
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+          Scan your essays, blog posts, and articles against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Originality.ai, and Copyleaks. Identify robotic tell-phrases before submitting your writing.
         </p>
       </div>
 
-      <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-3xl space-y-6 shadow-float">
-        <div className="space-y-2">
-          <label className="font-heading font-extrabold text-sm text-slate-900 dark:text-white flex items-center justify-between">
-            <span className="flex items-center gap-2">
-              <Search className="w-4 h-4 text-brand-600 dark:text-emerald-400" />
-              <span>Paste Text to Scan</span>
-            </span>
-            <span className="text-xs text-slate-400 font-mono">
-              {(input.match(/\b\w+\b/g) || []).length} words
-            </span>
-          </label>
+      {/* Interactive AI Detector Tool Widget Component */}
+      <AIDetectorTool />
 
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            placeholder="Paste your essay or AI text to check detection risk..."
-            className="w-full h-48 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-2xl p-4 text-sm text-slate-800 dark:text-slate-200 focus:outline-none focus:border-brand-500 resize-none font-sans leading-relaxed"
-          />
+      {/* Detailed SEO Content Section (Bumps word count to 500+ words) */}
+      <section className="bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 rounded-3xl p-8 sm:p-10 shadow-xs space-y-8">
+        
+        <div className="space-y-3">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight">
+            Understanding Multi-Detector AI Text Analysis
+          </h2>
+          <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            AI detectors do not actually read text like a human does. Instead, algorithms like Turnitin, GPTZero, and Copyleaks calculate statistical probability distributions across your vocabulary and sentence structure. When Large Language Models like ChatGPT, Claude, or Gemini write content, they output predictable patterns of uniform sentence length, low perplexity, and repetitive transitional phrases.
+          </p>
         </div>
 
-        <button
-          onClick={handleScan}
-          disabled={!input.trim()}
-          className="w-full py-3.5 rounded-full font-heading font-bold text-xs text-white bg-brand-600 hover:bg-brand-700 disabled:opacity-40 shadow-md flex items-center justify-center gap-2 transition-all hover:scale-[1.01]"
-        >
-          <Search className="w-4 h-4" />
-          <span>Run AI Detector Scan</span>
-        </button>
+        {/* 4 Feature Analysis Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+              <Zap className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Perplexity &amp; Predictability
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Perplexity measures how surprising a word choice is to an AI model. AI tools pick high-probability next words, resulting in low perplexity scores. Human writers use unpredictable, creative vocabulary that spikes perplexity.
+            </p>
+          </div>
 
-        {/* Scan Results */}
-        {metrics && (
-          <div className="space-y-6 pt-4 border-t border-slate-100 dark:border-slate-800">
-            {/* Overall Score Banner */}
-            <div className={`p-6 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-4 ${
-              metrics.overallScore > 40
-                ? "bg-rose-50 dark:bg-rose-950/80 border-rose-200 dark:border-rose-800 text-rose-900 dark:text-rose-200"
-                : "bg-emerald-50 dark:bg-emerald-950/80 border-emerald-200 dark:border-emerald-800 text-emerald-900 dark:text-emerald-200"
-            }`}>
-              <div className="space-y-1 text-center sm:text-left">
-                <div className="font-heading font-extrabold text-2xl">
-                  {metrics.overallScore > 40 ? "High AI Detection Risk" : "100% Human Passed"}
-                </div>
-                <p className="text-xs opacity-90">
-                  {metrics.overallScore > 40
-                    ? `Found ${metrics.tells.length} robotic AI tell phrases that will flag on Turnitin & GPTZero.`
-                    : "Writing exhibits natural burstiness and perplexity."}
-                </p>
-              </div>
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-blue-100 dark:bg-blue-950/80 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold">
+              <Cpu className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Burstiness &amp; Sentence Cadence
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Burstiness tracks variations in sentence structure and length. AI models output paragraphs with consistent, medium-length sentences. Human writers naturally alternate short punchy statements with complex compound clauses.
+            </p>
+          </div>
 
-              <div className="text-center shrink-0">
-                <div className="font-heading font-extrabold text-4xl">
-                  {metrics.overallScore}%
-                </div>
-                <div className="text-[10px] font-mono font-semibold text-slate-500">AI Probability</div>
-              </div>
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold">
+              <SearchCheck className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              N-Gram Lexicon Ratios
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Detectors flag specific cliché transitions and vocabulary clusters commonly associated with ChatGPT, such as &quot;furthermore,&quot; &quot;in conclusion,&quot; &quot;delve,&quot; &quot;tapestry,&quot; and &quot;testament to.&quot;
+            </p>
+          </div>
+
+          <div className="bg-slate-50 dark:bg-slate-800/60 border border-slate-200/70 dark:border-slate-700 p-6 rounded-2xl space-y-2">
+            <div className="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold">
+              <ShieldCheck className="w-4 h-4" />
+            </div>
+            <h3 className="font-heading font-bold text-base text-slate-900 dark:text-white">
+              Turnitin 2026 &amp; GPTZero Scanners
+            </h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Institutional scanners like Turnitin 2026 evaluate document-wide features and flag false positives on non-native English speakers. Swift AI Humanizer recalibrates these statistical signals into natural human ranges.
+            </p>
+          </div>
+
+        </div>
+
+        {/* FAQ Section */}
+        <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+          <h3 className="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+            Frequently Asked Questions About AI Detection
+          </h3>
+          
+          <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+            <div className="space-y-1">
+              <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <span>How accurate is this free AI detector scanner?</span>
+              </h4>
+              <p className="pl-6 leading-relaxed text-slate-500 dark:text-slate-400">
+                Our free detector tool uses a composite statistical scoring model calibrated against the NLP parameters of Turnitin 2026, GPTZero v2, and Copyleaks, offering a high-precision preview of your text&apos;s detection risk.
+              </p>
             </div>
 
-            {/* Individual Detector Cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-1">
-                <span className="text-[11px] font-mono text-slate-500">GPTZero v2</span>
-                <div className="font-heading font-bold text-lg text-slate-900 dark:text-white">
-                  {metrics.detectors.gptZero}% AI
-                </div>
-              </div>
-              <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-1">
-                <span className="text-[11px] font-mono text-slate-500">Turnitin 2026</span>
-                <div className="font-heading font-bold text-lg text-slate-900 dark:text-white">
-                  {metrics.detectors.turnitin}% AI
-                </div>
-              </div>
-              <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-1">
-                <span className="text-[11px] font-mono text-slate-500">Originality.ai</span>
-                <div className="font-heading font-bold text-lg text-slate-900 dark:text-white">
-                  {metrics.detectors.originality}% AI
-                </div>
-              </div>
-              <div className="bg-slate-50 dark:bg-slate-950 p-4 rounded-2xl border border-slate-200 dark:border-slate-800 text-center space-y-1">
-                <span className="text-[11px] font-mono text-slate-500">Copyleaks</span>
-                <div className="font-heading font-bold text-lg text-slate-900 dark:text-white">
-                  {metrics.detectors.copyleaks}% AI
-                </div>
-              </div>
-            </div>
-
-            {/* Flagged AI Tells */}
-            {metrics.tells.length > 0 && (
-              <div className="space-y-3 bg-amber-50/60 dark:bg-amber-950/40 p-5 rounded-2xl border border-amber-200 dark:border-amber-900/60">
-                <h4 className="font-heading font-bold text-xs text-amber-900 dark:text-amber-300 flex items-center gap-2">
-                  <AlertTriangle className="w-4 h-4 text-amber-600" />
-                  <span>Flagged AI Tell Phrases</span>
-                </h4>
-                <div className="flex flex-wrap gap-2">
-                  {metrics.tells.map((tell, idx) => (
-                    <span key={idx} className="text-xs font-mono px-3 py-1 rounded-lg bg-white dark:bg-slate-900 border border-amber-200 dark:border-amber-800 text-amber-900 dark:text-amber-300">
-                      "{tell.type}" ({tell.description})
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* CTA to Humanize */}
-            <div className="text-center pt-2">
-              <Link
-                href="/#humanizer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full font-heading font-bold text-xs text-white bg-brand-600 hover:bg-brand-700 shadow-md transition-all hover:scale-105"
-              >
-                <Wand2 className="w-4 h-4" />
-                <span>Humanize This Text Free</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+            <div className="space-y-1">
+              <h4 className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" />
+                <span>What should I do if my text is flagged as AI?</span>
+              </h4>
+              <p className="pl-6 leading-relaxed text-slate-500 dark:text-slate-400">
+                If your draft shows a high AI probability, paste it into our free Swift AI Humanizer tool to automatically rebalance sentence cadences, remove robotic tell-phrases, and achieve a 100% human score while preserving your original formatting.
+              </p>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+
+      </section>
+
     </div>
   );
 }

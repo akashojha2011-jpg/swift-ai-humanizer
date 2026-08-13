@@ -20,7 +20,9 @@ const ComparisonTable = dynamic(() => import("@/components/ComparisonTable").the
 const UseCases = dynamic(() => import("@/components/UseCases").then((mod) => mod.UseCases), {
   ssr: true,
 });
-
+const NecessitySection = dynamic(() => import("@/components/NecessitySection").then((mod) => mod.NecessitySection), {
+  ssr: true,
+});
 const FAQSection = dynamic(() => import("@/components/FAQSection").then((mod) => mod.FAQSection), {
   ssr: true,
 });
@@ -207,7 +209,10 @@ export default function Home() {
         {/* 7. Who Can Benefit (Use Cases) */}
         <UseCases />
 
-        {/* 8. Frequently Asked Questions (FAQ) & Schema */}
+        {/* 8. Necessity of Humanizing AI Text */}
+        <NecessitySection />
+
+        {/* 9. Frequently Asked Questions (FAQ) & Schema */}
         <FAQSection />
 
         {/* 9. Final CTA Banner */}

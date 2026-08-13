@@ -70,6 +70,9 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
 
           {/* Center: Main Navigation Links (Normal font weight) */}
           <nav className="hidden lg:flex items-center gap-8 font-sans">
+            <Link href="/#humanizer" className="text-sm font-semibold text-brand-600 dark:text-emerald-400 hover:text-brand-700 dark:hover:text-emerald-300 transition-colors">
+              Humanizer
+            </Link>
             <Link href="/how-it-works" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               How It Works
             </Link>
@@ -135,6 +138,13 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-3 pb-6 space-y-3 shadow-lg">
+          <Link
+            href="/#humanizer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 rounded-xl text-base font-semibold text-brand-600 dark:text-emerald-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Humanizer
+          </Link>
           <Link
             href="/how-it-works"
             onClick={() => setMobileMenuOpen(false)}

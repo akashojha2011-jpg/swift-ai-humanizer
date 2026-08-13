@@ -6,6 +6,7 @@ export interface BlogPost {
   readTime: string;
   author: string;
   authorTitle: string;
+  authorAvatar: string;
   category: "Comparison" | "Algorithms" | "Writing Tips" | "Academic";
   content: string;
 }
@@ -17,8 +18,9 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt: "Compare the best AI humanizer tools in 2026 for natural writing, readability, AI detection performance, pricing, and overall output quality.",
     date: "August 2026",
     readTime: "8 min read",
-    author: "Swift AI Research Team",
-    authorTitle: "Editorial & Benchmark Testing Group",
+    author: "Alina Lytvyniv | Swift AI",
+    authorTitle: "Content Strategist & AI Writing Specialist",
+    authorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
     category: "Comparison",
     content: `
 | Tool | Best For | Main Strength | Writing Quality |
@@ -295,8 +297,9 @@ Use the same text. Test the same conditions. Read every output. Then choose the 
     excerpt: "Learn 5 simple rules to make ChatGPT content read naturally. Improve sentence flow, word choice, tone, and personality so AI writing feels more human.",
     date: "August 2026",
     readTime: "9 min read",
-    author: "Swift AI Editorial Team",
-    authorTitle: "Digital Writing & Content Strategy Lead",
+    author: "Solomiia Salashnyk | Swift AI",
+    authorTitle: "Product Marketing Manager",
+    authorAvatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=120&q=80",
     category: "Writing Tips",
     content: `
 ## Introduction
@@ -992,8 +995,9 @@ If the answer is yes, you're on the right track.
     excerpt: "Learn how GPTZero and Turnitin detect AI-generated text, why AI detection can be inaccurate, and practical ways to make AI-assisted writing sound more natural.",
     date: "August 2026",
     readTime: "8 min read",
-    author: "Swift AI Research Team",
-    authorTitle: "AI Detection & NLP Classifier Specialist",
+    author: "Iryna Smuk | Swift AI",
+    authorTitle: "Content Marketing Manager & NLP Specialist",
+    authorAvatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80",
     category: "Algorithms",
     content: `
 ## Introduction
@@ -1551,8 +1555,9 @@ It's writing that makes a real reader want to keep reading.
     excerpt: "Learn the difference between AI humanizers and AI detector bypass tools, how each works, and what to prioritize when editing AI content.",
     date: "August 2026",
     readTime: "7 min read",
-    author: "Swift AI Research Team",
-    authorTitle: "Content Strategy & AI Detection Research Group",
+    author: "Alina Lytvyniv | Swift AI",
+    authorTitle: "Content Strategist & AI Writing Specialist",
+    authorAvatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80",
     category: "Comparison",
     content: `
 AI writing has changed how quickly we can create content. A blog post that once took several hours to draft can now have a workable first version in a few minutes.

@@ -97,20 +97,26 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
             {post.title}
           </h1>
 
-          {/* Investopedia Byline: By AUTHOR Published DATE */}
-          <div className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans flex flex-wrap items-center gap-x-2 gap-y-1">
-            <span>By</span>
-            <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider underline underline-offset-2 decoration-slate-300 dark:decoration-slate-700">
-              {post.author}
-            </span>
-            <span className="text-slate-300 dark:text-slate-700">•</span>
-            <span>{post.authorTitle}</span>
-            <span className="text-slate-300 dark:text-slate-700">•</span>
-            <span>Published {post.date} 06:00 AM EDT</span>
+          {/* Author Byline Header */}
+          <div className="pt-2 flex items-center gap-3.5 text-xs sm:text-sm font-sans">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={post.authorAvatar}
+              alt={post.author}
+              className="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700 shrink-0"
+            />
+            <div>
+              <div className="font-bold text-slate-900 dark:text-white text-sm">
+                {post.author}
+              </div>
+              <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                {post.authorTitle} • Published {post.date}
+              </div>
+            </div>
           </div>
         </header>
 
-        {/* Investopedia 2-Column Main Content Layout */}
+        {/* 2-Column Main Content Layout */}
         <div className="flex flex-col lg:flex-row gap-8 items-start">
           {/* Sticky Left Sidebar Table of Contents */}
           <InvestopediaTOC items={toc} />
@@ -127,6 +133,27 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               className="space-y-6 text-base sm:text-lg leading-relaxed text-slate-800 dark:text-slate-200"
               dangerouslySetInnerHTML={{ __html: html }}
             />
+
+            {/* Author Bio Card */}
+            <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex items-center gap-4 shadow-2xs mt-10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={post.authorAvatar}
+                alt={post.author}
+                className="w-14 h-14 rounded-full object-cover border border-slate-200 dark:border-slate-700 shrink-0"
+              />
+              <div className="space-y-0.5">
+                <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-brand-600 dark:text-emerald-400">
+                  Article Author
+                </span>
+                <h4 className="font-heading font-extrabold text-base text-slate-900 dark:text-white">
+                  {post.author}
+                </h4>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+                  {post.authorTitle}
+                </p>
+              </div>
+            </div>
 
             {/* Investopedia Bottom CTA Banner */}
             <div className="bg-slate-900 dark:bg-slate-950 rounded-2xl p-8 text-center text-white space-y-4 shadow-md mt-14 border border-slate-800">

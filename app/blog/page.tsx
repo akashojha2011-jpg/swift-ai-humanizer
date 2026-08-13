@@ -59,11 +59,24 @@ export default function BlogPage() {
                 {featuredPost.excerpt}
               </p>
 
-              <div className="pt-2 flex items-center justify-between text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-sans">
-                <div>
-                  By <span className="font-bold text-slate-900 dark:text-white uppercase tracking-wider">{featuredPost.author}</span>
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-4 text-xs sm:text-sm font-sans">
+                <div className="flex items-center gap-3 min-w-0">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={featuredPost.authorAvatar}
+                    alt={featuredPost.author}
+                    className="w-10 h-10 rounded-full object-cover border border-slate-200 dark:border-slate-700 shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <div className="font-bold text-slate-900 dark:text-white text-xs sm:text-sm truncate">
+                      {featuredPost.author}
+                    </div>
+                    <div className="text-xs text-slate-500 dark:text-slate-400 font-medium truncate">
+                      {featuredPost.authorTitle}
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5 font-bold text-brand-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform">
+                <div className="flex items-center gap-1.5 font-bold text-brand-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform shrink-0">
                   <span>Read Full Article</span>
                   <ArrowRight className="w-4 h-4" />
                 </div>
@@ -100,11 +113,24 @@ export default function BlogPage() {
                 </p>
               </div>
 
-              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
-                <span className="font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider truncate max-w-[150px]">
-                  By {post.author.split(" ")[0]} {post.author.split(" ")[1] || ""}
-                </span>
-                <div className="flex items-center gap-1 font-bold text-brand-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform">
+              <div className="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={post.authorAvatar}
+                    alt={post.author}
+                    className="w-8 h-8 rounded-full object-cover border border-slate-200 dark:border-slate-700 shrink-0"
+                  />
+                  <div className="min-w-0 flex-1">
+                    <div className="font-bold text-slate-900 dark:text-white text-xs truncate">
+                      {post.author}
+                    </div>
+                    <div className="text-[11px] text-slate-500 dark:text-slate-400 font-medium truncate">
+                      {post.authorTitle}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 font-bold text-brand-600 dark:text-emerald-400 group-hover:translate-x-0.5 transition-transform shrink-0">
                   <span>Read</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </div>

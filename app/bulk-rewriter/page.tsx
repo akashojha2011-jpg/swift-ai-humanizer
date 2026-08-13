@@ -3,15 +3,15 @@ import { BulkRewriterWorkbench } from "@/components/BulkRewriterWorkbench";
 import { Layers, CheckCircle2, FileText, Zap, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Bulk AI Text Rewriter — Humanize Full Word Documents & Articles Free",
+  title: "Bulk AI Text Rewriter: Full Documents | Swift AI",
   description: "Free bulk AI text rewriter tool. Upload Word documents (.docx) or multi-paragraph articles to humanize entire documents at once while preserving headers and bullet points.",
   openGraph: {
-    title: "Bulk AI Text Rewriter — Humanize Full Word Documents & Articles Free",
+    title: "Bulk AI Text Rewriter: Full Documents | Swift AI",
     description: "Free bulk AI text rewriter tool. Upload Word documents (.docx) or multi-paragraph articles to humanize entire documents at once while preserving headers and bullet points.",
     url: "https://swiftaihumanizer.com/bulk-rewriter",
   },
   twitter: {
-    title: "Bulk AI Text Rewriter — Humanize Full Word Documents & Articles Free",
+    title: "Bulk AI Text Rewriter: Full Documents | Swift AI",
     description: "Free bulk AI text rewriter tool. Upload Word documents (.docx) or multi-paragraph articles to humanize entire documents at once while preserving headers and bullet points.",
   },
 };

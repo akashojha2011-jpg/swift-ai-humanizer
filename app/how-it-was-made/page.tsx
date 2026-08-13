@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Cpu, ShieldCheck, CheckCircle2, FileText, Zap, BarChart2, Layers, Award } from "lucide-react";
 
 export const metadata = {
-  title: "How Swift AI Was Built — IEEE Research & Detection Evasion Architecture",
+  title: "IEEE Research & Architecture | Swift AI",
   description: "Learn how Swift AI Humanizer reverse-engineers AI detector classifiers (Turnitin, Copyleaks, GPTZero) using peer-reviewed IEEE research (Nguyen, Hatua & Sung, 2023).",
 };
 

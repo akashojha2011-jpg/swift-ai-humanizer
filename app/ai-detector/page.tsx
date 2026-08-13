@@ -3,15 +3,15 @@ import { AIDetectorTool } from "@/components/AIDetectorTool";
 import { ShieldCheck, Cpu, SearchCheck, CheckCircle2, Zap } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free AI Detector & Risk Scanner — Check Turnitin, GPTZero & Copyleaks",
+  title: "Free AI Detector & Risk Scanner | Swift AI",
   description: "Check any text against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Copyleaks, and Originality.ai. Free online AI detector scanner with no sign-up.",
   openGraph: {
-    title: "Free AI Detector & Risk Scanner — Check Turnitin, GPTZero & Copyleaks",
+    title: "Free AI Detector & Risk Scanner | Swift AI",
     description: "Check any text against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Copyleaks, and Originality.ai. Free online AI detector scanner with no sign-up.",
     url: "https://swiftaihumanizer.com/ai-detector",
   },
   twitter: {
-    title: "Free AI Detector & Risk Scanner — Check Turnitin, GPTZero & Copyleaks",
+    title: "Free AI Detector & Risk Scanner | Swift AI",
     description: "Check any text against simulated AI detection matrices for Turnitin 2026, GPTZero v2, Copyleaks, and Originality.ai. Free online AI detector scanner with no sign-up.",
   },
 };

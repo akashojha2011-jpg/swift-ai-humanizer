@@ -1,12 +1,22 @@
 import Link from "next/link";
 import { ArrowRight, BookOpen, Cpu, ShieldCheck, CheckCircle2, FileText, Zap, BarChart2, Layers, Award } from "lucide-react";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "IEEE Research & Architecture | Swift AI",
   description: "Learn how Swift AI Humanizer reverse-engineers AI detector classifiers (Turnitin, Copyleaks, GPTZero) using peer-reviewed IEEE research (Nguyen, Hatua & Sung, 2023).",
+  openGraph: {
+    title: "IEEE Research & Architecture | Swift AI",
+    description: "Learn how Swift AI Humanizer reverse-engineers AI detector classifiers (Turnitin, Copyleaks, GPTZero) using peer-reviewed IEEE research (Nguyen, Hatua & Sung, 2023).",
+    url: "https://swiftaihumanizer.com/research-architecture",
+  },
+  twitter: {
+    title: "IEEE Research & Architecture | Swift AI",
+    description: "Learn how Swift AI Humanizer reverse-engineers AI detector classifiers (Turnitin, Copyleaks, GPTZero) using peer-reviewed IEEE research (Nguyen, Hatua & Sung, 2023).",
+  },
 };
 
-export default function HowItWasMadePage() {
+export default function ResearchArchitecturePage() {
   return (
     <div className="relative overflow-hidden bg-[#F9FAFB] dark:bg-[#0F172A] min-h-screen py-12 transition-colors font-sans">
       {/* Background Accent Glow */}
@@ -25,7 +35,7 @@ export default function HowItWasMadePage() {
           </h1>
 
           <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-            Rather than using surface-level word swaps, Swift AI Humanizer reverse-engineers machine learning classifiers using the 10 handcrafted NLP features identified by IEEE researchers <span className="font-semibold text-slate-900 dark:text-white">(Nguyen, Hatua & Sung)</span>.
+            Rather than using surface-level word swaps, Swift AI Humanizer reverse-engineers machine learning classifiers using the 10 handcrafted NLP features identified by IEEE researchers <span className="font-semibold text-slate-900 dark:text-white">(Nguyen, Hatua &amp; Sung)</span>.
           </p>
         </div>
 
@@ -36,7 +46,7 @@ export default function HowItWasMadePage() {
               System Architecture Diagram
             </span>
             <h2 className="font-heading font-bold text-2xl text-slate-900 dark:text-white">
-              The 4-Stage Evasion & Transformation Pipeline
+              The 4-Stage Evasion &amp; Transformation Pipeline
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">
               How raw AI text passes through feature extraction, SHAP balancing, and natural human reconstruction.
@@ -81,7 +91,7 @@ export default function HowItWasMadePage() {
               <rect x="545" y="55" width="36" height="36" rx="10" fill="#10B981" fillOpacity="0.1" />
               <path d="M563 67V79M557 73H569" stroke="#10B981" strokeWidth="2" strokeLinecap="round" />
               <text x="545" y="115" fill="#0F172A" className="dark:fill-white" fontSize="15" fontWeight="700">3. SHAP Evasion Engine</text>
-              <text x="545" y="138" fill="#64748B" className="dark:fill-slate-400" fontSize="12">RF & XGB Classifier Bypass</text>
+              <text x="545" y="138" fill="#64748B" className="dark:fill-slate-400" fontSize="12">RF &amp; XGB Classifier Bypass</text>
               <text x="545" y="160" fill="#059669" fontSize="11" fontWeight="600">• Clause Inversion</text>
               <text x="545" y="178" fill="#059669" fontSize="11" fontWeight="600">• Burstiness Injection</text>
               <text x="545" y="196" fill="#059669" fontSize="11" fontWeight="600">• Contraction Restoral</text>
@@ -142,10 +152,10 @@ export default function HowItWasMadePage() {
                 Word Density Equalization (#chars / #words)
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-                XGBoost classifiers heavily rely on <strong className="text-slate-900 dark:text-white">Word Density</strong>. AI models consistently produce longer average character counts per word (&gt; 5.2 chars). Swift AI's Word Density Equalizer automatically replaces multi-syllable AI jargon with 1-2 syllable grounded human vocabulary.
+                XGBoost classifiers heavily rely on <strong className="text-slate-900 dark:text-white">Word Density</strong>. AI models consistently produce longer average character counts per word (&gt; 5.2 chars). Swift AI&apos;s Word Density Equalizer automatically replaces multi-syllable AI jargon with 1-2 syllable grounded human vocabulary.
               </p>
               <div className="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
-                E.g., "comprehensively utilize" ➔ "fully use"
+                E.g., &quot;comprehensively utilize&quot; ➔ &quot;fully use&quot;
               </div>
             </div>
 
@@ -155,10 +165,10 @@ export default function HowItWasMadePage() {
                 03
               </div>
               <h3 className="font-heading font-bold text-xl text-slate-900 dark:text-white">
-                POS Lexicon Rebalancing (Pronouns & Verbs)
+                POS Lexicon Rebalancing (Pronouns &amp; Verbs)
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-                The research highlights a significant POS gap: synthetic text over-indexes on static nouns and adjectives while severely under-indexing on personal pronouns (<em className="text-slate-900 dark:text-white">we, you, it's, our</em>) and active verbs. Swift AI rebalances POS ratios back to human natural distributions.
+                The research highlights a significant POS gap: synthetic text over-indexes on static nouns and adjectives while severely under-indexing on personal pronouns (<em className="text-slate-900 dark:text-white">we, you, it&apos;s, our</em>) and active verbs. Swift AI rebalances POS ratios back to human natural distributions.
               </p>
               <div className="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
                 Nouns &amp; Adjectives ➔ Active Action Verbs &amp; Contractions
@@ -174,7 +184,7 @@ export default function HowItWasMadePage() {
                 Predictability &amp; N-Gram Cluster Elimination
               </h3>
               <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
-                Detectors scan for predictable bigram/trigram sequences like <em className="text-slate-900 dark:text-white">"plays a pivotal role in"</em> or <em className="text-slate-900 dark:text-white">"advancements in"</em>. Our 250+ Predictability Breaker identifies these exact n-gram clusters and replaces them with unpredictable human idioms.
+                Detectors scan for predictable bigram/trigram sequences like <em className="text-slate-900 dark:text-white">&quot;plays a pivotal role in&quot;</em> or <em className="text-slate-900 dark:text-white">&quot;advancements in&quot;</em>. Our 250+ Predictability Breaker identifies these exact n-gram clusters and replaces them with unpredictable human idioms.
               </p>
               <div className="bg-slate-50 dark:bg-slate-950 p-3 rounded-xl border border-slate-200/80 dark:border-slate-800 text-[11px] font-mono text-slate-600 dark:text-slate-400">
                 High Perplexity + 0% Repetitive N-Grams
@@ -190,7 +200,7 @@ export default function HowItWasMadePage() {
               Detector Classifier Features vs. Swift AI Counter-Measures
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400">
-              Comparison between the 10 IEEE paper features and Swift AI's transformation modules.
+              Comparison between the 10 IEEE paper features and Swift AI&apos;s transformation modules.
             </p>
           </div>
 
@@ -247,7 +257,7 @@ export default function HowItWasMadePage() {
               Academic Paper Reference
             </span>
             <p className="leading-relaxed max-w-2xl font-sans">
-              <strong className="font-bold">"How to Detect AI-Generated Texts?"</strong> — Nguyen, T. T., Hatua, A., &amp; Sung, A. H. (2023). <em>IEEE International Conference on Machine Learning &amp; Applications</em>.
+              <strong className="font-bold">&quot;How to Detect AI-Generated Texts?&quot;</strong> — Nguyen, T. T., Hatua, A., &amp; Sung, A. H. (2023). <em>IEEE International Conference on Machine Learning &amp; Applications</em>.
             </p>
           </div>
           <Link

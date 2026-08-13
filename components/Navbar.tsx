@@ -73,7 +73,7 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             <Link href="/how-it-works" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               How It Works
             </Link>
-            <Link href="/how-it-was-made" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+            <Link href="/research-architecture" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
               Research &amp; Architecture
             </Link>
             <Link href="/dashboard" className="text-sm font-normal text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
@@ -143,7 +143,7 @@ export function Navbar({ onOpenHistory }: NavbarProps) {
             How It Works
           </Link>
           <Link
-            href="/how-it-was-made"
+            href="/research-architecture"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-xl text-base font-normal text-slate-800 dark:text-slate-100 hover:bg-slate-50 dark:hover:bg-slate-800"
           >

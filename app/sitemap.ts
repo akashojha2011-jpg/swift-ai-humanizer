@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
     "/how-it-works",
-    "/how-it-was-made",
+    "/research-architecture",
     "/bulk-rewriter",
     "/tone-customizer",
     "/ai-detector",
@@ -30,7 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           route === "/tone-customizer" ||
           route === "/ai-detector" ||
           route === "/how-it-works" ||
-          route === "/how-it-was-made"
+          route === "/research-architecture"
         ? 0.9
         : 0.7,
   }));

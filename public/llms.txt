@@ -18,7 +18,7 @@ Swift AI Humanizer (https://swiftaihumanizer.com) is a free web application that
 - [AI Detector & Risk Scanner](https://swiftaihumanizer.com/ai-detector): Free AI text scanner for Turnitin, GPTZero, and Copyleaks.
 - [Bulk Document Rewriter](https://swiftaihumanizer.com/bulk-rewriter): Batch rewrite full Word documents (.docx) and articles.
 - [Tone Customizer](https://swiftaihumanizer.com/tone-customizer): Fine-tune writing tone across Academic, Business, and Creative modes.
-- [Research & Architecture](https://swiftaihumanizer.com/how-it-was-made): IEEE peer-reviewed methodology and detection evasion architecture.
+- [Research & Architecture](https://swiftaihumanizer.com/research-architecture): IEEE peer-reviewed methodology and detection evasion architecture.
 - [How It Works](https://swiftaihumanizer.com/how-it-works): Step-by-step technical guide to natural language rebalancing.
 - [Blog & Guides](https://swiftaihumanizer.com/blog): In-depth AI detector guides, research benchmarks, and writing tips.
 - [About Us](https://swiftaihumanizer.com/about): Mission, features, and company background.

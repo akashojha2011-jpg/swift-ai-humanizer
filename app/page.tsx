@@ -121,7 +121,7 @@ export default function Home() {
               </div>
 
               <Link
-                href="/how-it-was-made"
+                href="/research-architecture"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-heading font-bold text-xs text-white bg-brand-600 hover:bg-brand-700 shadow-2xs transition-all shrink-0 hover:scale-105"
               >
                 <span>See full research breakdown</span>

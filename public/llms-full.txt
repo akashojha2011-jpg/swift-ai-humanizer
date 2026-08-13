@@ -18,7 +18,7 @@ Swift AI Humanizer is built on peer-reviewed Natural Language Processing researc
 - [AI Detector](https://swiftaihumanizer.com/ai-detector)
 - [Bulk Rewriter](https://swiftaihumanizer.com/bulk-rewriter)
 - [Tone Customizer](https://swiftaihumanizer.com/tone-customizer)
-- [Research Documentation](https://swiftaihumanizer.com/how-it-was-made)
+- [Research Documentation](https://swiftaihumanizer.com/research-architecture)
 - [How It Works](https://swiftaihumanizer.com/how-it-works)
 - [Blog Directory](https://swiftaihumanizer.com/blog)
 - [About Us](https://swiftaihumanizer.com/about)

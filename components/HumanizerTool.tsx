@@ -277,8 +277,12 @@ export function HumanizerTool({ onOpenHistory }: HumanizerToolProps) {
 
             {/* Purpose / Tone Dropdown */}
             <div className="relative flex items-center bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-1.5 shadow-2xs">
-              <span className="text-xs font-bold text-slate-400 dark:text-slate-500 mr-1.5 shrink-0">Tone:</span>
+              <label htmlFor="writing-tone-select" className="text-xs font-bold text-slate-400 dark:text-slate-500 mr-1.5 shrink-0">
+                Tone:
+              </label>
               <select
+                id="writing-tone-select"
+                aria-label="Select writing tone"
                 value={tone}
                 onChange={(e) => setTone(e.target.value as HumanizeTone)}
                 className="bg-transparent text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none cursor-pointer appearance-none pr-6"

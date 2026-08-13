@@ -1,0 +1,24 @@
+# Swift AI Humanizer — Full Technical Specification & API Guidelines
+
+> Complete technical documentation for AI models, web crawlers, and LLM agent integration.
+
+## Architecture & Algorithm
+
+Swift AI Humanizer is built on peer-reviewed Natural Language Processing research ("How to Detect AI-Generated Texts?", Nguyen, Hatua & Sung, 2023). It targets 10 key NLP features analyzed by modern AI detectors:
+
+1. **Coleman-Liau Readability Index**: Calibrates letter-to-word and word-to-sentence ratios into human ranges.
+2. **Vocabulary Entropy & POS Density**: Rebalances noun-to-verb-to-adjective distributions.
+3. **Burstiness & Perplexity**: Introduces sentence length variations to eliminate artificial uniform rhythm.
+4. **Transition Filtering**: Replaces formal AI cliché transitions ("moreover", "in summary") with natural human bridges.
+5. **Formatting Preservation**: Preserves AST Markdown nodes line-by-line during transformation.
+
+## Resource Links
+
+- [Home Page](https://swiftaihumanizer.com)
+- [AI Detector](https://swiftaihumanizer.com/ai-detector)
+- [Bulk Rewriter](https://swiftaihumanizer.com/bulk-rewriter)
+- [Tone Customizer](https://swiftaihumanizer.com/tone-customizer)
+- [Research Documentation](https://swiftaihumanizer.com/how-it-was-made)
+- [How It Works](https://swiftaihumanizer.com/how-it-works)
+- [Blog Directory](https://swiftaihumanizer.com/blog)
+- [About Us](https://swiftaihumanizer.com/about)

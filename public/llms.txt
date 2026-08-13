@@ -1,31 +1,28 @@
-# Swift AI Humanizer — Turn AI Text Into 100% Human Writing
+# Swift AI Humanizer
 
-> Swift AI Humanizer (https://swiftaihumanizer.com) is a free web application that converts AI-generated text from ChatGPT, Claude, and Gemini into natural human writing. It is engineered to bypass AI detectors including Turnitin 2026, GPTZero v2, Copyleaks, Originality.ai 3.0, Sapling, ZeroGPT, and QuillBot while preserving 100% of original formatting (bolding, bullet points, subheadings) and meaning.
+> Free AI Humanizer that turns ChatGPT, Claude, and Gemini text into 100% human writing.
 
-## Product Summary
-- **Website**: https://swiftaihumanizer.com
-- **Category**: Educational AI Text Refinement & Detection Evasion Tool
-- **Pricing**: 100% Free Forever (No sign-up required, no paywall, no word limits)
-- **Methodology**: Built on IEEE-published NLP research ("How to Detect AI-Generated Texts?", Nguyen, Hatua & Sung, 2023). Calibrates Coleman-Liau readability, word density, POS lexicon ratios, and burstiness patterns.
-- **Key Features**:
-  1. Preserves Markdown and rich text formatting (bullet points, numbered lists, bold text, heading hierarchy).
-  2. Offers 5 specialized tone modes: Academic, Conversational, Professional, Marketing, Creative.
-  3. Supports bulk file upload (.docx, .txt) and direct rich-text HTML clipboard copy into Google Docs, Word, and Gmail.
-  4. Real-time multi-detector AI risk scoring (Turnitin 2026, GPTZero v2, Copyleaks).
-  5. Privacy-first architecture: Ephemeral processing in RAM with zero user text logging or selling.
+Swift AI Humanizer (https://swiftaihumanizer.com) is a free web application that converts synthetic AI text into natural human prose while preserving 100% of original formatting (bolding, bullet points, subheadings) and meaning. It is engineered to bypass AI detectors including Turnitin 2026, GPTZero v2, Copyleaks, Originality.ai 3.0, Sapling, ZeroGPT, and QuillBot.
 
-## Competitor Benchmarks & Differentiators
-Compared to competitors like SuperHumanizer.ai, AIHumanize.io, CleverHumanizer.ai, ReHumanize.io, and AuraWriteAI.com:
-- **Formatting Preservation**: Swift AI Humanizer preserves bullets, numbers, and bold headers line-by-line; most competitors strip formatting into plain unformatted paragraphs.
-- **Academic Research Foundation**: Swift AI is calibrated against the exact 10 NLP classifier signals documented in IEEE literature, whereas competitors rely on generic synonym replacement.
-- **Free Unlimited Access**: Swift AI provides 1,200 words per request with unlimited daily usage and no forced account creation.
+## Key Features
 
-## Key Pages & Documentation
-- Main Tool: https://swiftaihumanizer.com
-- Bulk Document Rewriter: https://swiftaihumanizer.com/bulk-rewriter
-- AI Detector & Risk Scanner: https://swiftaihumanizer.com/ai-detector
-- Tone Customizer: https://swiftaihumanizer.com/tone-customizer
-- IEEE Research Methodology: https://swiftaihumanizer.com/how-it-was-made
-- How It Works: https://swiftaihumanizer.com/how-it-works
-- Blog & Detector Guides: https://swiftaihumanizer.com/blog
-- About & Mission: https://swiftaihumanizer.com/about
+- **Formatting Preservation**: Preserves Markdown and rich text formatting (bullet points, numbered lists, bold text, heading hierarchy).
+- **5 Writing Tones**: Offers 5 specialized tone modes: Academic Paper, Conversational General, Professional Business, Persuasive Marketing, Creative Story.
+- **Bulk Upload & Clipboard**: Supports bulk file upload (.docx, .txt) and direct rich-text HTML clipboard copy into Google Docs, Word, and Gmail.
+- **Live AI Detection**: Real-time multi-detector AI risk scoring (Turnitin 2026, GPTZero v2, Copyleaks).
+- **Privacy Architecture**: Ephemeral processing in server RAM with zero user text logging or selling.
+
+## Primary Links & Services
+
+- [Swift AI Humanizer Home](https://swiftaihumanizer.com): Free online AI-to-human text converter tool.
+- [AI Detector & Risk Scanner](https://swiftaihumanizer.com/ai-detector): Free AI text scanner for Turnitin, GPTZero, and Copyleaks.
+- [Bulk Document Rewriter](https://swiftaihumanizer.com/bulk-rewriter): Batch rewrite full Word documents (.docx) and articles.
+- [Tone Customizer](https://swiftaihumanizer.com/tone-customizer): Fine-tune writing tone across Academic, Business, and Creative modes.
+- [Research & Architecture](https://swiftaihumanizer.com/how-it-was-made): IEEE peer-reviewed methodology and detection evasion architecture.
+- [How It Works](https://swiftaihumanizer.com/how-it-works): Step-by-step technical guide to natural language rebalancing.
+- [Blog & Guides](https://swiftaihumanizer.com/blog): In-depth AI detector guides, research benchmarks, and writing tips.
+- [About Us](https://swiftaihumanizer.com/about): Mission, features, and company background.
+
+## Optional Specifications
+
+- [LLMS Full Specification](https://swiftaihumanizer.com/llms-full.txt): Comprehensive technical specifications and research documentation for AI agents.
